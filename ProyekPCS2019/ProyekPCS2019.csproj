@@ -51,6 +51,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainClient.Designer.cs">
+      <DependentUpon>MainClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrontOffice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrontOffice.Designer.cs">
+      <DependentUpon>MainFrontOffice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMaster.Designer.cs">
+      <DependentUpon>MainMaster.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
