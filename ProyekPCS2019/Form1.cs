@@ -16,5 +16,29 @@ namespace ProyekPCS2019
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MainMaster mm = new MainMaster();
+            this.Hide();
+            mm.ShowDialog();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MainFrontOffice mf = new MainFrontOffice();
+            this.Hide();
+            mf.ShowDialog();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MainClient mc = new MainClient();
+            this.Hide();
+            mc.ShowDialog();
+            this.Close();
+        }
     }
 }
