@@ -51,6 +51,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginKaryawan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginKaryawan.Designer.cs">
+      <DependentUpon>LoginKaryawan.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginKaryawan.resx">
+      <DependentUpon>LoginKaryawan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainClient.resx">
+      <DependentUpon>MainClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrontOffice.resx">
+      <DependentUpon>MainFrontOffice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMaster.resx">
       <DependentUpon>MainMaster.cs</DependentUpon>
