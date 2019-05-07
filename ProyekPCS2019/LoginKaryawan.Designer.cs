@@ -1,6 +1,6 @@
 ﻿namespace ProyekPCS2019
 {
-    partial class Login
+    partial class LoginKaryawan
     {
         /// <summary>
         /// Required designer variable.

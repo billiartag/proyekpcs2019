@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyekPCS2019
 {
-    public partial class Login : Form
+    public partial class LoginKaryawan : Form
     {
-        public Login()
+        public LoginKaryawan()
         {
             InitializeComponent();
         }
