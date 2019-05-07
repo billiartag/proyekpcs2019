@@ -1,10 +1,11 @@
-drop table transaksi;
-drop table membership;
-drop table pegawai;
-drop table fasilitas_kamar;
-drop table fasilitas;
-drop table kamar;
-drop table jenis_kamar;
+drop table d_transaksi CASCADE CONSTRAINT PURGE;
+drop table h_transaksi CASCADE CONSTRAINT PURGE;
+drop table membership CASCADE CONSTRAINT PURGE;
+drop table pegawai CASCADE CONSTRAINT PURGE;
+drop table fasilitas_kamar CASCADE CONSTRAINT PURGE;
+drop table fasilitas CASCADE CONSTRAINT PURGE;
+drop table kamar CASCADE CONSTRAINT PURGE;
+drop table jenis_kamar CASCADE CONSTRAINT PURGE;
 
 create table jenis_kamar(
 kode_jenis varchar2(20),
