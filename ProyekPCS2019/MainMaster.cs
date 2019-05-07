@@ -16,5 +16,10 @@ namespace ProyekPCS2019
         {
             InitializeComponent();
         }
+
+        private void MainMaster_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

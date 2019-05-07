@@ -1,7 +1,7 @@
-drop table transaksi;
+drop table d_transaksi;
+drop table h_transaksi;
 drop table membership;
 drop table pegawai;
-drop table fasilitas_kamar;
 drop table fasilitas;
 drop table kamar;
 drop table jenis_kamar;
@@ -41,11 +41,11 @@ constraint pk_pegawai PRIMARY KEY (id_pegawai)
 );
 
 create table membership(
-id_membership varchar2(20),
-nama varchar2(20),
-alamat varchar2(20),
-no_telp varchar2(20),
-email varchar2(20),
+id_membership varchar2(30),
+nama varchar2(30),
+alamat varchar2(30),
+no_telp varchar2(30),
+email varchar2(30),
 constraint pk_membership PRIMARY KEY (id_membership)
 );
 
@@ -63,7 +63,6 @@ total_harga varchar2(20),
 id_membership varchar2(20),
 id_ref varchar2(20),
 tgl_checkout date,
-constraint pk_transaksi PRIMARY KEY (id_transaksi),
-constraint fk_transaksi_kamar foreign key(id_kamar) references kamar(id_kamar)
+constraint pk_transaksi PRIMARY KEY (id_transaksi)
 );
 

@@ -54,11 +54,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 253);
+            this.ClientSize = new System.Drawing.Size(1234, 650);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "MainMaster";
             this.Text = "MainMaster";
+            this.Load += new System.EventHandler(this.MainMaster_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

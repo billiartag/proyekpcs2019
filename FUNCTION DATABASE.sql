@@ -1,6 +1,8 @@
 drop function AUTO_GEN_JENIS_KAMAR;
 drop function AUTO_GEN_KAMAR;
 drop function AUTO_GEN_FASILITAS;
+drop function AUTO_GEN_PEGAWAI;
+drop function AUTO_GEN_MEMBERSHIP;
 
 --auto gen jenis kamar
 set serveroutput on;
@@ -80,5 +82,77 @@ end;
 /
 show err;
 
+--auto gen pegawai
 
+set serveroutput on;
+create or replace function AUTO_GEN_PEGAWAI
+return varchar2
+is
+	hasil varchar2(30);
+	counter number(7);
+	cek number(5);
+	temp number(5);
+begin
+	hasil:='PE';
+	select to_number(max(substr(id_pegawai,3,3))) into temp from pegawai;
+	temp:=temp+1;
+	
+	if temp>0 then
+	hasil:= upper(hasil)||lpad(temp,3,'0');
+	else
+	hasil:= upper(hasil)||lpad('1',3,'0');
+	end if;
+	return hasil;
+end;
+/
+show err;
 
+--auto gen membership
+
+set serveroutput on;
+create or replace function AUTO_GEN_MEMBERSHIP
+return varchar2
+is
+	hasil varchar2(30);
+	counter number(7);
+	cek number(5);
+	temp number(5);
+begin
+	hasil:='ME';
+	select to_number(max(substr(id_membership,3,3))) into temp from membership;
+	temp:=temp+1;
+	
+	if temp>0 then
+	hasil:= upper(hasil)||lpad(temp,3,'0');
+	else
+	hasil:= upper(hasil)||lpad('1',3,'0');
+	end if;
+	return hasil;
+end;
+/
+show err;
+
+--auto gen pegawai
+
+set serveroutput on;
+create or replace function AUTO_GEN_MEMBERSHIP
+return varchar2
+is
+	hasil varchar2(30);
+	counter number(7);
+	cek number(5);
+	temp number(5);
+begin
+	hasil:='ME';
+	select to_number(max(substr(id_membership,3,3))) into temp from membership;
+	temp:=temp+1;
+	
+	if temp>0 then
+	hasil:= upper(hasil)||lpad(temp,3,'0');
+	else
+	hasil:= upper(hasil)||lpad('1',3,'0');
+	end if;
+	return hasil;
+end;
+/
+show err;
