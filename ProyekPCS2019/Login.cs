@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ProyekPCS2019
 {
-    public partial class MainMaster : Form
+    public partial class Login : Form
     {
-        public MainMaster()
+        public Login()
         {
             InitializeComponent();
-        }
-
-        private void MainMaster_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
