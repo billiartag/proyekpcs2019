@@ -16,5 +16,18 @@ namespace ProyekPCS2019
         {
             InitializeComponent();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Client.ClientMembership cm = new Client.ClientMembership();
+            cm.ShowDialog();
+            this.Close();
+        }
     }
 }

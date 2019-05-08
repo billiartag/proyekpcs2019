@@ -17,6 +17,14 @@ namespace ProyekPCS2019
             InitializeComponent();
         }
 
+        private void pEGAWAIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditPegawai ep = new EditPegawai();
+            ep.MdiParent = this;
+            ep.Show();
+
+        }
+
         private void MainMaster_Load(object sender, EventArgs e)
         {
 
