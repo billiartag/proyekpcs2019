@@ -2,6 +2,8 @@
 insert into jenis_kamar values(' ','Luxury',500000);
 --kamar
 insert into kamar values(' ','JK001','ya',to_date(sysdate,'dd/mm/yyyy'));
+insert into kamar values(' ','JK001','ya','');
+insert into kamar values(' ','JK001','ya',to_date(sysdate,'dd/mm/yyyy'));
 --fasilitas
 insert into fasilitas values('','kolam renang',100000,'kolam renang');
 --fasilitas
