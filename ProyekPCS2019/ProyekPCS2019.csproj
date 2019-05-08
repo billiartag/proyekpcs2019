@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\app\edwin\product\11.2.0\dbhome_1\ODP.NET\bin\2.x\Oracle.DataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -75,6 +79,12 @@
     <Compile Include="MainFrontOffice.Designer.cs">
       <DependentUpon>MainFrontOffice.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditPegawai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPegawai.Designer.cs">
+      <DependentUpon>EditPegawai.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMaster.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainFrontOffice.resx">
       <DependentUpon>MainFrontOffice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPegawai.resx">
+      <DependentUpon>EditPegawai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMaster.resx">
       <DependentUpon>MainMaster.cs</DependentUpon>
