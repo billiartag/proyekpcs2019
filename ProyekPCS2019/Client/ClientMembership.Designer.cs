@@ -29,37 +29,49 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.buttonCek = new System.Windows.Forms.Button();
+            this.buttonBuat = new System.Windows.Forms.Button();
+            this.groupBoxCek = new System.Windows.Forms.GroupBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBoxBuat = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBoxNomorMember = new System.Windows.Forms.TextBox();
+            this.textBoxEmailMember = new System.Windows.Forms.TextBox();
+            this.textBoxAlamatMember = new System.Windows.Forms.TextBox();
+            this.textBoxNamaMember = new System.Windows.Forms.TextBox();
+            this.buttonbuatMember = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBoxCek.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBoxBuat.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.buttonCek);
+            this.groupBox1.Controls.Add(this.buttonBuat);
             this.groupBox1.Location = new System.Drawing.Point(13, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(376, 87);
@@ -67,58 +79,188 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Membership";
             // 
-            // button1
+            // buttonCek
             // 
-            this.button1.Location = new System.Drawing.Point(16, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 41);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Buat Membership";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonCek.Location = new System.Drawing.Point(195, 31);
+            this.buttonCek.Name = "buttonCek";
+            this.buttonCek.Size = new System.Drawing.Size(137, 41);
+            this.buttonCek.TabIndex = 1;
+            this.buttonCek.Text = "Cek Membership";
+            this.buttonCek.UseVisualStyleBackColor = true;
+            this.buttonCek.Click += new System.EventHandler(this.buttonCek_Click);
             // 
-            // button2
+            // buttonBuat
             // 
-            this.button2.Location = new System.Drawing.Point(195, 31);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(137, 41);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Cek Membership";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonBuat.Location = new System.Drawing.Point(16, 31);
+            this.buttonBuat.Name = "buttonBuat";
+            this.buttonBuat.Size = new System.Drawing.Size(137, 41);
+            this.buttonBuat.TabIndex = 0;
+            this.buttonBuat.Text = "Buat Membership";
+            this.buttonBuat.UseVisualStyleBackColor = true;
+            this.buttonBuat.Click += new System.EventHandler(this.button1_Click);
             // 
-            // groupBox2
+            // groupBoxCek
             // 
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(13, 114);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1064, 620);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Cek Membership";
+            this.groupBoxCek.Controls.Add(this.label12);
+            this.groupBoxCek.Controls.Add(this.listBox1);
+            this.groupBoxCek.Controls.Add(this.label11);
+            this.groupBoxCek.Controls.Add(this.dataGridView1);
+            this.groupBoxCek.Controls.Add(this.label10);
+            this.groupBoxCek.Controls.Add(this.label9);
+            this.groupBoxCek.Controls.Add(this.label8);
+            this.groupBoxCek.Controls.Add(this.label7);
+            this.groupBoxCek.Controls.Add(this.label6);
+            this.groupBoxCek.Controls.Add(this.label5);
+            this.groupBoxCek.Controls.Add(this.label4);
+            this.groupBoxCek.Controls.Add(this.textBox2);
+            this.groupBoxCek.Controls.Add(this.label3);
+            this.groupBoxCek.Controls.Add(this.label2);
+            this.groupBoxCek.Controls.Add(this.pictureBox1);
+            this.groupBoxCek.Controls.Add(this.button4);
+            this.groupBoxCek.Controls.Add(this.textBox1);
+            this.groupBoxCek.Controls.Add(this.label1);
+            this.groupBoxCek.Location = new System.Drawing.Point(13, 114);
+            this.groupBoxCek.Name = "groupBoxCek";
+            this.groupBoxCek.Size = new System.Drawing.Size(1064, 620);
+            this.groupBoxCek.TabIndex = 3;
+            this.groupBoxCek.TabStop = false;
+            this.groupBoxCek.Text = "Cek Membership";
             // 
-            // groupBox3
+            // listBox1
             // 
-            this.groupBox3.Location = new System.Drawing.Point(19, 114);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1064, 620);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Buat Membership";
-            this.groupBox3.Visible = false;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(642, 80);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(412, 244);
+            this.listBox1.TabIndex = 16;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(639, 49);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(158, 17);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "Daftar kunjungan Anda:";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 342);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1048, 272);
+            this.dataGridView1.TabIndex = 14;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(105, 271);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(13, 17);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "-";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(105, 230);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(13, 17);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "-";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(105, 189);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(13, 17);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "-";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(105, 148);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(13, 17);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "-";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(260, 85);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(280, 22);
+            this.textBox2.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 85);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(244, 17);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Masukkan Kata Pertama Nama Anda:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 123);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(543, 2);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(546, 41);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 66);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Cek";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(260, 43);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(280, 22);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(174, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Masukkan ID Membership:";
+            // 
+            // groupBoxBuat
+            // 
+            this.groupBoxBuat.Controls.Add(this.buttonbuatMember);
+            this.groupBoxBuat.Controls.Add(this.textBoxNamaMember);
+            this.groupBoxBuat.Controls.Add(this.textBoxAlamatMember);
+            this.groupBoxBuat.Controls.Add(this.textBoxEmailMember);
+            this.groupBoxBuat.Controls.Add(this.textBoxNomorMember);
+            this.groupBoxBuat.Controls.Add(this.label13);
+            this.groupBoxBuat.Controls.Add(this.label14);
+            this.groupBoxBuat.Controls.Add(this.label15);
+            this.groupBoxBuat.Controls.Add(this.label16);
+            this.groupBoxBuat.Location = new System.Drawing.Point(12, 114);
+            this.groupBoxBuat.Name = "groupBoxBuat";
+            this.groupBoxBuat.Size = new System.Drawing.Size(1065, 620);
+            this.groupBoxBuat.TabIndex = 4;
+            this.groupBoxBuat.TabStop = false;
+            this.groupBoxBuat.Text = "Buat Membership";
+            this.groupBoxBuat.Visible = false;
             // 
             // button3
             // 
@@ -130,39 +272,14 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label1
+            // label12
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Masukkan ID Membership:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(260, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(280, 22);
-            this.textBox1.TabIndex = 1;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(546, 43);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Cek";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 123);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(543, 2);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(5, 322);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(125, 17);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "Rincian kunjungan";
             // 
             // label2
             // 
@@ -172,22 +289,6 @@
             this.label2.Size = new System.Drawing.Size(49, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Nama:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 85);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(244, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Masukkan Kata Pertama Nama Anda:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(260, 85);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(280, 22);
-            this.textBox2.TabIndex = 6;
             // 
             // label4
             // 
@@ -216,62 +317,79 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "No. Telepon:";
             // 
-            // label7
+            // label13
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(105, 148);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(13, 17);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "-";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(13, 224);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(90, 17);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "No. Telepon:";
             // 
-            // label8
+            // label14
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(105, 189);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(13, 17);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "-";
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(14, 164);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(51, 17);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "E-mail:";
             // 
-            // label9
+            // label15
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(105, 230);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(13, 17);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "-";
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(14, 104);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(55, 17);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "Alamat:";
             // 
-            // label10
+            // label16
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(105, 271);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(13, 17);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "-";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(14, 44);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(49, 17);
+            this.label16.TabIndex = 10;
+            this.label16.Text = "Nama:";
             // 
-            // dataGridView1
+            // textBoxNomorMember
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 342);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1048, 272);
-            this.dataGridView1.TabIndex = 14;
+            this.textBoxNomorMember.Location = new System.Drawing.Point(109, 224);
+            this.textBoxNomorMember.Name = "textBoxNomorMember";
+            this.textBoxNomorMember.Size = new System.Drawing.Size(391, 22);
+            this.textBoxNomorMember.TabIndex = 14;
             // 
-            // label11
+            // textBoxEmailMember
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 313);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(158, 17);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "Daftar kunjungan Anda:";
+            this.textBoxEmailMember.Location = new System.Drawing.Point(109, 163);
+            this.textBoxEmailMember.Name = "textBoxEmailMember";
+            this.textBoxEmailMember.Size = new System.Drawing.Size(391, 22);
+            this.textBoxEmailMember.TabIndex = 15;
+            // 
+            // textBoxAlamatMember
+            // 
+            this.textBoxAlamatMember.Location = new System.Drawing.Point(110, 102);
+            this.textBoxAlamatMember.Name = "textBoxAlamatMember";
+            this.textBoxAlamatMember.Size = new System.Drawing.Size(391, 22);
+            this.textBoxAlamatMember.TabIndex = 16;
+            // 
+            // textBoxNamaMember
+            // 
+            this.textBoxNamaMember.Location = new System.Drawing.Point(110, 41);
+            this.textBoxNamaMember.Name = "textBoxNamaMember";
+            this.textBoxNamaMember.Size = new System.Drawing.Size(391, 22);
+            this.textBoxNamaMember.TabIndex = 17;
+            // 
+            // buttonbuatMember
+            // 
+            this.buttonbuatMember.Location = new System.Drawing.Point(17, 276);
+            this.buttonbuatMember.Name = "buttonbuatMember";
+            this.buttonbuatMember.Size = new System.Drawing.Size(484, 43);
+            this.buttonbuatMember.TabIndex = 18;
+            this.buttonbuatMember.Text = "Buat Membership";
+            this.buttonbuatMember.UseVisualStyleBackColor = true;
+            this.buttonbuatMember.Click += new System.EventHandler(this.buttonbuatMember_Click);
             // 
             // ClientMembership
             // 
@@ -279,16 +397,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1089, 746);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBoxCek);
+            this.Controls.Add(this.groupBoxBuat);
             this.Name = "ClientMembership";
             this.Text = "ClientMembership";
+            this.Load += new System.EventHandler(this.ClientMembership_Load);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBoxCek.ResumeLayout(false);
+            this.groupBoxCek.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBoxBuat.ResumeLayout(false);
+            this.groupBoxBuat.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -296,10 +417,10 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button buttonCek;
+        private System.Windows.Forms.Button buttonBuat;
+        private System.Windows.Forms.GroupBox groupBoxCek;
+        private System.Windows.Forms.GroupBox groupBoxBuat;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
@@ -307,15 +428,26 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBoxNamaMember;
+        private System.Windows.Forms.TextBox textBoxAlamatMember;
+        private System.Windows.Forms.TextBox textBoxEmailMember;
+        private System.Windows.Forms.TextBox textBoxNomorMember;
+        private System.Windows.Forms.Button buttonbuatMember;
     }
 }
