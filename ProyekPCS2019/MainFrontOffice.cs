@@ -59,6 +59,10 @@ namespace ProyekPCS2019
                 OracleDataAdapter da = new OracleDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
+                dataGridView1.DataSource = null;
+                dataGridView1.Columns.Clear();
+                dataGridView1.Rows.Clear();
+                dataGridView1.Refresh();
                 dataGridView1.DataSource = dt;
                 if (dataGridView1.ColumnCount < 5)
                 {
@@ -127,21 +131,21 @@ namespace ProyekPCS2019
             try
             {
                 conn.Open();
-                OracleCommand cmd = new OracleCommand("Select upper(tersedia) from kamar where id_kamar = '" + id_kamar + "' and tgl_checkin is null", conn);
-                string temp = cmd.ExecuteScalar().ToString();
+                OracleCommand cmd = new OracleCommand("Select count(id_kamar) from kamar where id_kamar = '" + id_kamar + "' and tgl_checkin is null", conn);
+                int temp = Convert.ToInt32(cmd.ExecuteScalar().ToString());
                 //MessageBox.Show("Test -->"+temp);
-                if(temp == null)
+                if(temp==0)
                 {
-                    MessageBox.Show("Kamar Tidak Tersedia");
+                    MessageBox.Show("Room is not Available Right now!","error",MessageBoxButtons.OK,MessageBoxIcon.Stop);
                 }
                 else
                 {
-                    MessageBox.Show("Test -->" + temp);
                     string date = DateTime.Now.Day + "-" + DateTime.Now.Month + "-" + DateTime.Now.Year;
                     string update = "update kamar set tersedia = 'tidak', tgl_checkin = to_date('"+date+"','dd-mm-yyyy') where id_kamar = '"+id_kamar+"'";
                     cmd = new OracleCommand(update, conn);
                     cmd.ExecuteNonQuery();
                     loadDataKamar(comboBox1.SelectedValue.ToString());
+                    MessageBox.Show(id_kamar + " has Checked in");
                 }
                 conn.Close();
             }
@@ -153,7 +157,36 @@ namespace ProyekPCS2019
         }
         public void checkOut(string id_kamar)
         {
-
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+            try
+            {
+                conn.Open();
+                OracleCommand cmd = new OracleCommand("Select count(*) from kamar where id_kamar = '" + id_kamar + "' and tgl_checkin is not null", conn);
+                int temp = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+                
+                if(temp == 0)
+                {
+                    MessageBox.Show("Room is Empty!","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                else
+                {
+                    string date = DateTime.Now.Day + "-" + DateTime.Now.Month + "-" + DateTime.Now.Year;
+                    string update = "update kamar set tersedia = 'ya', tgl_checkin = null where id_kamar = '"+id_kamar+"'";
+                    cmd = new OracleCommand(update, conn);
+                    cmd.ExecuteNonQuery();
+                    loadDataKamar(comboBox1.SelectedValue.ToString());
+                    MessageBox.Show(id_kamar + " has Checked out");
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -162,10 +195,16 @@ namespace ProyekPCS2019
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //MessageBox.Show(e.ColumnIndex+"clickeddddd");
             if (e.ColumnIndex == 4)
             {
-                MessageBox.Show("clicked -- >"+ dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+                //MessageBox.Show("clicked -- >"+ dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
                 checkIn(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            }
+            else if(e.ColumnIndex == 5)
+            {
+                //MessageBox.Show("clicked -- >" + dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+                checkOut(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
             }
 
         }
