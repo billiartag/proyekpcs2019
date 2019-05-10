@@ -68,3 +68,16 @@ begin
 end;
 /
 show err;
+
+--tambah booking
+create or replace trigger tambah_booking
+before insert
+on booking
+for each row
+declare
+	jenis varchar2(20);
+begin
+	:new.kode_booking:=AUTO_GEN_BOOKING();
+end;
+/
+show err;
