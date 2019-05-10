@@ -17,7 +17,7 @@ namespace ProyekPCS2019
         {
             InitializeComponent();
         }
-        OracleConnection conn = new OracleConnection("User ID=aaa;Password=1;Data Source=orcl");
+        OracleConnection conn = new OracleConnection("User ID=proyek;Password=1;Data Source=orcl");
         
         private void MainFrontOffice_Load(object sender, EventArgs e)
         {
