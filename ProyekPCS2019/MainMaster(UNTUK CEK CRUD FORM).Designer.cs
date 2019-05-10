@@ -32,7 +32,6 @@
             this.pEGAWAIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fASILITASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kAMARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.jENISKAMARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,11 +41,10 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pEGAWAIToolStripMenuItem,
             this.fASILITASToolStripMenuItem,
-            this.kAMARToolStripMenuItem,
-            this.jENISKAMARToolStripMenuItem});
+            this.kAMARToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(960, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1232, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -60,26 +58,21 @@
             // fASILITASToolStripMenuItem
             // 
             this.fASILITASToolStripMenuItem.Name = "fASILITASToolStripMenuItem";
-            this.fASILITASToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
-            this.fASILITASToolStripMenuItem.Text = "FASILITAS";
+            this.fASILITASToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
+            this.fASILITASToolStripMenuItem.Text = "MEMBERSHIP";
+            this.fASILITASToolStripMenuItem.Click += new System.EventHandler(this.fASILITASToolStripMenuItem_Click);
             // 
             // kAMARToolStripMenuItem
             // 
             this.kAMARToolStripMenuItem.Name = "kAMARToolStripMenuItem";
-            this.kAMARToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
-            this.kAMARToolStripMenuItem.Text = "KAMAR";
-            // 
-            // jENISKAMARToolStripMenuItem
-            // 
-            this.jENISKAMARToolStripMenuItem.Name = "jENISKAMARToolStripMenuItem";
-            this.jENISKAMARToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
-            this.jENISKAMARToolStripMenuItem.Text = "JENIS KAMAR";
+            this.kAMARToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.kAMARToolStripMenuItem.Text = "BOOKING";
             // 
             // MainMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 535);
+            this.ClientSize = new System.Drawing.Size(1232, 593);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -99,6 +92,5 @@
         private System.Windows.Forms.ToolStripMenuItem pEGAWAIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fASILITASToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kAMARToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem jENISKAMARToolStripMenuItem;
     }
 }

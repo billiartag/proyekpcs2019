@@ -12,3 +12,4 @@ insert into pegawai values('','Alfonsus Yves','L','Direktur','mangrove');
 insert into membership values('','Alfonsus Yves','mangrove','081331322570','edwin0sidharta@gmail.com');
 --booking
 insert into booking values('','ME001','KA001',to_date(sysdate,'dd/mm/yyyy'),to_date(sysdate,'dd/mm/yyyy'));
+commit;
