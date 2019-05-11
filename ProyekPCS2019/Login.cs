@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace ProyekPCS2019
 {
-    public partial class LoginKaryawan : Form
+    public partial class Login : Form
     {
-        public LoginKaryawan()
+        public Login()
         {
             InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Client.ClientMembership cm = new Client.ClientMembership("login");
+            this.Hide();
+            cm.ShowDialog();
+            this.Close();
         }
     }
 }

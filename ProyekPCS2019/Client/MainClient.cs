@@ -25,7 +25,7 @@ namespace ProyekPCS2019
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Client.ClientMembership cm = new Client.ClientMembership();
+            Client.ClientMembership cm = new Client.ClientMembership("normal");
             cm.ShowDialog();
             this.Close();
         }

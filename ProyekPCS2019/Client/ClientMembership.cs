@@ -14,9 +14,10 @@ namespace ProyekPCS2019.Client
     public partial class ClientMembership : Form
     {
         OracleConnection conn;
-        public ClientMembership()
+        public ClientMembership(string mode)
         {
             InitializeComponent();
+            if (mode== "login") { button3.Visible = false;}
         }
 
         private void button3_Click(object sender, EventArgs e)
