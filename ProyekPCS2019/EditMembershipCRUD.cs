@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace ProyekPCS2019
 {
-    public partial class EditPegawai : Form
+    public partial class EditMembership : Form
     {
         OracleConnection conn = new OracleConnection();
-        public EditPegawai()
+        public EditMembership()
         {
             InitializeComponent();
         }
@@ -46,17 +46,18 @@ namespace ProyekPCS2019
         }
         public void refresh()
         {
+            //refresh data grid view
             conn.Open();
             OracleDataAdapter da = new OracleDataAdapter();
             DataTable dt = new DataTable();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "select * from pegawai";
+            cmd.CommandText = "select * from membership";
             da.SelectCommand = cmd;
             da.Fill(dt);
             dataGridView1.DataSource = dt;
 
-            if (dataGridView1.Columns.Count<6)
+            if (dataGridView1.Columns.Count < 6)
             {
                 DataGridViewButtonColumn newbtn = new DataGridViewButtonColumn();
                 newbtn.DefaultCellStyle.SelectionForeColor = Color.Green;
@@ -68,43 +69,36 @@ namespace ProyekPCS2019
                 newbtn.UseColumnTextForButtonValue = true;
                 dataGridView1.Columns.Add(newbtn);
             }
-            
-                OracleDataAdapter da1 = new OracleDataAdapter();
-                DataTable dt1 = new DataTable();
-                OracleCommand cmd1 = new OracleCommand();
-                cmd1.Connection = conn;
-                cmd1.CommandText = "select id_pegawai from pegawai";
-                da1.SelectCommand = cmd1;
-                da1.Fill(dt1);
-                dataGridView2.DataSource = dt1;
-                comboBox3.Items.Clear();
-                for (int i = 0; i < dataGridView2.Rows.Count-1; i++)
-                {
-                    comboBox3.Items.Add(dataGridView2.Rows[i].Cells[0].Value.ToString());
-                }
-            conn.Close();
+            //refresh isi combo box
+            OracleDataAdapter da1 = new OracleDataAdapter();
+            DataTable dt1 = new DataTable();
+            OracleCommand cmd1 = new OracleCommand();
+            cmd1.Connection = conn;
+            cmd1.CommandText = "select id_membership from membership";
+            da1.SelectCommand = cmd1;
+            da1.Fill(dt1);
+            dataGridView2.DataSource = dt1;
+            comboBox1.Items.Clear();
+            for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
+            {
+                comboBox1.Items.Add(dataGridView2.Rows[i].Cells[0].Value.ToString());
+            }
 
+            conn.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             //insert
-            conn.Open();
-            OracleTransaction mytrans = conn.BeginTransaction();
-            if (textBox1.Text != "" && textBox2.Text != "" && comboBox1.Text != "")
+            if (textBox1.Text!=""&& textBox2.Text != ""&& textBox3.Text != ""&& textBox4.Text != "")
             {
+                conn.Open();
+                OracleTransaction mytrans = conn.BeginTransaction();
                 try
                 {
                     OracleCommand cmd = new OracleCommand();
-                    if (radioButton1.Checked == true)
-                    {
-                        cmd.CommandText = "insert into pegawai values('','" + textBox1.Text + "','L','" + comboBox1.Text + "','" + textBox2.Text + "')";
-                    }
-                    else if (radioButton2.Checked == true)
-                    {
-                        cmd.CommandText = "insert into pegawai values('','" + textBox1.Text + "','P','" + comboBox1.Text + "','" + textBox2.Text + "')";
-                    }
                     cmd.Connection = conn;
+                    cmd.CommandText = "insert into membership values('','"+textBox1.Text+ "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "')";
                     cmd.ExecuteNonQuery();
                     mytrans.Commit();
                 }
@@ -113,14 +107,15 @@ namespace ProyekPCS2019
                     mytrans.Rollback();
                     MessageBox.Show(ex.Message);
                 }
+                conn.Close();
             }
-            conn.Close();
             refresh();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex==0)
+            //delete
+            if (e.ColumnIndex == 0)
             {
                 string id = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 //delete
@@ -129,7 +124,7 @@ namespace ProyekPCS2019
                 try
                 {
                     OracleCommand cmd = new OracleCommand();
-                    cmd.CommandText = "delete from pegawai where id_pegawai='"+id+"'";
+                    cmd.CommandText = "delete from membership where id_membership='" + id + "'";
                     cmd.Connection = conn;
                     cmd.ExecuteNonQuery();
                     mytrans.Commit();
@@ -137,16 +132,19 @@ namespace ProyekPCS2019
                 catch (Exception ex)
                 {
                     mytrans.Rollback();
-                    MessageBox.Show(ex.Message);
+                    if (ex.Message== "ORA-02292: integrity constraint (PROYEK.FK_MEMBERBOOKING) violated - child record found")
+                    {
+                        MessageBox.Show("Member Sedang Menggunakan Ruangan Hotel");
+                    }
                 }
                 conn.Close();
                 refresh();
             }
         }
 
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox3.SelectedIndex>-1)
+            if (comboBox1.SelectedIndex>-1)
             {
                 conn.Open();
                 try
@@ -154,71 +152,55 @@ namespace ProyekPCS2019
                     OracleCommand cmd = new OracleCommand();
                     cmd.Connection = conn;
                     //nama
-                    cmd.CommandText = "select nama_pegawai from pegawai where id_pegawai='"+comboBox3.Text+"'";
-                    textBox3.Text = cmd.ExecuteScalar().ToString();
-                    //jenis kelamin
-                    cmd.CommandText = "select jenis_kelamin from pegawai where id_pegawai='" + comboBox3.Text + "'";
-                    if (cmd.ExecuteScalar().ToString()=="L")
-                    {
-                        radioButton4.Checked = true;
-                    }
-                    else if (cmd.ExecuteScalar().ToString() == "P")
-                    {
-                        radioButton3.Checked = true;
-                    }
-                    //jabatan
-                    cmd.CommandText = "select jabatan from pegawai where id_pegawai='" + comboBox3.Text + "'";
-                    comboBox2.Text = cmd.ExecuteScalar().ToString();
+                    cmd.CommandText = "select nama from membership where id_membership='" + comboBox1.Text + "'";
+                    textBox5.Text = cmd.ExecuteScalar().ToString();
                     //alamat
-                    cmd.CommandText = "select alamat from pegawai where id_pegawai='" + comboBox3.Text + "'";
-                    textBox4.Text = cmd.ExecuteScalar().ToString();
+                    cmd.CommandText = "select alamat from membership where id_membership='" + comboBox1.Text + "'";
+                    textBox6.Text = cmd.ExecuteScalar().ToString();
+                    //no_telp
+                    cmd.CommandText = "select no_telp from membership where id_membership='" + comboBox1.Text + "'";
+                    textBox7.Text = cmd.ExecuteScalar().ToString();
+                    //email
+                    cmd.CommandText = "select email from membership where id_membership='" + comboBox1.Text + "'";
+                    textBox8.Text = cmd.ExecuteScalar().ToString();
                 }
                 catch (Exception)
                 {
-                    
+
                 }
                 conn.Close();
-
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             //update
+            //update
             conn.Open();
             OracleTransaction mytrans = conn.BeginTransaction();
             try
             {
-                //jenis kelamin
+                //nama
                 OracleCommand cmd = new OracleCommand();
-                string jenis = "";
-                if (radioButton4.Checked == true)
-                {
-                    jenis = "L";
-                }
-                else if (radioButton3.Checked == true)
-                {
-                    jenis = "P";
-                }
-                cmd.CommandText = "update pegawai set jenis_kelamin='" + jenis + "' where id_pegawai='" + comboBox3.Text + "'";
+                cmd.CommandText = "update membership set nama='" + textBox5.Text + "' where id_membership='" + comboBox1.Text + "'";
                 cmd.Connection = conn;
                 cmd.ExecuteNonQuery();
 
-                //nama
+                //alamat
                 OracleCommand cmd1 = new OracleCommand();
-                cmd1.CommandText = "update pegawai set nama_pegawai='" + textBox3.Text + "' where id_pegawai='" + comboBox3.Text + "'";
+                cmd1.CommandText = "update membership set alamat='" + textBox6.Text + "' where id_membership='" + comboBox1.Text + "'";
                 cmd1.Connection = conn;
                 cmd1.ExecuteNonQuery();
 
-                //jabatan
+                //nomor telpon
                 OracleCommand cmd2 = new OracleCommand();
-                cmd2.CommandText = "update pegawai set jabatan='" + comboBox2.Text + "' where id_pegawai='" + comboBox3.Text + "'";
+                cmd2.CommandText = "update membership set no_telp='" + textBox7.Text + "' where id_membership='" + comboBox1.Text + "'";
                 cmd2.Connection = conn;
                 cmd2.ExecuteNonQuery();
 
-                //alamat
+                //email
                 OracleCommand cmd3 = new OracleCommand();
-                cmd3.CommandText = "update pegawai set alamat='" + textBox4.Text + "' where id_pegawai='" + comboBox3.Text + "'";
+                cmd3.CommandText = "update membership set email='" + textBox8.Text + "' where id_membership='" + comboBox1.Text + "'";
                 cmd3.Connection = conn;
                 cmd3.ExecuteNonQuery();
                 mytrans.Commit();
@@ -228,7 +210,7 @@ namespace ProyekPCS2019
                 mytrans.Rollback();
                 MessageBox.Show(ex.Message);
             }
-            
+
             conn.Close();
             refresh();
         }

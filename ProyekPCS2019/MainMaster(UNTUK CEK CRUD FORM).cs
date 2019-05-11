@@ -19,7 +19,7 @@ namespace ProyekPCS2019
 
         private void pEGAWAIToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditPegawai ep = new EditPegawai();
+            EditPegawaiCRUD ep = new EditPegawaiCRUD();
             ep.MdiParent = this;
             ep.Show();
 
@@ -27,6 +27,15 @@ namespace ProyekPCS2019
 
         private void MainMaster_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void fASILITASToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            EditMembership em = new EditMembership();
+            em.MdiParent = this;
+            em.Show();
 
         }
     }

@@ -55,6 +55,12 @@
     <Compile Include="Client\ClientMembership.Designer.cs">
       <DependentUpon>ClientMembership.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditMembershipCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditMembershipCRUD.Designer.cs">
+      <DependentUpon>EditMembershipCRUD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,22 +85,25 @@
     <Compile Include="MainFrontOffice.Designer.cs">
       <DependentUpon>MainFrontOffice.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditPegawai.cs">
+    <Compile Include="EditPegawaiCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditPegawai.Designer.cs">
-      <DependentUpon>EditPegawai.cs</DependentUpon>
+    <Compile Include="EditPegawaiCRUD.Designer.cs">
+      <DependentUpon>EditPegawaiCRUD.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainMaster.cs">
+    <Compile Include="MainMaster%28UNTUK CEK CRUD FORM%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMaster.Designer.cs">
-      <DependentUpon>MainMaster.cs</DependentUpon>
+    <Compile Include="MainMaster%28UNTUK CEK CRUD FORM%29.Designer.cs">
+      <DependentUpon>MainMaster%28UNTUK CEK CRUD FORM%29.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Client\ClientMembership.resx">
       <DependentUpon>ClientMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditMembershipCRUD.resx">
+      <DependentUpon>EditMembershipCRUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -108,11 +117,11 @@
     <EmbeddedResource Include="MainFrontOffice.resx">
       <DependentUpon>MainFrontOffice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditPegawai.resx">
-      <DependentUpon>EditPegawai.cs</DependentUpon>
+    <EmbeddedResource Include="EditPegawaiCRUD.resx">
+      <DependentUpon>EditPegawaiCRUD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainMaster.resx">
-      <DependentUpon>MainMaster.cs</DependentUpon>
+    <EmbeddedResource Include="MainMaster%28UNTUK CEK CRUD FORM%29.resx">
+      <DependentUpon>MainMaster%28UNTUK CEK CRUD FORM%29.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
