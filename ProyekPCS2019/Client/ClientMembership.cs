@@ -80,11 +80,18 @@ namespace ProyekPCS2019.Client
                 {
                     //cari yang sama
                     OracleCommand cek = new OracleCommand("SELECT COUNT(NAMA) FROM MEMBERSHIP WHERE NAMA = '" + textBoxNamaMember.Text + "' and EMAIL='" + textBoxEmailMember.Text + "'", conn);
+                    OracleCommand getuserid = new OracleCommand("SELECT ID_MEMBERSHIP FROM MEMBERSHIP WHERE nama='" + textBoxNamaMember.Text + "'", conn);
                     String hasil = cek.ExecuteScalar().ToString();
                     MessageBox.Show(hasil);
                     if (hasil == "0")
                     {
+                        Console.WriteLine("ahaha");
                         cmd.ExecuteNonQuery();
+                        Console.WriteLine("aha");
+                        string userid = getuserid.ExecuteScalar().ToString();
+                        MessageBox.Show(userid);
+                        OracleCommand buat_user = new OracleCommand("INSERT INTO USERS(USERNAME,PASSWORD, ROLE) VALUES ('"+userid+"','"+textBoxPassword.Text+"','CUSTOMER')", conn);
+                        buat_user.ExecuteNonQuery();
                         trx.Commit();
                     }
                 }
@@ -101,7 +108,18 @@ namespace ProyekPCS2019.Client
 
         private void button4_Click(object sender, EventArgs e)
         {
+            OracleDataAdapter tampung = new OracleDataAdapter("select * from membership where id_membership='" + textBoxidMember.Text.ToUpper() + "'", conn);
+            DataTable tabeldatamember = new DataTable();
+            tampung.Fill(tabeldatamember);
+            labelnamamember.Text = tabeldatamember.Rows[0].ItemArray[1].ToString();
+            labelAlamatMember.Text = tabeldatamember.Rows[0].ItemArray[2].ToString();
+            labelNoMember.Text = tabeldatamember.Rows[0].ItemArray[3].ToString();
+            labelEmailMember.Text = tabeldatamember.Rows[0].ItemArray[4].ToString();
 
+            OracleDataAdapter tampung2 = new OracleDataAdapter("select * from membership where id_membership='" + textBoxidMember.Text + "'", conn);
+            DataTable tabeldatatrx = new DataTable();
+            tampung2.Fill(tabeldatatrx);
+            listBox1.DataSource = tabeldatatrx;
         }
     }
 }
