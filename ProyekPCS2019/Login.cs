@@ -22,7 +22,7 @@ namespace ProyekPCS2019
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Client.ClientMembership cm = new Client.ClientMembership("login");
+            Client.ClientMembership cm = new Client.ClientMembership("login","");
             this.Hide();
             cm.ShowDialog();
             this.Close();
@@ -53,7 +53,7 @@ namespace ProyekPCS2019
                     if (role == "CUSTOMER")
                     {
                         this.Hide();
-                        MainClient mc = new MainClient();
+                        MainClient mc = new MainClient(user);
                         mc.ShowDialog();
                         this.Close();
                     }

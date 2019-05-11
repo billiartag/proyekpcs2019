@@ -43,6 +43,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Pesan Kamar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -62,6 +63,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Cek Pesanan";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -94,7 +96,8 @@
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainClient";
-            this.Text = "MainClient";
+            this.Text = "Customer Main Menu";
+            this.Load += new System.EventHandler(this.MainClient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

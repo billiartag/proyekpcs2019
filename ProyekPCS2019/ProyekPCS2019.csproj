@@ -49,11 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\ClientCekPesan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\ClientCekPesan.Designer.cs">
+      <DependentUpon>ClientCekPesan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client\ClientMembership.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Client\ClientMembership.Designer.cs">
       <DependentUpon>ClientMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\ClientPesanKamar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\ClientPesanKamar.Designer.cs">
+      <DependentUpon>ClientPesanKamar.cs</DependentUpon>
     </Compile>
     <Compile Include="EditMembershipCRUD.cs">
       <SubType>Form</SubType>
@@ -105,8 +117,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Client\ClientCekPesan.resx">
+      <DependentUpon>ClientCekPesan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client\ClientMembership.resx">
       <DependentUpon>ClientMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\ClientPesanKamar.resx">
+      <DependentUpon>ClientPesanKamar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditMembershipCRUD.resx">
       <DependentUpon>EditMembershipCRUD.cs</DependentUpon>

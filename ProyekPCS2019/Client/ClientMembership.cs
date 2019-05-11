@@ -15,10 +15,12 @@ namespace ProyekPCS2019.Client
     {
         OracleConnection conn;
         string mode_login;
-        public ClientMembership(string mode)
+        string user;
+        public ClientMembership(string mode,string username)
         {
             InitializeComponent();
             mode_login = mode;
+            user = username;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -30,7 +32,7 @@ namespace ProyekPCS2019.Client
                 this.Close();
             }
             else {
-                MainClient mc = new MainClient();
+                MainClient mc = new MainClient(user);
                 this.Hide();
                 mc.ShowDialog();
                 this.Close();
@@ -100,11 +102,9 @@ namespace ProyekPCS2019.Client
                     MessageBox.Show(hasil);
                     if (hasil == "0")
                     {
-                        Console.WriteLine("ahaha");
                         cmd.ExecuteNonQuery();
-                        Console.WriteLine("aha");
                         string userid = getuserid.ExecuteScalar().ToString();
-                        MessageBox.Show(userid);
+                        MessageBox.Show("Username anda adalah: "+userid+"\nDimohon diingat untuk melakukan login.");
                         OracleCommand buat_user = new OracleCommand("INSERT INTO USERS(USERNAME,PASSWORD, ROLE) VALUES ('"+userid+"','"+textBoxPassword.Text+"','CUSTOMER')", conn);
                         buat_user.ExecuteNonQuery();
                         trx.Commit();

@@ -35,7 +35,7 @@ namespace ProyekPCS2019
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MainClient mc = new MainClient();
+            MainClient mc = new MainClient("");
             this.Hide();
             mc.ShowDialog();
             this.Close();

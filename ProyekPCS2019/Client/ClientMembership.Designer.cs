@@ -412,8 +412,8 @@
             this.ClientSize = new System.Drawing.Size(1089, 746);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBoxCek);
             this.Controls.Add(this.groupBoxBuat);
+            this.Controls.Add(this.groupBoxCek);
             this.Name = "ClientMembership";
             this.Text = "ClientMembership";
             this.Load += new System.EventHandler(this.ClientMembership_Load);
