@@ -19,7 +19,7 @@ namespace ProyekPCS2019
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainMaster mm = new MainMaster();
+            MainAdmin mm = new MainAdmin();
             this.Hide();
             mm.ShowDialog();
             this.Close();

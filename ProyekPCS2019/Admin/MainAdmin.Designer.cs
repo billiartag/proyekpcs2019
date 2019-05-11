@@ -1,6 +1,6 @@
 ﻿namespace ProyekPCS2019
 {
-    partial class MainMaster
+    partial class MainAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -67,8 +67,9 @@
             this.kAMARToolStripMenuItem.Name = "kAMARToolStripMenuItem";
             this.kAMARToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
             this.kAMARToolStripMenuItem.Text = "BOOKING";
+            this.kAMARToolStripMenuItem.Click += new System.EventHandler(this.kAMARToolStripMenuItem_Click);
             // 
-            // MainMaster
+            // MainAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -76,7 +77,7 @@
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "MainMaster";
+            this.Name = "MainAdmin";
             this.Text = "MainMaster";
             this.Load += new System.EventHandler(this.MainMaster_Load);
             this.menuStrip1.ResumeLayout(false);

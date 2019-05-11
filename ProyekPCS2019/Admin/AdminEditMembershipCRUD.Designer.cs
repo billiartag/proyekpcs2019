@@ -61,11 +61,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(169, 181);
+            this.button1.Location = new System.Drawing.Point(121, 198);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(165, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "INSERT";
+            this.button1.Text = "INSERT MEMBERSHIP";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -266,11 +266,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(165, 198);
+            this.button2.Location = new System.Drawing.Point(108, 198);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(181, 23);
             this.button2.TabIndex = 25;
-            this.button2.Text = "UPDATE";
+            this.button2.Text = "UPDATE MEMBERSHIP";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

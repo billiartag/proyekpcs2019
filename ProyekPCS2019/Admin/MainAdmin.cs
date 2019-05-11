@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyekPCS2019.Admin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace ProyekPCS2019
 {
-    public partial class MainMaster : Form
+    public partial class MainAdmin : Form
     {
-        public MainMaster()
+        public MainAdmin()
         {
             InitializeComponent();
         }
@@ -37,6 +38,13 @@ namespace ProyekPCS2019
             em.MdiParent = this;
             em.Show();
 
+        }
+
+        private void kAMARToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdminEditBookingCRUD eb = new AdminEditBookingCRUD();
+            eb.MdiParent = this;
+            eb.Show();
         }
     }
 }

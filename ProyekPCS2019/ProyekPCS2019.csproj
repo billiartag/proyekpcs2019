@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AdminEditBookingCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminEditBookingCRUD.Designer.cs">
+      <DependentUpon>AdminEditBookingCRUD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client\ClientCekPesan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,11 +73,11 @@
     <Compile Include="Client\ClientPesanKamar.Designer.cs">
       <DependentUpon>ClientPesanKamar.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditMembershipCRUD.cs">
+    <Compile Include="Admin\AdminEditMembershipCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditMembershipCRUD.Designer.cs">
-      <DependentUpon>EditMembershipCRUD.cs</DependentUpon>
+    <Compile Include="Admin\AdminEditMembershipCRUD.Designer.cs">
+      <DependentUpon>AdminEditMembershipCRUD.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -91,23 +97,23 @@
     <Compile Include="Client\MainClient.Designer.cs">
       <DependentUpon>MainClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainFrontOffice.cs">
+    <Compile Include="Front Office\MainFrontOffice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainFrontOffice.Designer.cs">
+    <Compile Include="Front Office\MainFrontOffice.Designer.cs">
       <DependentUpon>MainFrontOffice.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditPegawaiCRUD.cs">
+    <Compile Include="Admin\AdminEditPegawaiCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditPegawaiCRUD.Designer.cs">
-      <DependentUpon>EditPegawaiCRUD.cs</DependentUpon>
+    <Compile Include="Admin\AdminEditPegawaiCRUD.Designer.cs">
+      <DependentUpon>AdminEditPegawaiCRUD.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainMaster%28UNTUK CEK CRUD FORM%29.cs">
+    <Compile Include="Admin\MainAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMaster%28UNTUK CEK CRUD FORM%29.Designer.cs">
-      <DependentUpon>MainMaster%28UNTUK CEK CRUD FORM%29.cs</DependentUpon>
+    <Compile Include="Admin\MainAdmin.Designer.cs">
+      <DependentUpon>MainAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager\MainManager.cs">
       <SubType>Form</SubType>
@@ -117,6 +123,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin\AdminEditBookingCRUD.resx">
+      <DependentUpon>AdminEditBookingCRUD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client\ClientCekPesan.resx">
       <DependentUpon>ClientCekPesan.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,8 +135,8 @@
     <EmbeddedResource Include="Client\ClientPesanKamar.resx">
       <DependentUpon>ClientPesanKamar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditMembershipCRUD.resx">
-      <DependentUpon>EditMembershipCRUD.cs</DependentUpon>
+    <EmbeddedResource Include="Admin\AdminEditMembershipCRUD.resx">
+      <DependentUpon>AdminEditMembershipCRUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -138,14 +147,14 @@
     <EmbeddedResource Include="Client\MainClient.resx">
       <DependentUpon>MainClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainFrontOffice.resx">
+    <EmbeddedResource Include="Front Office\MainFrontOffice.resx">
       <DependentUpon>MainFrontOffice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditPegawaiCRUD.resx">
-      <DependentUpon>EditPegawaiCRUD.cs</DependentUpon>
+    <EmbeddedResource Include="Admin\AdminEditPegawaiCRUD.resx">
+      <DependentUpon>AdminEditPegawaiCRUD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainMaster%28UNTUK CEK CRUD FORM%29.resx">
-      <DependentUpon>MainMaster%28UNTUK CEK CRUD FORM%29.cs</DependentUpon>
+    <EmbeddedResource Include="Admin\MainAdmin.resx">
+      <DependentUpon>MainAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

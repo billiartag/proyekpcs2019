@@ -36,7 +36,7 @@ namespace ProyekPCS2019
             if (user == pass && user == "admin")
             {
                 this.Hide();
-                MainMaster mm = new MainMaster();
+                MainAdmin mm = new MainAdmin();
                 mm.ShowDialog();
                 this.Close();
             }
