@@ -98,6 +98,7 @@
             this.buttonBuat.TabIndex = 0;
             this.buttonBuat.Text = "Buat Membership";
             this.buttonBuat.UseVisualStyleBackColor = true;
+            this.buttonBuat.Visible = false;
             this.buttonBuat.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBoxCek

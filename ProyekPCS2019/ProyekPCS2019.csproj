@@ -97,6 +97,12 @@
     <Compile Include="MainMaster%28UNTUK CEK CRUD FORM%29.Designer.cs">
       <DependentUpon>MainMaster%28UNTUK CEK CRUD FORM%29.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\MainManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\MainManager.Designer.cs">
+      <DependentUpon>MainManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Client\ClientMembership.resx">

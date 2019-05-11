@@ -14,32 +14,41 @@ namespace ProyekPCS2019.Client
     public partial class ClientMembership : Form
     {
         OracleConnection conn;
+        string mode_login;
         public ClientMembership(string mode)
         {
             InitializeComponent();
-            if (mode== "login") { button3.Visible = false;}
+            mode_login = mode;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MainClient mc = new MainClient();
-            this.Hide();
-            mc.ShowDialog();
-            this.Close();
+            if (mode_login == "login") {
+                Login mc = new Login();
+                this.Hide();
+                mc.ShowDialog();
+                this.Close();
+            }
+            else {
+                MainClient mc = new MainClient();
+                this.Hide();
+                mc.ShowDialog();
+                this.Close();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             groupBoxCek.Visible = false;
             groupBoxBuat.Visible = true;
-            cekButton();
+            buttonCek.Enabled = true; buttonBuat.Enabled = false;
         }
 
         private void ClientMembership_Load(object sender, EventArgs e)
         {
             groupBoxCek.Visible = true;
             groupBoxBuat.Visible = false;
-            cekButton();
+            buttonCek.Enabled = false;
             try
             {
                 conn = new OracleConnection("User ID=proyek;Password=1;Data Source=orcl");
@@ -50,18 +59,23 @@ namespace ProyekPCS2019.Client
                 MessageBox.Show("gagal buka db");
                 throw;
             }
-        }
-        void cekButton()
-        {
-            if (groupBoxCek.Visible) { buttonCek.Enabled = false; buttonBuat.Enabled = true; }
-            else if (groupBoxBuat.Visible) { buttonCek.Enabled = true; buttonBuat.Enabled = false; }
+            if (mode_login == "normal")
+            {
+                buttonBuat.Enabled = false;
+                buttonBuat.Visible = false;
+            }
+            else if (mode_login=="login")
+            {
+                groupBox1.Visible = false;
+                buttonBuat.Visible = true;
+            }
         }
 
         private void buttonCek_Click(object sender, EventArgs e)
         {
             groupBoxCek.Visible = true;
             groupBoxBuat.Visible = false;
-            cekButton();
+            buttonCek.Enabled = false; buttonBuat.Enabled = true;
         }
 
         private void buttonbuatMember_Click(object sender, EventArgs e)
