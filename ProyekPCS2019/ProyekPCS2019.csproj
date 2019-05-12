@@ -85,6 +85,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Front Office\FrontOfficeFasilitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Front Office\FrontOfficeFasilitas.Designer.cs">
+      <DependentUpon>FrontOfficeFasilitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Front Office\FrontOfficeMembership.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Front Office\FrontOfficeMembership.Designer.cs">
+      <DependentUpon>FrontOfficeMembership.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +152,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Front Office\FrontOfficeFasilitas.resx">
+      <DependentUpon>FrontOfficeFasilitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Front Office\FrontOfficeMembership.resx">
+      <DependentUpon>FrontOfficeMembership.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
