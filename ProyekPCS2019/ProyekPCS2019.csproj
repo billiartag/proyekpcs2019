@@ -97,6 +97,12 @@
     <Compile Include="Front Office\FrontOfficeMembership.Designer.cs">
       <DependentUpon>FrontOfficeMembership.cs</DependentUpon>
     </Compile>
+    <Compile Include="Front Office\FrontOfficeParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Front Office\FrontOfficeParent.Designer.cs">
+      <DependentUpon>FrontOfficeParent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Front Office\FrontOfficeMembership.resx">
       <DependentUpon>FrontOfficeMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Front Office\FrontOfficeParent.resx">
+      <DependentUpon>FrontOfficeParent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

@@ -60,7 +60,7 @@ namespace ProyekPCS2019
                     else if (role == "FRONT OFFICE")
                     {
                         this.Hide();
-                        MainFrontOffice mf = new MainFrontOffice();
+                        Front_Office.FrontOfficeParent mf = new Front_Office.FrontOfficeParent();
                         mf.ShowDialog();
                         this.Close();
                     }
