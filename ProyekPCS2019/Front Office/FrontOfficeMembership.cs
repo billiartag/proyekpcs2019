@@ -36,7 +36,8 @@ namespace ProyekPCS2019.Front_Office
                 string sql = "INSERT INTO membership VALUES('','"+textBox1.Text+"','"+textBox2.Text+"','"+textBox3.Text+"','"+textBox4.Text+"')";
                 OracleCommand cmd = new OracleCommand(sql, conn);
                 cmd.ExecuteNonQuery();
-
+                MessageBox.Show("Member berhasil dibuat!");
+                isimembership();
                 conn.Close();
             }
             catch (Exception ex)
