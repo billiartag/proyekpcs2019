@@ -23,7 +23,6 @@ namespace ProyekPCS2019
             EditPegawaiCRUD ep = new EditPegawaiCRUD();
             ep.MdiParent = this;
             ep.Show();
-
         }
 
         private void MainMaster_Load(object sender, EventArgs e)

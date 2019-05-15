@@ -34,7 +34,7 @@
   <ItemGroup>
     <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>F:\app\edwin\product\11.2.0\dbhome_1\ODP.NET\bin\2.x\Oracle.DataAccess.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\app\ASUS\product\11.2.0\dbhome_1\ODP.NET\bin\2.x\Oracle.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,6 +54,18 @@
     </Compile>
     <Compile Include="Admin\AdminEditBookingCRUD.Designer.cs">
       <DependentUpon>AdminEditBookingCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminEditFasilitasCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminEditFasilitasCRUD.Designer.cs">
+      <DependentUpon>AdminEditFasilitasCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminEditKamarCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminEditKamarCRUD.Designer.cs">
+      <DependentUpon>AdminEditKamarCRUD.cs</DependentUpon>
     </Compile>
     <Compile Include="Client\ClientCekPesan.cs">
       <SubType>Form</SubType>
