@@ -32,6 +32,7 @@ namespace ProyekPCS2019
         {
             string user = textBox1.Text;
             string pass = textBox2.Text;
+            MessageBox.Show(user+pass);
             //tolong ini nanti buat user admin ya win huehehehe
             if (user == pass && user == "admin")
             {
@@ -44,10 +45,12 @@ namespace ProyekPCS2019
                 string role = "";
                 for (int i = 0; i < tabeluser.Rows.Count; i++)
                 {
+                    Console.WriteLine(tabeluser.Rows[i].ItemArray[0].ToString()+ tabeluser.Rows[i].ItemArray[1].ToString() + tabeluser.Rows[i].ItemArray[2].ToString());
                     if (user == tabeluser.Rows[i].ItemArray[0].ToString() && pass == tabeluser.Rows[i].ItemArray[1].ToString()) {
                         role = tabeluser.Rows[i].ItemArray[2].ToString();
                     }
                 }
+                MessageBox.Show(role);
                 if (role != "")
                 {
                     if (role == "CUSTOMER")
@@ -67,7 +70,7 @@ namespace ProyekPCS2019
                     else if (role == "MANAGER")
                     {
                         this.Hide();
-                        Manager.MainManager mc = new Manager.MainManager();
+                        Manager.MainManager mc = new Manager.MainManager(user,conn);
                         mc.ShowDialog();
                         this.Close();
                     }/*

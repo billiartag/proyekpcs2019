@@ -151,6 +151,24 @@
     <Compile Include="Manager\MainManager.Designer.cs">
       <DependentUpon>MainManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\ManagerFasilitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\ManagerFasilitas.Designer.cs">
+      <DependentUpon>ManagerFasilitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ManagerKamar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\ManagerKamar.Designer.cs">
+      <DependentUpon>ManagerKamar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ManagerKaryawan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\ManagerKaryawan.Designer.cs">
+      <DependentUpon>ManagerKaryawan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Admin\AdminEditBookingCRUD.resx">
@@ -197,6 +215,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\MainAdmin.resx">
       <DependentUpon>MainAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\MainManager.resx">
+      <DependentUpon>MainManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\ManagerFasilitas.resx">
+      <DependentUpon>ManagerFasilitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\ManagerKamar.resx">
+      <DependentUpon>ManagerKamar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\ManagerKaryawan.resx">
+      <DependentUpon>ManagerKaryawan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
