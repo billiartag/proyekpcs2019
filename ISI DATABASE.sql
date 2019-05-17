@@ -14,5 +14,10 @@ insert into membership values('','Alfonsus Yves','mangrove','081331322570','edwi
 insert into booking values('','ME001','KA001',to_date(sysdate,'dd/mm/yyyy'),to_date(sysdate,'dd/mm/yyyy'));
 --user
 insert into users values('alfon','1','FRONT OFFICE');
+insert into users values('manajer','1','MANAGER');
+insert into users values('cust','1','CUSTOMER');
+--jabatan
+insert into jabatan values('koki',4000000);
+
 commit;
 

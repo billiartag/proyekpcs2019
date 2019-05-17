@@ -7,6 +7,7 @@ drop table kamar cascade constraint purge;
 drop table jenis_kamar cascade constraint purge;
 drop table booking cascade constraint purge;
 drop table users cascade constraint purge;
+drop table jabatan cascade constraint purge;
 
 create table jenis_kamar(
 kode_jenis varchar2(50),
@@ -85,4 +86,10 @@ username varchar2(50),
 password varchar2(50),
 role varchar2(50),
 constraint pk_user PRIMARY KEY (username)
+);
+
+create table jabatan(
+nama_jabatan varchar2(50),
+gaji_jabatan number,
+constraint pk_jabatan PRIMARY KEY (nama_jabatan)
 );

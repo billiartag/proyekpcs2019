@@ -43,14 +43,17 @@ namespace ProyekPCS2019.Client
         {
             groupBoxCek.Visible = false;
             groupBoxBuat.Visible = true;
-            buttonCek.Enabled = true; buttonBuat.Enabled = false;
+            buttonBuat.Enabled = false;
+            buttonBuat.Visible= true;
+            buttonCek.Enabled = true;
+            buttonCek.Visible = true;
+            if (mode_login == "normal") {
+                buttonBuat.Enabled = false;
+            }
         }
 
         private void ClientMembership_Load(object sender, EventArgs e)
         {
-            groupBoxCek.Visible = true;
-            groupBoxBuat.Visible = false;
-            buttonCek.Enabled = false;
             try
             {
                 conn = new OracleConnection("User ID=proyek;Password=1;Data Source=orcl");
@@ -63,13 +66,24 @@ namespace ProyekPCS2019.Client
             }
             if (mode_login == "normal")
             {
+                groupBox1.Visible = false;
+                groupBoxCek.Visible = true;
+                groupBoxBuat.Visible = false;
+
                 buttonBuat.Enabled = false;
-                buttonBuat.Visible = false;
+                buttonBuat.Visible = false; ;
+                buttonCek.Enabled = true;
+                buttonCek.Visible = true;
             }
             else if (mode_login=="login")
             {
-                groupBox1.Visible = false;
+                groupBoxCek.Visible = false;
+                groupBoxBuat.Visible = true;
+
+                buttonBuat.Enabled = false;
                 buttonBuat.Visible = true;
+                buttonCek.Enabled = true;
+                buttonCek.Visible = true;
             }
         }
 
@@ -77,7 +91,10 @@ namespace ProyekPCS2019.Client
         {
             groupBoxCek.Visible = true;
             groupBoxBuat.Visible = false;
-            buttonCek.Enabled = false; buttonBuat.Enabled = true;
+            buttonBuat.Enabled = true;
+            buttonBuat.Visible = true;
+            buttonCek.Enabled = false;
+            buttonCek.Visible = true;
         }
 
         private void buttonbuatMember_Click(object sender, EventArgs e)

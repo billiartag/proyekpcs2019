@@ -71,8 +71,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.buttonCek);
             this.groupBox1.Controls.Add(this.buttonBuat);
+            this.groupBox1.Controls.Add(this.buttonCek);
             this.groupBox1.Location = new System.Drawing.Point(13, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(376, 87);
