@@ -43,6 +43,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.numericUpDownHargaFasilitas = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHargaFasilitas)).BeginInit();
             this.SuspendLayout();
@@ -138,17 +139,19 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 100);
             this.button2.TabIndex = 17;
-            this.button2.Text = "Upload Gambar";
+            this.button2.Text = "Ubah Gambar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(519, 465);
+            this.button3.Location = new System.Drawing.Point(503, 455);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(77, 32);
+            this.button3.Size = new System.Drawing.Size(93, 58);
             this.button3.TabIndex = 18;
-            this.button3.Text = "button3";
+            this.button3.Text = "Save";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label5
             // 
@@ -184,11 +187,21 @@
             this.numericUpDownHargaFasilitas.Size = new System.Drawing.Size(195, 22);
             this.numericUpDownHargaFasilitas.TabIndex = 22;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(17, 472);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(273, 34);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Untuk mengganti gambar dapat langsung \r\ndilakukan dengan button ubah gambar";
+            // 
             // ManagerFasilitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 525);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.numericUpDownHargaFasilitas);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
@@ -230,5 +243,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.NumericUpDown numericUpDownHargaFasilitas;
+        private System.Windows.Forms.Label label6;
     }
 }
