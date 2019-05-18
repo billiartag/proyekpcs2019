@@ -52,6 +52,7 @@ namespace ProyekPCS2019.Manager
         {
             if (comboBox1.SelectedIndex != -1) {
                 numericUpDown1.Value =Convert.ToInt32( comboBox1.SelectedValue.ToString());
+
             }
         }
 

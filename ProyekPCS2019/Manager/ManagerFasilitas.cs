@@ -15,6 +15,7 @@ namespace ProyekPCS2019.Manager
     {
         OracleConnection conn;
         string user;
+        DataTable listFasilitas = new DataTable();
         public ManagerFasilitas(string username, OracleConnection oc)
         {
             InitializeComponent();
@@ -28,6 +29,44 @@ namespace ProyekPCS2019.Manager
             this.Hide();
             mm.ShowDialog();
             this.Close();
+        }
+        void loadFasilitas() {
+            OracleDataAdapter od = new OracleDataAdapter("SELECT * FROM FASILITAS", conn);
+            listFasilitas.Clear();
+            od.Fill(listFasilitas);
+        }
+        private void ManagerFasilitas_Load(object sender, EventArgs e)
+        {
+            loadFasilitas();
+            listBox1.DisplayMember = "nama_fasilitas";
+            listBox1.ValueMember = "id_fasilitas";
+            listBox1.DataSource = listFasilitas;
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex != -1)
+            {
+                for (int i = 0; i < listFasilitas.Rows.Count; i++)
+                {
+                    if (listFasilitas.Rows[i].ItemArray[0].ToString() == listBox1.SelectedValue.ToString())
+                    {
+                        textBoxIDFasilitas.Text = listFasilitas.Rows[i].ItemArray[0].ToString();
+                        textBoxNamaFasilitas.Text = listFasilitas.Rows[i].ItemArray[1].ToString();
+                        numericUpDownHargaFasilitas.Value=Convert.ToInt32(listFasilitas.Rows[i].ItemArray[2].ToString());
+                        richTextBoxDeskripsi.Text = listFasilitas.Rows[i].ItemArray[3].ToString();
+                        try
+                        {
+                            Image img = Image.FromFile("z2.png");
+                            pictureBox1.Image = img;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
+                    }
+                }
+            }
         }
     }
 }
