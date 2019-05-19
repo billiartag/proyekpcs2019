@@ -16,6 +16,7 @@ harga_jenis number(20),
 constraint pk_kode_jenis PRIMARY KEY (kode_jenis)
 );
 
+--mungkin harus ada tanggal checkout untuk booking baru
 create table kamar(
 id_kamar varchar2(50),
 kode_jenis varchar2(50),
