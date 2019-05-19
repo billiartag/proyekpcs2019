@@ -156,14 +156,37 @@ namespace ProyekPCS2019.Admin
             conn.Open();
             try
             {
+                //cek untuk kamar yang tersedia
+                List<string> datakamar = new List<string>();
                 OracleCommand cmd = new OracleCommand("select id_kamar from kamar where kode_jenis='"+ kodejenis + "' and tersedia='Y'");
                 cmd.Connection = conn;
                 OracleDataReader reader = cmd.ExecuteReader();
                 comboBox3.Items.Clear();
                 while (reader.Read())
                 {
-                    comboBox3.Items.Add(String.Format("{0}", reader[0]));
+                    OracleCommand cmd1 = new OracleCommand("select tgl_keluar from booking where id_kamar='" + String.Format("{0}", reader[0]) + "'");
+                    cmd1.Connection = conn;
+                    //tanggal dalam data booking
+                    string tgl = cmd1.ExecuteScalar().ToString();
+                    string[] pisahtgl = tgl.Substring(0, 10).Split('/');
+                    int jumlah_hari = 0;
+                    jumlah_hari = int.Parse(pisahtgl[0]);
+                    jumlah_hari = jumlah_hari + (int.Parse(pisahtgl[1]) * 30);
+                    jumlah_hari = jumlah_hari + (int.Parse(pisahtgl[2]) * 365);
+                    //tanggal booking yang diinginkan
+                    string tgl2 = dateTimePicker1.Value.ToShortDateString();
+                    string[] pisahtgl2 = tgl2.Substring(0, 10).Split('/');
+                    int jumlah_hari2 = 0;
+                    jumlah_hari2 = int.Parse(pisahtgl2[0]);
+                    jumlah_hari2 = jumlah_hari2 + (int.Parse(pisahtgl2[1]) * 30);
+                    jumlah_hari2 = jumlah_hari2 + (int.Parse(pisahtgl2[2]) * 365);
+                    if (jumlah_hari2-jumlah_hari>=0)
+                    {
+                        comboBox3.Items.Add(String.Format("{0}", reader[0]));
+                    }
                 }
+                //cek untuk kamar yang tidak tersedia
+                
             }
             catch (Exception)
             {
