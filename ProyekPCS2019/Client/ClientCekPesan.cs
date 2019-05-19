@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.DataAccess.Client;
 
 namespace ProyekPCS2019.Client
 {
     public partial class ClientCekPesan : Form
     {
         string userID;
-        public ClientCekPesan(string user)
+        OracleConnection conn;
+        public ClientCekPesan(string user, OracleConnection cn)
         {
+            conn = cn;
             userID = user;
             InitializeComponent();
         }

@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.DataAccess.Client;
 
 namespace ProyekPCS2019
 {
     public partial class MainClient : Form
     {
         string userID;
+        OracleConnection conn;
         public MainClient(string username)
         {
             InitializeComponent();
@@ -35,20 +37,25 @@ namespace ProyekPCS2019
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Client.ClientPesanKamar cp = new Client.ClientPesanKamar(userID);
+            Client.ClientPesanKamar cp = new Client.ClientPesanKamar(userID,conn);
             cp.ShowDialog();
             this.Close();
         }
 
         private void MainClient_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                conn = new OracleConnection("User ID=proyek;Password=1;Data Source=orcl");
+                conn.Open();
+            }
+            catch { }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Client.ClientCekPesan cp = new Client.ClientCekPesan(userID);
+            Client.ClientCekPesan cp = new Client.ClientCekPesan(userID,conn);
             cp.ShowDialog();
             this.Close();
         }
