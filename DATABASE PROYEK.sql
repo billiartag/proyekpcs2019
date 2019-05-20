@@ -16,11 +16,9 @@ harga_jenis number(20),
 constraint pk_kode_jenis PRIMARY KEY (kode_jenis)
 );
 
---mungkin harus ada tanggal checkout untuk booking baru
 create table kamar(
 id_kamar varchar2(50),
 kode_jenis varchar2(50),
-kode_booking varchar2(50),
 tersedia varchar2(50),
 constraint pk_kamar PRIMARY KEY (id_kamar),
 constraint fk_kamar foreign key(kode_jenis) references jenis_kamar(kode_jenis)
@@ -50,12 +48,12 @@ nama varchar2(50),
 alamat varchar2(50),
 no_telp varchar2(50),
 email varchar2(50),
+status number(10),
 constraint pk_membership PRIMARY KEY (id_membership)
 );
 
 create table d_transaksi(
 id_transaksi varchar2(50),
-id_kamar varchar2(50),
 id_fasilitas varchar2(50),
 constraint fk_fasilitas_kamar foreign key(id_kamar) references kamar(id_kamar),
 constraint fk_fasilitas foreign key(id_fasilitas) references fasilitas(id_fasilitas)
@@ -63,9 +61,10 @@ constraint fk_fasilitas foreign key(id_fasilitas) references fasilitas(id_fasili
 
 create table h_transaksi(
 id_transaksi varchar2(50),
+id_kamar varchar2(50),
 total_harga varchar2(50),
 id_membership varchar2(50),
-id_ref varchar2(50),
+kode_booking varchar2(50),
 tgl_checkin date,
 tgl_checkout date,
 constraint pk_transaksi PRIMARY KEY (id_transaksi)
