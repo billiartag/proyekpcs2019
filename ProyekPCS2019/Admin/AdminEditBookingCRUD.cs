@@ -102,13 +102,23 @@ namespace ProyekPCS2019.Admin
                 OracleCommand cmd = new OracleCommand("select nama from membership where id_membership='" + textBox2.Text + "'");
                 cmd.Connection = conn;
                 string nama = cmd.ExecuteScalar().ToString();
+                cmd.CommandText = "select status from membership where id_membership = '" + textBox2.Text + "'";
+                int status = int.Parse(cmd.ExecuteScalar().ToString());
                 DialogResult dialogResult = MessageBox.Show("Jika Benar Maka Akan Dilanjutkan Ke Proses Selanjutnya, Apakah Anda Bersedia ? ", "Nama Anda : " + nama, MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    textBox1.BackColor = Color.Green;
-                    dateTimePicker1.Enabled = true;
-                    textBox2.Enabled = false;
-                    button3.Enabled = false;
+                    if (status==1)
+                    {
+                        textBox1.BackColor = Color.Green;
+                        dateTimePicker1.Enabled = true;
+                        textBox2.Enabled = false;
+                        button3.Enabled = false;
+                    }
+                    else if (status==0)
+                    {
+                        textBox1.BackColor = Color.Red;
+                        MessageBox.Show("Membership Anda Tidak Aktif");
+                    }
                 }
                 else if (dialogResult == DialogResult.No)
                 {

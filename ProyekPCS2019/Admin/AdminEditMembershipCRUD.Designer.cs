@@ -53,6 +53,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -164,6 +166,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.textBox5);
@@ -266,7 +270,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(108, 198);
+            this.button2.Location = new System.Drawing.Point(110, 221);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(181, 23);
             this.button2.TabIndex = 25;
@@ -292,6 +296,26 @@
             this.label10.Size = new System.Drawing.Size(290, 52);
             this.label10.TabIndex = 14;
             this.label10.Text = "MEMBERSHIP";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(9, 186);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 17);
+            this.label11.TabIndex = 36;
+            this.label11.Text = "STATUS : ";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "AKTIF",
+            "TIDAK AKTIF"});
+            this.comboBox2.Location = new System.Drawing.Point(152, 183);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(240, 24);
+            this.comboBox2.TabIndex = 37;
             // 
             // EditMembership
             // 
@@ -344,5 +368,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label11;
     }
 }
