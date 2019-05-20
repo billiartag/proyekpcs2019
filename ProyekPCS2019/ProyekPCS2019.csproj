@@ -183,6 +183,9 @@
     <EmbeddedResource Include="Admin\AdminEditFasilitasCRUD.resx">
       <DependentUpon>AdminEditFasilitasCRUD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminEditKamarCRUD.resx">
+      <DependentUpon>AdminEditKamarCRUD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client\ClientCekPesan.resx">
       <DependentUpon>ClientCekPesan.cs</DependentUpon>
     </EmbeddedResource>
