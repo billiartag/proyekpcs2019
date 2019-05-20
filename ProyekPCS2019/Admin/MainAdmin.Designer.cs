@@ -32,6 +32,7 @@
             this.pEGAWAIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fASILITASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kAMARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTCUSTOMERPERBULANToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +42,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pEGAWAIToolStripMenuItem,
             this.fASILITASToolStripMenuItem,
-            this.kAMARToolStripMenuItem});
+            this.kAMARToolStripMenuItem,
+            this.rEPORTCUSTOMERPERBULANToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1232, 28);
@@ -69,6 +71,13 @@
             this.kAMARToolStripMenuItem.Text = "BOOKING";
             this.kAMARToolStripMenuItem.Click += new System.EventHandler(this.kAMARToolStripMenuItem_Click);
             // 
+            // rEPORTCUSTOMERPERBULANToolStripMenuItem
+            // 
+            this.rEPORTCUSTOMERPERBULANToolStripMenuItem.Name = "rEPORTCUSTOMERPERBULANToolStripMenuItem";
+            this.rEPORTCUSTOMERPERBULANToolStripMenuItem.Size = new System.Drawing.Size(232, 24);
+            this.rEPORTCUSTOMERPERBULANToolStripMenuItem.Text = "REPORT CUSTOMER PER BULAN";
+            this.rEPORTCUSTOMERPERBULANToolStripMenuItem.Click += new System.EventHandler(this.rEPORTCUSTOMERPERBULANToolStripMenuItem_Click);
+            // 
             // MainAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -93,5 +102,6 @@
         private System.Windows.Forms.ToolStripMenuItem pEGAWAIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fASILITASToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kAMARToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEPORTCUSTOMERPERBULANToolStripMenuItem;
     }
 }

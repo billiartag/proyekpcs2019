@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProyekPCS2019.Report.Jumlah_Customer_Per_Bulan {
+namespace ProyekPCS2019.Report.JumlahCustomerPerBulan {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace ProyekPCS2019.Report.Jumlah_Customer_Per_Bulan {
         
         public override string FullResourceName {
             get {
-                return "ProyekPCS2019.Report.Jumlah Customer Per Bulan.ReportCustomer.rpt";
+                return "ProyekPCS2019.Report.JumlahCustomerPerBulan.ReportCustomer.rpt";
             }
             set {
                 // Do nothing
@@ -85,6 +85,14 @@ namespace ProyekPCS2019.Report.Jumlah_Customer_Per_Bulan {
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
                 return this.ReportDefinition.Sections[4];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_bulan {
+            get {
+                return this.DataDefinition.ParameterFields[0];
             }
         }
     }

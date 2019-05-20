@@ -14,7 +14,14 @@ insert into pegawai values('','mister satpam','L','SATPAM','emboh');
 insert into membership values('','Alfonsus Yves','xxx','081331322570','edwin0sidharta@gmail.com',1);
 insert into membership values('','Cosmas Yustianus Billiarta','xxx','081331322570','edwin0sidharta@gmail.com',0);
 --booking
-insert into booking values('','ME001','KA001',TO_DATE('15/05/2019', 'dd/mm/yyyy'),TO_DATE('19/05/2019', 'dd/mm/yyyy'));
+insert into booking values('','ME001','KA001',TO_DATE('15/05/2019', 'dd/mm/yyyy'),TO_DATE('17/05/2019', 'dd/mm/yyyy'));
+insert into booking values('','ME001','KA001',TO_DATE('18/05/2019', 'dd/mm/yyyy'),TO_DATE('20/05/2019', 'dd/mm/yyyy'));
+insert into booking values('','ME001','KA001',TO_DATE('21/05/2019', 'dd/mm/yyyy'),TO_DATE('23/05/2019', 'dd/mm/yyyy'));
+insert into booking values('','ME001','KA001',TO_DATE('24/05/2019', 'dd/mm/yyyy'),TO_DATE('26/05/2019', 'dd/mm/yyyy'));
+insert into booking values('','ME001','KA001',TO_DATE('27/05/2019', 'dd/mm/yyyy'),TO_DATE('29/05/2019', 'dd/mm/yyyy'));
+insert into booking values('','ME001','KA001',TO_DATE('01/06/2019', 'dd/mm/yyyy'),TO_DATE('4/06/2019', 'dd/mm/yyyy'));
+insert into booking values('','ME001','KA001',TO_DATE('05/06/2019', 'dd/mm/yyyy'),TO_DATE('8/06/2019', 'dd/mm/yyyy'));
+insert into booking values('','ME001','KA001',TO_DATE('09/06/2019', 'dd/mm/yyyy'),TO_DATE('14/06/2019', 'dd/mm/yyyy'));
 --user
 insert into users values('alfon','1','FRONT OFFICE');
 insert into users values('manajer','1','MANAGER');
