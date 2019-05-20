@@ -55,7 +55,6 @@ constraint pk_membership PRIMARY KEY (id_membership)
 create table d_transaksi(
 id_transaksi varchar2(50),
 id_fasilitas varchar2(50),
-constraint fk_fasilitas_kamar foreign key(id_kamar) references kamar(id_kamar),
 constraint fk_fasilitas foreign key(id_fasilitas) references fasilitas(id_fasilitas)
 );
 
@@ -67,6 +66,7 @@ id_membership varchar2(50),
 kode_booking varchar2(50),
 tgl_checkin date,
 tgl_checkout date,
+constraint fk_fasilitas_kamar foreign key(id_kamar) references kamar(id_kamar),
 constraint pk_transaksi PRIMARY KEY (id_transaksi)
 );
 

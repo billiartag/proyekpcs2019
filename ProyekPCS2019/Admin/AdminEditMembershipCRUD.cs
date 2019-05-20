@@ -57,7 +57,7 @@ namespace ProyekPCS2019
             da.Fill(dt);
             dataGridView1.DataSource = dt;
 
-            if (dataGridView1.Columns.Count < 6)
+            if (dataGridView1.Columns.Count < 7)
             {
                 DataGridViewButtonColumn newbtn = new DataGridViewButtonColumn();
                 newbtn.DefaultCellStyle.SelectionForeColor = Color.Green;
@@ -98,7 +98,7 @@ namespace ProyekPCS2019
                 {
                     OracleCommand cmd = new OracleCommand();
                     cmd.Connection = conn;
-                    cmd.CommandText = "insert into membership values('','"+textBox1.Text+ "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "')";
+                    cmd.CommandText = "insert into membership values('','"+textBox1.Text+ "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "',1)";
                     cmd.ExecuteNonQuery();
                     mytrans.Commit();
                 }
