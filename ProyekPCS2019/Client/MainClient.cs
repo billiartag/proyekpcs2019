@@ -59,5 +59,14 @@ namespace ProyekPCS2019
             cp.ShowDialog();
             this.Close();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Client.ClientLihatFasilitas cp = new Client.ClientLihatFasilitas(conn,userID);
+            cp.ShowDialog();
+            this.Close();
+
+        }
     }
 }

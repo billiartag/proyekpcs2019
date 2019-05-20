@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonCek = new System.Windows.Forms.Button();
             this.buttonBuat = new System.Windows.Forms.Button();
+            this.buttonCek = new System.Windows.Forms.Button();
             this.groupBoxCek = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.labelNoMember = new System.Windows.Forms.Label();
@@ -62,6 +62,11 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.ID_KAMAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_BOOKING = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_MEMBERSHIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TGL_MSK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TGL_KELUAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBoxCek.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -80,16 +85,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Membership";
             // 
-            // buttonCek
-            // 
-            this.buttonCek.Location = new System.Drawing.Point(195, 31);
-            this.buttonCek.Name = "buttonCek";
-            this.buttonCek.Size = new System.Drawing.Size(137, 41);
-            this.buttonCek.TabIndex = 1;
-            this.buttonCek.Text = "Cek Membership";
-            this.buttonCek.UseVisualStyleBackColor = true;
-            this.buttonCek.Click += new System.EventHandler(this.buttonCek_Click);
-            // 
             // buttonBuat
             // 
             this.buttonBuat.Location = new System.Drawing.Point(16, 31);
@@ -101,10 +96,20 @@
             this.buttonBuat.Visible = false;
             this.buttonBuat.Click += new System.EventHandler(this.button1_Click);
             // 
+            // buttonCek
+            // 
+            this.buttonCek.Location = new System.Drawing.Point(195, 31);
+            this.buttonCek.Name = "buttonCek";
+            this.buttonCek.Size = new System.Drawing.Size(137, 41);
+            this.buttonCek.TabIndex = 1;
+            this.buttonCek.Text = "Cek Membership";
+            this.buttonCek.UseVisualStyleBackColor = true;
+            this.buttonCek.Click += new System.EventHandler(this.buttonCek_Click);
+            // 
             // groupBoxCek
             // 
-            this.groupBoxCek.Controls.Add(this.label12);
             this.groupBoxCek.Controls.Add(this.listBox1);
+            this.groupBoxCek.Controls.Add(this.label12);
             this.groupBoxCek.Controls.Add(this.label11);
             this.groupBoxCek.Controls.Add(this.dataGridView1);
             this.groupBoxCek.Controls.Add(this.labelNoMember);
@@ -126,6 +131,16 @@
             this.groupBoxCek.TabStop = false;
             this.groupBoxCek.Text = "Cek Membership";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(642, 71);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(412, 260);
+            this.listBox1.TabIndex = 18;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -134,15 +149,6 @@
             this.label12.Size = new System.Drawing.Size(125, 17);
             this.label12.TabIndex = 17;
             this.label12.Text = "Rincian kunjungan";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(642, 80);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(412, 244);
-            this.listBox1.TabIndex = 16;
             // 
             // label11
             // 
@@ -158,6 +164,12 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_KAMAR,
+            this.ID_BOOKING,
+            this.ID_MEMBERSHIP,
+            this.TGL_MSK,
+            this.TGL_KELUAR});
             this.dataGridView1.Location = new System.Drawing.Point(6, 342);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -405,6 +417,46 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // ID_KAMAR
+            // 
+            this.ID_KAMAR.DataPropertyName = "ID_KAMAR";
+            this.ID_KAMAR.HeaderText = "Nomor Kamar";
+            this.ID_KAMAR.Name = "ID_KAMAR";
+            this.ID_KAMAR.ReadOnly = true;
+            this.ID_KAMAR.Width = 150;
+            // 
+            // ID_BOOKING
+            // 
+            this.ID_BOOKING.DataPropertyName = "KODE_BOOKING";
+            this.ID_BOOKING.HeaderText = "ID BOOKING";
+            this.ID_BOOKING.Name = "ID_BOOKING";
+            this.ID_BOOKING.ReadOnly = true;
+            this.ID_BOOKING.Visible = false;
+            // 
+            // ID_MEMBERSHIP
+            // 
+            this.ID_MEMBERSHIP.DataPropertyName = "ID_MEMBERSHIP";
+            this.ID_MEMBERSHIP.HeaderText = "ID MEMBER";
+            this.ID_MEMBERSHIP.Name = "ID_MEMBERSHIP";
+            this.ID_MEMBERSHIP.ReadOnly = true;
+            this.ID_MEMBERSHIP.Visible = false;
+            // 
+            // TGL_MSK
+            // 
+            this.TGL_MSK.DataPropertyName = "TGL_MSK";
+            this.TGL_MSK.HeaderText = "Tanggal Masuk";
+            this.TGL_MSK.Name = "TGL_MSK";
+            this.TGL_MSK.ReadOnly = true;
+            this.TGL_MSK.Width = 150;
+            // 
+            // TGL_KELUAR
+            // 
+            this.TGL_KELUAR.DataPropertyName = "TGL_KELUAR";
+            this.TGL_KELUAR.HeaderText = "Tanggal Keluar";
+            this.TGL_KELUAR.Name = "TGL_KELUAR";
+            this.TGL_KELUAR.ReadOnly = true;
+            this.TGL_KELUAR.Width = 150;
+            // 
             // ClientMembership
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -412,8 +464,8 @@
             this.ClientSize = new System.Drawing.Size(1089, 746);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBoxBuat);
             this.Controls.Add(this.groupBoxCek);
+            this.Controls.Add(this.groupBoxBuat);
             this.Name = "ClientMembership";
             this.Text = "ClientMembership";
             this.Load += new System.EventHandler(this.ClientMembership_Load);
@@ -446,7 +498,6 @@
         private System.Windows.Forms.Label labelnamamember;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -464,5 +515,11 @@
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_KAMAR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_BOOKING;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_MEMBERSHIP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TGL_MSK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TGL_KELUAR;
     }
 }

@@ -30,7 +30,7 @@ namespace ProyekPCS2019
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string user = textBox1.Text;
+            string user = textBox1.Text.ToUpper();
             string pass = textBox2.Text;
             MessageBox.Show(user+pass);
             //tolong ini nanti buat user admin ya win huehehehe
