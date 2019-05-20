@@ -73,6 +73,12 @@
     <Compile Include="Client\ClientCekPesan.Designer.cs">
       <DependentUpon>ClientCekPesan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Client\ClientLihatFasilitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\ClientLihatFasilitas.Designer.cs">
+      <DependentUpon>ClientLihatFasilitas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client\ClientMembership.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Client\ClientCekPesan.resx">
       <DependentUpon>ClientCekPesan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\ClientLihatFasilitas.resx">
+      <DependentUpon>ClientLihatFasilitas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client\ClientMembership.resx">
       <DependentUpon>ClientMembership.cs</DependentUpon>

@@ -29,5 +29,27 @@ namespace ProyekPCS2019.Client
             mc.ShowDialog();
             this.Close();
         }
+
+        private void buttonCekBooking_Click(object sender, EventArgs e)
+        {
+            labelNoKamar.Text = "-";
+            labelTanggalKeluar.Text = "-";
+            labelTanggalMasuk.Text = "-";
+            OracleDataAdapter od = new OracleDataAdapter("SELECT * FROM BOOKING WHERE KODE_BOOKING='"+textBoxKodeBooking.Text+"' AND ID_MEMBERSHIP='"+userID+"'", conn);
+            DataTable dt = new DataTable();
+            od.Fill(dt);
+            if (dt.Rows.Count == 1)
+            {
+                DataRow dr = dt.Rows[0];
+                labelNoKamar.Text = dr.ItemArray[2].ToString();
+                labelTanggalMasuk.Text = Convert.ToDateTime(dr.ItemArray[3].ToString()).ToShortDateString();
+                labelTanggalKeluar.Text = Convert.ToDateTime(dr.ItemArray[4].ToString()).ToShortDateString();
+            }
+            else
+            {
+                MessageBox.Show("Maaf! Kode booking tidak dapat ditemukan, ");
+            }
+
+        }
     }
 }
