@@ -175,7 +175,6 @@ namespace ProyekPCS2019
         private void button2_Click(object sender, EventArgs e)
         {
             //update
-            //update
             conn.Open();
             OracleTransaction mytrans = conn.BeginTransaction();
             try

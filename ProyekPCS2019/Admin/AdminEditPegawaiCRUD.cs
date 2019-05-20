@@ -232,10 +232,6 @@ namespace ProyekPCS2019
             conn.Close();
             refresh();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
     }
 }
