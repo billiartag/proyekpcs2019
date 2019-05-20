@@ -34,7 +34,7 @@ namespace ProyekPCS2019
             string pass = textBox2.Text;
             MessageBox.Show(user+pass);
             //tolong ini nanti buat user admin ya win huehehehe
-            if (user == pass && user == "admin")
+            if (user == pass && user == "ADMIN")
             {
                 this.Hide();
                 MainAdmin mm = new MainAdmin();

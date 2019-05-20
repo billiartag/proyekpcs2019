@@ -57,7 +57,7 @@ namespace ProyekPCS2019
             da.Fill(dt);
             dataGridView1.DataSource = dt;
 
-            if (dataGridView1.Columns.Count < 6)
+            if (dataGridView1.Columns.Count < 7)
             {
                 DataGridViewButtonColumn newbtn = new DataGridViewButtonColumn();
                 newbtn.DefaultCellStyle.SelectionForeColor = Color.Green;
@@ -98,7 +98,7 @@ namespace ProyekPCS2019
                 {
                     OracleCommand cmd = new OracleCommand();
                     cmd.Connection = conn;
-                    cmd.CommandText = "insert into membership values('','"+textBox1.Text+ "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "')";
+                    cmd.CommandText = "insert into membership values('','"+textBox1.Text+ "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "',1)";
                     cmd.ExecuteNonQuery();
                     mytrans.Commit();
                 }
@@ -163,6 +163,16 @@ namespace ProyekPCS2019
                     //email
                     cmd.CommandText = "select email from membership where id_membership='" + comboBox1.Text + "'";
                     textBox8.Text = cmd.ExecuteScalar().ToString();
+                    //STATUS
+                    cmd.CommandText = "select STATUS from membership where id_membership='" + comboBox1.Text + "'";
+                    if (cmd.ExecuteScalar().ToString()=="1")
+                    {
+                        comboBox2.Text = "AKTIF";
+                    }
+                    else if (cmd.ExecuteScalar().ToString() == "0")
+                    {
+                        comboBox2.Text = "TIDAK AKTIF";
+                    }
                 }
                 catch (Exception)
                 {
@@ -202,6 +212,22 @@ namespace ProyekPCS2019
                 cmd3.CommandText = "update membership set email='" + textBox8.Text + "' where id_membership='" + comboBox1.Text + "'";
                 cmd3.Connection = conn;
                 cmd3.ExecuteNonQuery();
+
+                //STATUS
+                OracleCommand cmd4 = new OracleCommand();
+                if (comboBox2.Text=="TIDAK AKTIF")
+                {
+                    cmd4.CommandText = "update membership set STATUS=0 where id_membership='" + comboBox1.Text + "'";
+                    cmd4.Connection = conn;
+                    cmd4.ExecuteNonQuery();
+                }
+                else if (comboBox2.Text=="AKTIF")
+                {
+                    cmd4.CommandText = "update membership set STATUS=1 where id_membership='" + comboBox1.Text + "'";
+                    cmd4.Connection = conn;
+                    cmd4.ExecuteNonQuery();
+                }
+
                 mytrans.Commit();
             }
             catch (Exception ex)

@@ -102,13 +102,23 @@ namespace ProyekPCS2019.Admin
                 OracleCommand cmd = new OracleCommand("select nama from membership where id_membership='" + textBox2.Text + "'");
                 cmd.Connection = conn;
                 string nama = cmd.ExecuteScalar().ToString();
+                cmd.CommandText = "select status from membership where id_membership = '" + textBox2.Text + "'";
+                int status = int.Parse(cmd.ExecuteScalar().ToString());
                 DialogResult dialogResult = MessageBox.Show("Jika Benar Maka Akan Dilanjutkan Ke Proses Selanjutnya, Apakah Anda Bersedia ? ", "Nama Anda : " + nama, MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    textBox1.BackColor = Color.Green;
-                    dateTimePicker1.Enabled = true;
-                    textBox2.Enabled = false;
-                    button3.Enabled = false;
+                    if (status==1)
+                    {
+                        textBox1.BackColor = Color.Green;
+                        dateTimePicker1.Enabled = true;
+                        textBox2.Enabled = false;
+                        button3.Enabled = false;
+                    }
+                    else if (status==0)
+                    {
+                        textBox1.BackColor = Color.Red;
+                        MessageBox.Show("Membership Anda Tidak Aktif");
+                    }
                 }
                 else if (dialogResult == DialogResult.No)
                 {
@@ -224,6 +234,10 @@ namespace ProyekPCS2019.Admin
                                 cekbisa = false;
                             }
                             if (jumlah_hari01 >= jumlah_hari1 && jumlah_hari01 <= jumlah_hari2)
+                            {
+                                cekbisa = false;
+                            }
+                            if (jumlah_hari00 <= jumlah_hari1 && jumlah_hari01>=jumlah_hari2)
                             {
                                 cekbisa = false;
                             }
@@ -356,6 +370,13 @@ namespace ProyekPCS2019.Admin
             conn.Open();
             try
             {
+                //tanggal masuk yang dipilih
+                string tgl00 = dateTimePicker4.Value.ToShortDateString();
+                string[] pisahtgl00 = tgl00.Substring(0, 10).Split('/');
+                int jumlah_hari00 = 0;
+                jumlah_hari00 = int.Parse(pisahtgl00[0]);
+                jumlah_hari00 = jumlah_hari00 + (int.Parse(pisahtgl00[1]) * 30);
+                jumlah_hari00 = jumlah_hari00 + (int.Parse(pisahtgl00[2]) * 365);
                 //tanggal keluar yang dipilih
                 string tgl01 = dateTimePicker2.Value.ToShortDateString();
                 string[] pisahtgl01 = tgl01.Substring(0, 10).Split('/');
@@ -391,6 +412,10 @@ namespace ProyekPCS2019.Admin
                         {
                             cekbisaupdate = false;
                         }
+                        if (jumlah_hari00 <= jumlah_hari1 && jumlah_hari01 >= jumlah_hari2)
+                        {
+                            cekbisaupdate = false;
+                        }
                     }
                 }
             }
@@ -412,6 +437,7 @@ namespace ProyekPCS2019.Admin
                     cmd3.Connection = conn;
                     cmd3.ExecuteNonQuery();
                     mytrans.Commit();
+                    MessageBox.Show("Booking Berhasil di Update !");
                 }
                 catch (Exception ex)
                 {
@@ -429,5 +455,15 @@ namespace ProyekPCS2019.Admin
         }
 
         bool cekbisaupdate = true;
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox2.Enabled = true;
+            button3.Enabled = true;
+            dateTimePicker1.Enabled = false;
+            comboBox4.Enabled = false;
+            comboBox3.Enabled = false;
+            dateTimePicker3.Enabled = false;
+        }
     }
 }
