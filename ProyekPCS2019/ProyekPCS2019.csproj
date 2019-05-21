@@ -184,6 +184,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\BulanTerbaikPenjualan\BulanTertinggi.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BulanTertinggi.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\JumlahCustomerPerBulan\FormReportCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
