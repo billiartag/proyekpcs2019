@@ -30,11 +30,11 @@ namespace ProyekPCS2019
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string user = textBox1.Text.ToUpper();
+            string user = textBox1.Text;
             string pass = textBox2.Text;
             MessageBox.Show(user+pass);
             //tolong ini nanti buat user admin ya win huehehehe
-            if (user == pass && user == "ADMIN")
+            if (user == pass && user.ToUpper() == "ADMIN")
             {
                 this.Hide();
                 MainAdmin mm = new MainAdmin();
@@ -95,10 +95,9 @@ namespace ProyekPCS2019
                 tabeluser = new DataTable();
                 od.Fill(tabeluser);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("gagal buka db");
-                throw;
+                MessageBox.Show("gagal buka db"); MessageBox.Show(ex.Message);
             }
         }
     }

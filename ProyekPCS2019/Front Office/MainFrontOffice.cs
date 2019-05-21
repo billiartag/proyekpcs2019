@@ -22,6 +22,7 @@ namespace ProyekPCS2019
         private void MainFrontOffice_Load(object sender, EventArgs e)
         {
             loadjeniskamar();
+            loadmembership();
         }
         public void loadjeniskamar() {
             if (conn.State == ConnectionState.Open)
@@ -46,6 +47,32 @@ namespace ProyekPCS2019
                 MessageBox.Show(ex.Message);
             }
         }
+
+        public void loadmembership()
+        {
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+            try
+            {
+                conn.Open();
+                OracleCommand cmd = new OracleCommand("Select * from membership", conn);
+                OracleDataAdapter da = new OracleDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                comboBox2.DataSource = dt;
+                comboBox2.DisplayMember = "nama";
+                comboBox2.ValueMember = "id_membership";
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         public void loadDataKamar(string id_jenis) {
             
             if (conn.State == ConnectionState.Open)
@@ -207,6 +234,100 @@ namespace ProyekPCS2019
                 checkOut(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
             }
 
+        }
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+        public void filter(int index,string id_jenis)
+        {
+            string pilihan = "";
+            if(index == 0)
+            {
+                pilihan = "tgl_checkin";
+            }
+            else if(index == 1)
+            {
+                pilihan = "tgl_checkout";
+            }
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+            try
+            {
+                conn.Open();
+                string tgl1 = dateTimePicker3.Value.Day + "-" + dateTimePicker3.Value.Month + "-" + dateTimePicker3.Value.Year;
+                string tgl2 = dateTimePicker4.Value.Day + "-" + dateTimePicker4.Value.Month + "-" + dateTimePicker4.Value.Year; ;
+                OracleCommand cmd = new OracleCommand("Select * from kamar k,where kode_jenis = '" + id_jenis + "' and "+pilihan+" > to_date('"+tgl1+ "','dd-mm-yyyy') and " + pilihan + " < to_date('" + tgl2 + "','dd-mm-yyyy') ", conn);
+                OracleDataAdapter da = new OracleDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = null;
+                dataGridView1.Columns.Clear();
+                dataGridView1.Rows.Clear();
+                dataGridView1.Refresh();
+                dataGridView1.DataSource = dt;
+                if (dataGridView1.ColumnCount < 5)
+                {
+                    DataGridViewButtonColumn newbtn = new DataGridViewButtonColumn();
+                    newbtn.DefaultCellStyle.SelectionForeColor = Color.Green;
+                    newbtn.DefaultCellStyle.BackColor = Color.Green;
+                    newbtn.DefaultCellStyle.ForeColor = Color.Green;
+                    newbtn.HeaderText = "Action";
+                    newbtn.Name = "Button";
+                    newbtn.Text = "Check In";
+                    newbtn.UseColumnTextForButtonValue = true;
+                    dataGridView1.Columns.Add(newbtn);
+
+
+                    newbtn = new DataGridViewButtonColumn();
+                    newbtn.DefaultCellStyle.SelectionForeColor = Color.Red;
+                    newbtn.DefaultCellStyle.BackColor = Color.Red;
+                    newbtn.DefaultCellStyle.ForeColor = Color.Red;
+                    newbtn.HeaderText = "Action";
+                    newbtn.Name = "Button";
+                    newbtn.Text = "Check Out";
+                    newbtn.UseColumnTextForButtonValue = true;
+                    dataGridView1.Columns.Add(newbtn);
+                }
+
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                filter(comboBox3.SelectedIndex, comboBox1.SelectedValue.ToString());
+            }
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                filter(comboBox3.SelectedIndex, comboBox1.SelectedValue.ToString());
+            }
+        }
+
+        private void dateTimePicker4_ValueChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                filter(comboBox3.SelectedIndex, comboBox1.SelectedValue.ToString());
+            }
         }
     }
 }
