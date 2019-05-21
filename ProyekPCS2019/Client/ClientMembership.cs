@@ -54,6 +54,7 @@ namespace ProyekPCS2019.Client
 
         private void ClientMembership_Load(object sender, EventArgs e)
         {
+            textBoxidMember.Text = user;
             try
             {
                 conn = new OracleConnection("User ID=proyek;Password=1;Data Source=orcl");
@@ -140,18 +141,35 @@ namespace ProyekPCS2019.Client
 
         private void button4_Click(object sender, EventArgs e)
         {
-            OracleDataAdapter tampung = new OracleDataAdapter("select * from membership where id_membership='" + textBoxidMember.Text.ToUpper() + "'", conn);
-            DataTable tabeldatamember = new DataTable();
-            tampung.Fill(tabeldatamember);
-            labelnamamember.Text = tabeldatamember.Rows[0].ItemArray[1].ToString();
-            labelAlamatMember.Text = tabeldatamember.Rows[0].ItemArray[2].ToString();
-            labelNoMember.Text = tabeldatamember.Rows[0].ItemArray[3].ToString();
-            labelEmailMember.Text = tabeldatamember.Rows[0].ItemArray[4].ToString();
+            if (textBoxidMember.Text.ToUpper() == user)
+            {
+                OracleDataAdapter tampung = new OracleDataAdapter("select * from membership where id_membership='" + textBoxidMember.Text.ToUpper() + "'", conn);
+                DataTable tabeldatamember = new DataTable();
+                tampung.Fill(tabeldatamember);
+                labelnamamember.Text = tabeldatamember.Rows[0].ItemArray[1].ToString();
+                labelAlamatMember.Text = tabeldatamember.Rows[0].ItemArray[2].ToString();
+                labelNoMember.Text = tabeldatamember.Rows[0].ItemArray[3].ToString();
+                labelEmailMember.Text = tabeldatamember.Rows[0].ItemArray[4].ToString();
+                loadList();
+            }
+            else { MessageBox.Show("Maaf, hanya bisa cek diri sendiri");}
+        }
+        void loadList() {
+            listBox1.Items.Clear();
+            OracleDataAdapter od = new OracleDataAdapter("SELECT * FROM BOOKING WHERE ID_MEMBERSHIP='"+user+"'", conn);
+            DataTable dt = new DataTable();
+            od.Fill(dt);
+            listBox1.DisplayMember = "kode_booking";
+            listBox1.ValueMember = "kode_booking";
+            listBox1.DataSource = dt;
+        }
 
-            OracleDataAdapter tampung2 = new OracleDataAdapter("select * from membership where id_membership='" + textBoxidMember.Text + "'", conn);
-            DataTable tabeldatatrx = new DataTable();
-            tampung2.Fill(tabeldatatrx);
-            listBox1.DataSource = tabeldatatrx;
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            OracleDataAdapter od = new OracleDataAdapter("SELECT * FROM BOOKING WHERE KODE_BOOKING='"+listBox1.Text+"' ORDER BY KODE_BOOKING DESC", conn);
+            DataTable dt = new DataTable();
+            od.Fill(dt);
+            dataGridView1.DataSource = dt;
         }
     }
 }

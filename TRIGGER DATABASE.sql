@@ -4,7 +4,7 @@ drop trigger tambah_fasilitas;
 drop trigger tambah_pegawai;
 drop trigger tambah_membership;
 drop trigger tambah_booking;
-tambah_booking
+
 --tambah jenis kamar
 create or replace trigger tambah_jenis_kamar
 before insert

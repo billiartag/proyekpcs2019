@@ -1,4 +1,5 @@
 ﻿using ProyekPCS2019.Admin;
+using ProyekPCS2019.Report.Jumlah_Customer_Per_Bulan;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,6 +45,27 @@ namespace ProyekPCS2019
             AdminEditBookingCRUD eb = new AdminEditBookingCRUD();
             eb.MdiParent = this;
             eb.Show();
+        }
+
+        private void rEPORTCUSTOMERPERBULANToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormReportCustomer rc = new FormReportCustomer();
+            rc.MdiParent = this;
+            rc.Show();
+        }
+
+        private void kAMARToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AdminEditKamarCRUD ek = new AdminEditKamarCRUD();
+            ek.MdiParent = this;
+            ek.Show();
+        }
+
+        private void fASILITASToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AdminEditFasilitasCRUD ef = new AdminEditFasilitasCRUD();
+            ef.MdiParent = this;
+            ef.Show();
         }
     }
 }
