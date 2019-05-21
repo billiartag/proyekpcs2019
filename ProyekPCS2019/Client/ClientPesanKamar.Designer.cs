@@ -183,7 +183,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Name = "ClientPesanKamar";
-            this.Text = "ClientPesanKamar";
+            this.Text = "Pesan Kamar";
             this.Load += new System.EventHandler(this.ClientPesanKamar_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

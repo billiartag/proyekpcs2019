@@ -47,13 +47,6 @@ namespace ProyekPCS2019
             eb.Show();
         }
 
-        private void rEPORTCUSTOMERPERBULANToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormReportCustomer rc = new FormReportCustomer();
-            rc.MdiParent = this;
-            rc.Show();
-        }
-
         private void kAMARToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             AdminEditKamarCRUD ek = new AdminEditKamarCRUD();
@@ -66,6 +59,14 @@ namespace ProyekPCS2019
             AdminEditFasilitasCRUD ef = new AdminEditFasilitasCRUD();
             ef.MdiParent = this;
             ef.Show();
+        }
+
+        private void cUSTOMERPERBULANToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormReportCustomer rc = new FormReportCustomer();
+            rc.MdiParent = this;
+            rc.Show();
+
         }
     }
 }

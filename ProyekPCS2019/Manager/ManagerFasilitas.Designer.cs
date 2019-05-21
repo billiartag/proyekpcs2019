@@ -217,7 +217,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Name = "ManagerFasilitas";
-            this.Text = "ManagerFasilitas";
+            this.Text = "Ubah Fasilitas";
             this.Load += new System.EventHandler(this.ManagerFasilitas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHargaFasilitas)).EndInit();

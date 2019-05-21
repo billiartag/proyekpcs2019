@@ -141,7 +141,7 @@ namespace ProyekPCS2019.Client
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (textBoxidMember.Text.ToUpper() == user)
+            if (textBoxidMember.Text.ToUpper() == user||mode_login=="login")
             {
                 OracleDataAdapter tampung = new OracleDataAdapter("select * from membership where id_membership='" + textBoxidMember.Text.ToUpper() + "'", conn);
                 DataTable tabeldatamember = new DataTable();
