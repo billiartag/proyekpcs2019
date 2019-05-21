@@ -53,5 +53,19 @@ namespace ProyekPCS2019
             rc.MdiParent = this;
             rc.Show();
         }
+
+        private void kAMARToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AdminEditKamarCRUD ek = new AdminEditKamarCRUD();
+            ek.MdiParent = this;
+            ek.Show();
+        }
+
+        private void fASILITASToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AdminEditFasilitasCRUD ef = new AdminEditFasilitasCRUD();
+            ef.MdiParent = this;
+            ef.Show();
+        }
     }
 }

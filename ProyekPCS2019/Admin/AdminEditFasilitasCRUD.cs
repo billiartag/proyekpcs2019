@@ -16,5 +16,10 @@ namespace ProyekPCS2019.Admin
         {
             InitializeComponent();
         }
+
+        private void AdminEditFasilitasCRUD_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

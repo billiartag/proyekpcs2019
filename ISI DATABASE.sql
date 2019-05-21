@@ -1,11 +1,12 @@
 --jenis kamar
-insert into jenis_kamar values(' ','Luxury',500000);
+insert into jenis_kamar values('','Luxury',500000);
 --kamar
 insert into kamar values(' ','JK001','Y');
 insert into kamar values(' ','JK001','Y');
 insert into kamar values(' ','JK001','N');
 --fasilitas
 insert into fasilitas values('','kolam renang',100000,'kolam renang');
+insert into fasilitas values('','spa',500000,'spa');
 --pegawai
 insert into pegawai values('','Alfonsus Yves','L','ADMIN','mangrove');
 insert into pegawai values('','Karyawan1','L','KOKI','somewhere over da rainbow');

@@ -30,11 +30,11 @@ namespace ProyekPCS2019
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string user = textBox1.Text.ToUpper();
+            string user = textBox1.Text;
             string pass = textBox2.Text;
             MessageBox.Show(user+pass);
             //tolong ini nanti buat user admin ya win huehehehe
-            if (user == pass && user == "ADMIN")
+            if (user == pass && user.ToUpper() == "ADMIN")
             {
                 this.Hide();
                 MainAdmin mm = new MainAdmin();
