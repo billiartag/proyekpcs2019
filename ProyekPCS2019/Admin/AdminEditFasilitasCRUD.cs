@@ -54,7 +54,7 @@ namespace ProyekPCS2019.Admin
             DataTable dt = new DataTable();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "select * from jenis_kamar";
+            cmd.CommandText = "select * from fasilitas";
             da.SelectCommand = cmd;
             da.Fill(dt);
             dataGridView1.DataSource = dt;
