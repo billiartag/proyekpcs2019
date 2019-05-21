@@ -95,10 +95,9 @@ namespace ProyekPCS2019
                 tabeluser = new DataTable();
                 od.Fill(tabeluser);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("gagal buka db");
-                throw;
+                MessageBox.Show("gagal buka db"); MessageBox.Show(ex.Message);
             }
         }
     }

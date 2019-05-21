@@ -39,13 +39,15 @@ namespace ProyekPCS2019.Front_Office
                 try
                 {
                     conn.Open();
-                    string sql2 = "SELECT id_transaksi FROM kamar WHERE id_kamar = '" + comboBox1.Text + "'";
+
+                    string sql2 = "SELECT id_transaksi FROM h_transaksi WHERE id_kamar = '" + comboBox1.Text + "' ORDER BY tgl_checkin,tgl_checkout DESC";
                     OracleCommand cmd2 = new OracleCommand(sql2, conn);
                     string kode = cmd2.ExecuteScalar().ToString();
                     
                     string sql = "INSERT INTO d_transaksi VALUES('"+kode+"','"+comboBox1.Text+"','"+comboBox2.Text+"')";
                     OracleCommand cmd = new OracleCommand(sql, conn);
                     cmd.ExecuteNonQuery();
+                    MessageBox.Show("Fasilitas berhasil ditambahkan!");
                     conn.Close();
                 }
                 catch (Exception ex)
