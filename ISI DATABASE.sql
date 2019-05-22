@@ -1,9 +1,9 @@
 --jenis kamar
 insert into jenis_kamar values('','Luxury',500000);
 --kamar
-insert into kamar values(' ','JK001',null,'Y');
-insert into kamar values(' ','JK001',null,'Y');
-insert into kamar values(' ','JK001','ME001','N');
+insert into kamar values(' ','JK001','Y');
+insert into kamar values(' ','JK001','Y');
+insert into kamar values(' ','JK001','N');
 --fasilitas
 insert into fasilitas values('','kolam renang',100000,'kolam renang');
 insert into fasilitas values('','spa',500000,'spa');
