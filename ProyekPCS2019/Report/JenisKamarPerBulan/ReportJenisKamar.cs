@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProyekPCS2019.Report.JumlahCustomerPerBulan {
+namespace ProyekPCS2019.Report.JenisKamarPerBulan {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace ProyekPCS2019.Report.JumlahCustomerPerBulan {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class JenisKamarPalingBanyakDipesan : ReportClass {
+    public class ReportJenisKamar : ReportClass {
         
-        public JenisKamarPalingBanyakDipesan() {
+        public ReportJenisKamar() {
         }
         
         public override string ResourceName {
             get {
-                return "JenisKamarPalingBanyakDipesan.rpt";
+                return "ReportJenisKamar.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace ProyekPCS2019.Report.JumlahCustomerPerBulan {
         
         public override string FullResourceName {
             get {
-                return "ProyekPCS2019.Report.JumlahCustomerPerBulan.JenisKamarPalingBanyakDipesan.rpt";
+                return "ProyekPCS2019.Report.JenisKamarPerBulan.ReportJenisKamar.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace ProyekPCS2019.Report.JumlahCustomerPerBulan {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedJenisKamarPalingBanyakDipesan : Component, ICachedReport {
+    public class CachedReportJenisKamar : Component, ICachedReport {
         
-        public CachedJenisKamarPalingBanyakDipesan() {
+        public CachedReportJenisKamar() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace ProyekPCS2019.Report.JumlahCustomerPerBulan {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            JenisKamarPalingBanyakDipesan rpt = new JenisKamarPalingBanyakDipesan();
+            ReportJenisKamar rpt = new ReportJenisKamar();
             rpt.Site = this.Site;
             return rpt;
         }
