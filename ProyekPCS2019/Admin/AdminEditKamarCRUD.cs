@@ -149,7 +149,7 @@ namespace ProyekPCS2019.Admin
                 {
                     OracleCommand cmd = new OracleCommand();
                     cmd.Connection = conn;
-                    cmd.CommandText = "insert into membership values('','" + textBox1.Text + "','" + textBox2.Text + "')";
+                    cmd.CommandText = "insert into jenis_kamar values('','" + textBox1.Text + "','" + textBox2.Text + "')";
                     cmd.ExecuteNonQuery();
                     mytrans.Commit();
                 }
