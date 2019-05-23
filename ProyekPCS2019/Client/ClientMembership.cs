@@ -103,7 +103,7 @@ namespace ProyekPCS2019.Client
             if (textBoxNamaMember.Text != "" && textBoxAlamatMember.Text != "" && textBoxNomorMember.Text != "" && textBoxEmailMember.Text != "" && textBoxEmailMember.Text != "" && textBoxNomorMember.Text.Length >= 10 && textBoxNomorMember.Text.Length <=12 && textBoxNomorMember.Text.Substring(0,1)=="0")
             {
                 OracleCommand cmd = new OracleCommand();
-                cmd.CommandText = "INSERT INTO membership(ID_MEMBERSHIP, NAMA, ALAMAT,NO_TELP,EMAIL) VALUES (:ID_MEMBER,:NAMA_MEMBER,:ALAMAT_MEMBER,:NOTEL_MEMBER, :EMAIL_MEMBER)";
+                cmd.CommandText = "INSERT INTO membership(ID_MEMBERSHIP, NAMA, ALAMAT,NO_TELP,EMAIL,STATUS) VALUES (:ID_MEMBER,:NAMA_MEMBER,:ALAMAT_MEMBER,:NOTEL_MEMBER, :EMAIL_MEMBER,1)";
                 cmd.Parameters.Add(":ID_MEMBER", "");
                 cmd.Parameters.Add(":NAMA_MEMBER", textBoxNamaMember.Text);
                 cmd.Parameters.Add(":ALAMAT_MEMBER", textBoxAlamatMember.Text);
@@ -114,7 +114,7 @@ namespace ProyekPCS2019.Client
                 try
                 {
                     //cari yang sama
-                    OracleCommand cek = new OracleCommand("SELECT COUNT(NAMA) FROM MEMBERSHIP WHERE NAMA = '" + textBoxNamaMember.Text + "' and EMAIL='" + textBoxEmailMember.Text + "',1", conn);
+                    OracleCommand cek = new OracleCommand("SELECT COUNT(NAMA) FROM MEMBERSHIP WHERE NAMA = '" + textBoxNamaMember.Text + "' and EMAIL='" + textBoxEmailMember.Text + "'", conn);
                     OracleCommand getuserid = new OracleCommand("SELECT ID_MEMBERSHIP FROM MEMBERSHIP WHERE nama='" + textBoxNamaMember.Text + "'", conn);
                     String hasil = cek.ExecuteScalar().ToString();
                     MessageBox.Show(hasil);
@@ -130,7 +130,7 @@ namespace ProyekPCS2019.Client
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message.ToString());
+                    MessageBox.Show(ex.ToString());
                     trx.Rollback();
                 }
             }
