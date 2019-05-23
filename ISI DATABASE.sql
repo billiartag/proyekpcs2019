@@ -12,7 +12,7 @@ insert into pegawai values('','Alfonsus Yves','L','ADMIN','mangrove');
 insert into pegawai values('','Karyawan1','L','KOKI','somewhere over da rainbow');
 insert into pegawai values('','mister satpam','L','SATPAM','emboh');
 --membership
-insert into membership values('','Alfonsus Yves','mangrove','081331322570','edwin0sidharta@gmail.com');
+insert into membership values('','Alfonsus Yves','mangrove','081331322570','edwin0sidharta@gmail.com',1);
 --booking
 insert into booking values('','ME001','KA001',TO_DATE('15/05/2019', 'dd/mm/yyyy'),TO_DATE('17/05/2019', 'dd/mm/yyyy'));
 insert into booking values('','ME001','KA001',TO_DATE('18/05/2019', 'dd/mm/yyyy'),TO_DATE('20/05/2019', 'dd/mm/yyyy'));

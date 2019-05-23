@@ -114,7 +114,7 @@ namespace ProyekPCS2019.Client
                 try
                 {
                     //cari yang sama
-                    OracleCommand cek = new OracleCommand("SELECT COUNT(NAMA) FROM MEMBERSHIP WHERE NAMA = '" + textBoxNamaMember.Text + "' and EMAIL='" + textBoxEmailMember.Text + "'", conn);
+                    OracleCommand cek = new OracleCommand("SELECT COUNT(NAMA) FROM MEMBERSHIP WHERE NAMA = '" + textBoxNamaMember.Text + "' and EMAIL='" + textBoxEmailMember.Text + "',1", conn);
                     OracleCommand getuserid = new OracleCommand("SELECT ID_MEMBERSHIP FROM MEMBERSHIP WHERE nama='" + textBoxNamaMember.Text + "'", conn);
                     String hasil = cek.ExecuteScalar().ToString();
                     MessageBox.Show(hasil);
@@ -150,6 +150,10 @@ namespace ProyekPCS2019.Client
                 labelAlamatMember.Text = tabeldatamember.Rows[0].ItemArray[2].ToString();
                 labelNoMember.Text = tabeldatamember.Rows[0].ItemArray[3].ToString();
                 labelEmailMember.Text = tabeldatamember.Rows[0].ItemArray[4].ToString();
+                if (tabeldatamember.Rows[0].ItemArray[4].ToString() == "1") {
+                    labelStatusMember.Text = "Aktif";
+                }
+                else { labelStatusMember.Text = "Non Aktif"; }
                 loadList();
             }
             else { MessageBox.Show("Maaf, hanya bisa cek diri sendiri");}
