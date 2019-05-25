@@ -33,7 +33,7 @@ namespace ProyekPCS2019.Front_Office
             try
             {
                 conn.Open();
-                string sql = "INSERT INTO membership VALUES('','"+textBox1.Text+"','"+textBox2.Text+"','"+textBox3.Text+"','"+textBox4.Text+"')";
+                string sql = "INSERT INTO membership VALUES('','"+textBox1.Text+"','"+textBox2.Text+"','"+textBox3.Text+"','"+textBox4.Text+"',1)";
                 OracleCommand cmd = new OracleCommand(sql, conn);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Member berhasil dibuat!");
