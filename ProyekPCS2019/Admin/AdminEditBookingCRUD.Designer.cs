@@ -43,6 +43,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -62,7 +63,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -76,7 +76,7 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.label10.Location = new System.Drawing.Point(404, 9);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(219, 52);
+            this.label10.Size = new System.Drawing.Size(207, 52);
             this.label10.TabIndex = 19;
             this.label10.Text = "BOOKING";
             // 
@@ -104,14 +104,14 @@
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Location = new System.Drawing.Point(528, 73);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(448, 250);
+            this.groupBox2.Size = new System.Drawing.Size(448, 335);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "UPDATE";
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(190, 88);
+            this.textBox6.Location = new System.Drawing.Point(187, 123);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(239, 22);
             this.textBox6.TabIndex = 37;
@@ -119,7 +119,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 91);
+            this.label8.Location = new System.Drawing.Point(8, 126);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(85, 17);
             this.label8.TabIndex = 36;
@@ -127,14 +127,14 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(190, 60);
+            this.textBox5.Location = new System.Drawing.Point(187, 95);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(239, 22);
             this.textBox5.TabIndex = 26;
             // 
             // dateTimePicker4
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(190, 119);
+            this.dateTimePicker4.Location = new System.Drawing.Point(187, 154);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(239, 22);
             this.dateTimePicker4.TabIndex = 27;
@@ -142,7 +142,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 124);
+            this.label6.Location = new System.Drawing.Point(9, 159);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 17);
             this.label6.TabIndex = 26;
@@ -151,7 +151,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(190, 30);
+            this.comboBox1.Location = new System.Drawing.Point(187, 65);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(239, 24);
             this.comboBox1.TabIndex = 35;
@@ -160,7 +160,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 31);
+            this.label9.Location = new System.Drawing.Point(6, 66);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(127, 17);
             this.label9.TabIndex = 34;
@@ -168,7 +168,7 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(190, 147);
+            this.dateTimePicker2.Location = new System.Drawing.Point(187, 182);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(239, 22);
             this.dateTimePicker2.TabIndex = 23;
@@ -176,7 +176,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 152);
+            this.label5.Location = new System.Drawing.Point(8, 187);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 17);
             this.label5.TabIndex = 22;
@@ -185,7 +185,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 63);
+            this.label7.Location = new System.Drawing.Point(8, 98);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(167, 17);
             this.label7.TabIndex = 19;
@@ -193,7 +193,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(165, 203);
+            this.button2.Location = new System.Drawing.Point(165, 261);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(144, 23);
             this.button2.TabIndex = 18;
@@ -224,6 +224,16 @@
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "INSERT";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(44, 261);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(142, 23);
+            this.button4.TabIndex = 26;
+            this.button4.Text = "BATAL BOOKING";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // dateTimePicker3
             // 
@@ -407,20 +417,11 @@
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(44, 261);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(142, 23);
-            this.button4.TabIndex = 26;
-            this.button4.Text = "BATAL BOOKING";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // AdminEditBookingCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::ProyekPCS2019.Properties.Resources._91a8958149c5f608b77fba66347e3032;
             this.ClientSize = new System.Drawing.Size(997, 804);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dataGridView2);
