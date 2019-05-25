@@ -95,7 +95,7 @@
             this.Controls.Add(this.buttonKeluar);
             this.Controls.Add(this.label1);
             this.Name = "MainManager";
-            this.Text = "MainManager";
+            this.Text = "Main Menu";
             this.Load += new System.EventHandler(this.MainManager_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

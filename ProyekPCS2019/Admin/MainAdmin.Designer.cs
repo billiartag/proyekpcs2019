@@ -35,6 +35,10 @@
             this.kAMARToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.fASILITASToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTCUSTOMERPERBULANToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cUSTOMERPERBULANToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bULANTERBAIKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dATAFASILITASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dATAKAMARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,10 +96,39 @@
             // 
             // rEPORTCUSTOMERPERBULANToolStripMenuItem
             // 
+            this.rEPORTCUSTOMERPERBULANToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cUSTOMERPERBULANToolStripMenuItem,
+            this.bULANTERBAIKToolStripMenuItem,
+            this.dATAFASILITASToolStripMenuItem,
+            this.dATAKAMARToolStripMenuItem});
             this.rEPORTCUSTOMERPERBULANToolStripMenuItem.Name = "rEPORTCUSTOMERPERBULANToolStripMenuItem";
-            this.rEPORTCUSTOMERPERBULANToolStripMenuItem.Size = new System.Drawing.Size(189, 20);
-            this.rEPORTCUSTOMERPERBULANToolStripMenuItem.Text = "REPORT CUSTOMER PER BULAN";
-            this.rEPORTCUSTOMERPERBULANToolStripMenuItem.Click += new System.EventHandler(this.rEPORTCUSTOMERPERBULANToolStripMenuItem_Click);
+            this.rEPORTCUSTOMERPERBULANToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.rEPORTCUSTOMERPERBULANToolStripMenuItem.Text = "REPORT";
+            // 
+            // cUSTOMERPERBULANToolStripMenuItem
+            // 
+            this.cUSTOMERPERBULANToolStripMenuItem.Name = "cUSTOMERPERBULANToolStripMenuItem";
+            this.cUSTOMERPERBULANToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.cUSTOMERPERBULANToolStripMenuItem.Text = "CUSTOMER PER BULAN";
+            this.cUSTOMERPERBULANToolStripMenuItem.Click += new System.EventHandler(this.cUSTOMERPERBULANToolStripMenuItem_Click);
+            // 
+            // bULANTERBAIKToolStripMenuItem
+            // 
+            this.bULANTERBAIKToolStripMenuItem.Name = "bULANTERBAIKToolStripMenuItem";
+            this.bULANTERBAIKToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.bULANTERBAIKToolStripMenuItem.Text = "BULAN TERBAIK";
+            // 
+            // dATAFASILITASToolStripMenuItem
+            // 
+            this.dATAFASILITASToolStripMenuItem.Name = "dATAFASILITASToolStripMenuItem";
+            this.dATAFASILITASToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.dATAFASILITASToolStripMenuItem.Text = "DATA FASILITAS";
+            // 
+            // dATAKAMARToolStripMenuItem
+            // 
+            this.dATAKAMARToolStripMenuItem.Name = "dATAKAMARToolStripMenuItem";
+            this.dATAKAMARToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.dATAKAMARToolStripMenuItem.Text = "DATA KAMAR";
             // 
             // MainAdmin
             // 
@@ -125,5 +158,9 @@
         private System.Windows.Forms.ToolStripMenuItem rEPORTCUSTOMERPERBULANToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kAMARToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem fASILITASToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem cUSTOMERPERBULANToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bULANTERBAIKToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dATAFASILITASToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dATAKAMARToolStripMenuItem;
     }
 }

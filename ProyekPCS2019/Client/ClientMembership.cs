@@ -103,7 +103,7 @@ namespace ProyekPCS2019.Client
             if (textBoxNamaMember.Text != "" && textBoxAlamatMember.Text != "" && textBoxNomorMember.Text != "" && textBoxEmailMember.Text != "" && textBoxEmailMember.Text != "" && textBoxNomorMember.Text.Length >= 10 && textBoxNomorMember.Text.Length <=12 && textBoxNomorMember.Text.Substring(0,1)=="0")
             {
                 OracleCommand cmd = new OracleCommand();
-                cmd.CommandText = "INSERT INTO membership(ID_MEMBERSHIP, NAMA, ALAMAT,NO_TELP,EMAIL) VALUES (:ID_MEMBER,:NAMA_MEMBER,:ALAMAT_MEMBER,:NOTEL_MEMBER, :EMAIL_MEMBER)";
+                cmd.CommandText = "INSERT INTO membership(ID_MEMBERSHIP, NAMA, ALAMAT,NO_TELP,EMAIL,STATUS) VALUES (:ID_MEMBER,:NAMA_MEMBER,:ALAMAT_MEMBER,:NOTEL_MEMBER, :EMAIL_MEMBER,1)";
                 cmd.Parameters.Add(":ID_MEMBER", "");
                 cmd.Parameters.Add(":NAMA_MEMBER", textBoxNamaMember.Text);
                 cmd.Parameters.Add(":ALAMAT_MEMBER", textBoxAlamatMember.Text);
@@ -130,7 +130,7 @@ namespace ProyekPCS2019.Client
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message.ToString());
+                    MessageBox.Show(ex.ToString());
                     trx.Rollback();
                 }
             }
@@ -141,7 +141,7 @@ namespace ProyekPCS2019.Client
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (textBoxidMember.Text.ToUpper() == user)
+            if (textBoxidMember.Text.ToUpper() == user||mode_login=="login")
             {
                 OracleDataAdapter tampung = new OracleDataAdapter("select * from membership where id_membership='" + textBoxidMember.Text.ToUpper() + "'", conn);
                 DataTable tabeldatamember = new DataTable();
@@ -150,6 +150,10 @@ namespace ProyekPCS2019.Client
                 labelAlamatMember.Text = tabeldatamember.Rows[0].ItemArray[2].ToString();
                 labelNoMember.Text = tabeldatamember.Rows[0].ItemArray[3].ToString();
                 labelEmailMember.Text = tabeldatamember.Rows[0].ItemArray[4].ToString();
+                if (tabeldatamember.Rows[0].ItemArray[4].ToString() == "1") {
+                    labelStatusMember.Text = "Aktif";
+                }
+                else { labelStatusMember.Text = "Non Aktif"; }
                 loadList();
             }
             else { MessageBox.Show("Maaf, hanya bisa cek diri sendiri");}

@@ -34,12 +34,18 @@ namespace ProyekPCS2019.Client
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            OracleDataAdapter data_fasilitas = new OracleDataAdapter("SELECT * FROM FASILITAS WHERE ID_FASILITAS='"+listBox1.SelectedValue.ToString()+"'", conn);
-            DataTable dt = new DataTable();
-            data_fasilitas.Fill(dt);
-            richTextBox1.Text = dt.Rows[0].ItemArray[3].ToString();
-            Image gambar = Image.FromFile("gambar_fasilitas/" + listBox1.SelectedValue.ToString() + ".jpg");
-            pictureBox1.Image = gambar;
+            try
+            {
+                OracleDataAdapter data_fasilitas = new OracleDataAdapter("SELECT * FROM FASILITAS WHERE ID_FASILITAS='" + listBox1.SelectedValue.ToString() + "'", conn);
+                DataTable dt = new DataTable();
+                data_fasilitas.Fill(dt);
+                richTextBox1.Text = dt.Rows[0].ItemArray[3].ToString();
+                Image gambar = Image.FromFile("gambar_fasilitas/" + listBox1.SelectedValue.ToString() + ".jpg");
+                pictureBox1.Image = gambar;
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

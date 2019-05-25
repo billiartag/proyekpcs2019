@@ -149,7 +149,7 @@ namespace ProyekPCS2019.Admin
                 {
                     OracleCommand cmd = new OracleCommand();
                     cmd.Connection = conn;
-                    cmd.CommandText = "insert into membership values('','" + textBox1.Text + "','" + textBox2.Text + "')";
+                    cmd.CommandText = "insert into jenis_kamar values('','" + textBox1.Text + "','" + textBox2.Text + "')";
                     cmd.ExecuteNonQuery();
                     mytrans.Commit();
                 }
@@ -176,7 +176,7 @@ namespace ProyekPCS2019.Admin
                 cmd.Connection = conn;
                 cmd.ExecuteNonQuery();
 
-                //alamat
+                //jenis
                 OracleCommand cmd1 = new OracleCommand();
                 cmd1.CommandText = "update jenis_kamar set harga_jenis='" + textBox4.Text + "' where kode_jenis='" + comboBox4.Text + "'";
                 cmd1.Connection = conn;
@@ -225,7 +225,7 @@ namespace ProyekPCS2019.Admin
             OracleTransaction mytrans = conn.BeginTransaction();
             try
             {
-                //nama
+                //kode
                 OracleCommand cmd = new OracleCommand();
                 cmd.CommandText = "update kamar set kode_jenis='" + comboBox2.Text + "' where id_kamar='" + comboBox3.Text + "'";
                 cmd.Connection = conn;
@@ -246,11 +246,9 @@ namespace ProyekPCS2019.Admin
         //delete jenis kamar
         private void dataGridViewJenis_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //delete
             if (e.ColumnIndex == 0)
             {
                 string id = dataGridViewJenis.Rows[e.RowIndex].Cells[1].Value.ToString();
-                //delete
                 conn.Open();
                 OracleTransaction mytrans = conn.BeginTransaction();
                 try
@@ -277,11 +275,9 @@ namespace ProyekPCS2019.Admin
         //delete kamar
         private void dataGridViewKamar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //delete
             if (e.ColumnIndex == 0)
             {
                 string id = dataGridViewKamar.Rows[e.RowIndex].Cells[1].Value.ToString();
-                //delete
                 conn.Open();
                 OracleTransaction mytrans = conn.BeginTransaction();
                 try
@@ -315,7 +311,7 @@ namespace ProyekPCS2019.Admin
                     //nama
                     cmd.CommandText = "select nama_jenis from jenis_kamar where kode_jenis='" + comboBox4.Text + "'";
                     textBox3.Text = cmd.ExecuteScalar().ToString();
-                    //alamat
+                    //harga
                     cmd.CommandText = "select harga_jenis from jenis_kamar where kode_jenis='" + comboBox4.Text + "'";
                     textBox4.Text = cmd.ExecuteScalar().ToString();
 
@@ -331,7 +327,7 @@ namespace ProyekPCS2019.Admin
         //cek update kamar
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox4.SelectedIndex > -1)
+            if (comboBox3.SelectedIndex > -1)
             {
                 conn.Open();
                 try

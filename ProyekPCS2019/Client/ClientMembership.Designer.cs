@@ -36,6 +36,11 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ID_KAMAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_BOOKING = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_MEMBERSHIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TGL_MSK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TGL_KELUAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelNoMember = new System.Windows.Forms.Label();
             this.labelEmailMember = new System.Windows.Forms.Label();
             this.labelAlamatMember = new System.Windows.Forms.Label();
@@ -62,11 +67,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.ID_KAMAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_BOOKING = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_MEMBERSHIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TGL_MSK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TGL_KELUAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelStatusMember = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBoxCek.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -108,6 +110,9 @@
             // 
             // groupBoxCek
             // 
+            this.groupBoxCek.BackColor = System.Drawing.Color.SeaShell;
+            this.groupBoxCek.Controls.Add(this.labelStatusMember);
+            this.groupBoxCek.Controls.Add(this.label7);
             this.groupBoxCek.Controls.Add(this.listBox1);
             this.groupBoxCek.Controls.Add(this.label12);
             this.groupBoxCek.Controls.Add(this.label11);
@@ -144,7 +149,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(5, 322);
+            this.label12.Location = new System.Drawing.Point(5, 368);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(125, 17);
             this.label12.TabIndex = 17;
@@ -170,12 +175,52 @@
             this.ID_MEMBERSHIP,
             this.TGL_MSK,
             this.TGL_KELUAR});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 342);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 400);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1048, 272);
+            this.dataGridView1.Size = new System.Drawing.Size(1048, 214);
             this.dataGridView1.TabIndex = 14;
+            // 
+            // ID_KAMAR
+            // 
+            this.ID_KAMAR.DataPropertyName = "ID_KAMAR";
+            this.ID_KAMAR.HeaderText = "Nomor Kamar";
+            this.ID_KAMAR.Name = "ID_KAMAR";
+            this.ID_KAMAR.ReadOnly = true;
+            this.ID_KAMAR.Width = 150;
+            // 
+            // ID_BOOKING
+            // 
+            this.ID_BOOKING.DataPropertyName = "KODE_BOOKING";
+            this.ID_BOOKING.HeaderText = "ID BOOKING";
+            this.ID_BOOKING.Name = "ID_BOOKING";
+            this.ID_BOOKING.ReadOnly = true;
+            this.ID_BOOKING.Visible = false;
+            // 
+            // ID_MEMBERSHIP
+            // 
+            this.ID_MEMBERSHIP.DataPropertyName = "ID_MEMBERSHIP";
+            this.ID_MEMBERSHIP.HeaderText = "ID MEMBER";
+            this.ID_MEMBERSHIP.Name = "ID_MEMBERSHIP";
+            this.ID_MEMBERSHIP.ReadOnly = true;
+            this.ID_MEMBERSHIP.Visible = false;
+            // 
+            // TGL_MSK
+            // 
+            this.TGL_MSK.DataPropertyName = "TGL_MSK";
+            this.TGL_MSK.HeaderText = "Tanggal Masuk";
+            this.TGL_MSK.Name = "TGL_MSK";
+            this.TGL_MSK.ReadOnly = true;
+            this.TGL_MSK.Width = 150;
+            // 
+            // TGL_KELUAR
+            // 
+            this.TGL_KELUAR.DataPropertyName = "TGL_KELUAR";
+            this.TGL_KELUAR.HeaderText = "Tanggal Keluar";
+            this.TGL_KELUAR.Name = "TGL_KELUAR";
+            this.TGL_KELUAR.ReadOnly = true;
+            this.TGL_KELUAR.Width = 150;
             // 
             // labelNoMember
             // 
@@ -225,7 +270,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 230);
+            this.label5.Location = new System.Drawing.Point(52, 230);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 17);
             this.label5.TabIndex = 8;
@@ -234,7 +279,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 189);
+            this.label4.Location = new System.Drawing.Point(48, 189);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 17);
             this.label4.TabIndex = 7;
@@ -243,7 +288,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 148);
+            this.label2.Location = new System.Drawing.Point(54, 148);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 17);
             this.label2.TabIndex = 4;
@@ -417,45 +462,23 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // ID_KAMAR
+            // labelStatusMember
             // 
-            this.ID_KAMAR.DataPropertyName = "ID_KAMAR";
-            this.ID_KAMAR.HeaderText = "Nomor Kamar";
-            this.ID_KAMAR.Name = "ID_KAMAR";
-            this.ID_KAMAR.ReadOnly = true;
-            this.ID_KAMAR.Width = 150;
+            this.labelStatusMember.AutoSize = true;
+            this.labelStatusMember.Location = new System.Drawing.Point(105, 302);
+            this.labelStatusMember.Name = "labelStatusMember";
+            this.labelStatusMember.Size = new System.Drawing.Size(13, 17);
+            this.labelStatusMember.TabIndex = 20;
+            this.labelStatusMember.Text = "-";
             // 
-            // ID_BOOKING
+            // label7
             // 
-            this.ID_BOOKING.DataPropertyName = "KODE_BOOKING";
-            this.ID_BOOKING.HeaderText = "ID BOOKING";
-            this.ID_BOOKING.Name = "ID_BOOKING";
-            this.ID_BOOKING.ReadOnly = true;
-            this.ID_BOOKING.Visible = false;
-            // 
-            // ID_MEMBERSHIP
-            // 
-            this.ID_MEMBERSHIP.DataPropertyName = "ID_MEMBERSHIP";
-            this.ID_MEMBERSHIP.HeaderText = "ID MEMBER";
-            this.ID_MEMBERSHIP.Name = "ID_MEMBERSHIP";
-            this.ID_MEMBERSHIP.ReadOnly = true;
-            this.ID_MEMBERSHIP.Visible = false;
-            // 
-            // TGL_MSK
-            // 
-            this.TGL_MSK.DataPropertyName = "TGL_MSK";
-            this.TGL_MSK.HeaderText = "Tanggal Masuk";
-            this.TGL_MSK.Name = "TGL_MSK";
-            this.TGL_MSK.ReadOnly = true;
-            this.TGL_MSK.Width = 150;
-            // 
-            // TGL_KELUAR
-            // 
-            this.TGL_KELUAR.DataPropertyName = "TGL_KELUAR";
-            this.TGL_KELUAR.HeaderText = "Tanggal Keluar";
-            this.TGL_KELUAR.Name = "TGL_KELUAR";
-            this.TGL_KELUAR.ReadOnly = true;
-            this.TGL_KELUAR.Width = 150;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(50, 302);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 17);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Status:";
             // 
             // ClientMembership
             // 
@@ -464,10 +487,10 @@
             this.ClientSize = new System.Drawing.Size(1089, 746);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBoxCek);
             this.Controls.Add(this.groupBoxBuat);
+            this.Controls.Add(this.groupBoxCek);
             this.Name = "ClientMembership";
-            this.Text = "ClientMembership";
+            this.Text = "Membership";
             this.Load += new System.EventHandler(this.ClientMembership_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBoxCek.ResumeLayout(false);
@@ -521,5 +544,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_MEMBERSHIP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TGL_MSK;
         private System.Windows.Forms.DataGridViewTextBoxColumn TGL_KELUAR;
+        private System.Windows.Forms.Label labelStatusMember;
+        private System.Windows.Forms.Label label7;
     }
 }

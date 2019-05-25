@@ -31,6 +31,7 @@
             this.dataGridViewJenis = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -59,28 +61,28 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJenis)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKamar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewJenis
             // 
             this.dataGridViewJenis.AllowUserToAddRows = false;
             this.dataGridViewJenis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewJenis.Location = new System.Drawing.Point(11, 234);
+            this.dataGridViewJenis.Location = new System.Drawing.Point(11, 253);
             this.dataGridViewJenis.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewJenis.Name = "dataGridViewJenis";
             this.dataGridViewJenis.RowTemplate.Height = 24;
-            this.dataGridViewJenis.Size = new System.Drawing.Size(472, 263);
+            this.dataGridViewJenis.Size = new System.Drawing.Size(472, 244);
             this.dataGridViewJenis.TabIndex = 20;
             this.dataGridViewJenis.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewJenis_CellContentClick);
             // 
@@ -111,6 +113,23 @@
             this.button2.Text = "INSERT";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(120, 80);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(78, 20);
+            this.numericUpDown1.TabIndex = 26;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // textBox1
             // 
@@ -197,6 +216,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "UPDATE JENIS";
             // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(132, 23);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(106, 21);
+            this.comboBox4.TabIndex = 29;
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -257,11 +285,11 @@
             // 
             this.dataGridViewKamar.AllowUserToAddRows = false;
             this.dataGridViewKamar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewKamar.Location = new System.Drawing.Point(499, 234);
+            this.dataGridViewKamar.Location = new System.Drawing.Point(499, 253);
             this.dataGridViewKamar.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewKamar.Name = "dataGridViewKamar";
             this.dataGridViewKamar.RowTemplate.Height = 24;
-            this.dataGridViewKamar.Size = new System.Drawing.Size(472, 263);
+            this.dataGridViewKamar.Size = new System.Drawing.Size(472, 244);
             this.dataGridViewKamar.TabIndex = 29;
             this.dataGridViewKamar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKamar_CellContentClick);
             // 
@@ -305,7 +333,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(22, 131);
+            this.label9.Location = new System.Drawing.Point(12, 136);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(113, 13);
             this.label9.TabIndex = 31;
@@ -368,7 +396,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(8, 130);
+            this.label11.Location = new System.Drawing.Point(5, 136);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(83, 13);
             this.label11.TabIndex = 29;
@@ -402,37 +430,31 @@
             this.label13.TabIndex = 1;
             this.label13.Text = "JENIS KAMAR:";
             // 
-            // comboBox4
+            // label12
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(132, 23);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(106, 21);
-            this.comboBox4.TabIndex = 29;
-            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(13, 235);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(78, 13);
+            this.label12.TabIndex = 31;
+            this.label12.Text = "JENIS KAMAR";
             // 
-            // numericUpDown1
+            // label14
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(120, 80);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(78, 20);
-            this.numericUpDown1.TabIndex = 26;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(496, 235);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(45, 13);
+            this.label14.TabIndex = 32;
+            this.label14.Text = "KAMAR";
             // 
             // AdminEditKamarCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 510);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.dataGridView4);
@@ -448,6 +470,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJenis)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -457,8 +480,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -497,5 +520,7 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
     }
 }
