@@ -46,29 +46,27 @@ namespace ProyekPCS2019
         }
         public void refresh()
         {
-            //refresh data grid view
+            //refresh data grid view member aktif
             conn.Open();
             OracleDataAdapter da = new OracleDataAdapter();
             DataTable dt = new DataTable();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "select * from membership";
+            cmd.CommandText = "select * from membership where status=1";
             da.SelectCommand = cmd;
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+            
+            //refresh data grid view member tidak aktif
+            OracleDataAdapter da2 = new OracleDataAdapter();
+            DataTable dt2 = new DataTable();
+            OracleCommand cmd2 = new OracleCommand();
+            cmd2.Connection = conn;
+            cmd2.CommandText = "select * from membership where status=0";
+            da2.SelectCommand = cmd2;
+            da2.Fill(dt2);
+            dataGridView3.DataSource = dt2;
 
-            if (dataGridView1.Columns.Count < 7)
-            {
-                DataGridViewButtonColumn newbtn = new DataGridViewButtonColumn();
-                newbtn.DefaultCellStyle.SelectionForeColor = Color.Green;
-                newbtn.DefaultCellStyle.BackColor = Color.Green;
-                newbtn.DefaultCellStyle.ForeColor = Color.Green;
-                newbtn.HeaderText = "Action";
-                newbtn.Name = "Button";
-                newbtn.Text = "Delete";
-                newbtn.UseColumnTextForButtonValue = true;
-                dataGridView1.Columns.Add(newbtn);
-            }
             //refresh isi combo box
             OracleDataAdapter da1 = new OracleDataAdapter();
             DataTable dt1 = new DataTable();
@@ -114,32 +112,7 @@ namespace ProyekPCS2019
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //delete
-            if (e.ColumnIndex == 0)
-            {
-                string id = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                //delete
-                conn.Open();
-                OracleTransaction mytrans = conn.BeginTransaction();
-                try
-                {
-                    OracleCommand cmd = new OracleCommand();
-                    cmd.CommandText = "delete from membership where id_membership='" + id + "'";
-                    cmd.Connection = conn;
-                    cmd.ExecuteNonQuery();
-                    mytrans.Commit();
-                }
-                catch (Exception ex)
-                {
-                    mytrans.Rollback();
-                    if (ex.Message== "ORA-02292: integrity constraint (PROYEK.FK_MEMBERBOOKING) violated - child record found")
-                    {
-                        MessageBox.Show("Member Sedang Menggunakan Ruangan Hotel");
-                    }
-                }
-                conn.Close();
-                refresh();
-            }
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

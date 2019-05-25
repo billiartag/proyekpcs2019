@@ -1,4 +1,5 @@
 ﻿using ProyekPCS2019.Admin;
+using ProyekPCS2019.Report.JenisKamarPerBulan;
 using ProyekPCS2019.Report.Jumlah_Customer_Per_Bulan;
 using System;
 using System.Collections.Generic;
@@ -67,6 +68,13 @@ namespace ProyekPCS2019
             rc.MdiParent = this;
             rc.Show();
 
+        }
+
+        private void dATAKAMARToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormReportJenisKamar rj = new FormReportJenisKamar();
+            rj.MdiParent = this;
+            rj.Show();
         }
     }
 }

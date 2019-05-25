@@ -34,5 +34,10 @@ namespace ProyekPCS2019.Report.Jumlah_Customer_Per_Bulan
             rep.SetParameterValue("bulan", comboBox1.Text);
             crystalReportViewer1.ReportSource = rep;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -4,6 +4,7 @@ drop function AUTO_GEN_FASILITAS;
 drop function AUTO_GEN_PEGAWAI;
 drop function AUTO_GEN_MEMBERSHIP;
 drop function AUTO_GEN_BOOKING;
+drop function JENIS_KAMAR_TERBANYAK;
 
 --auto gen jenis kamar
 set serveroutput on;
@@ -178,6 +179,41 @@ begin
 	else
 	hasil:= upper(hasil)||lpad('1',3,'0');
 	end if;
+	return hasil;
+end;
+/
+show err;
+
+--Function menentukan Jenis Kamar terbanyak
+set serveroutput on;
+create or replace function JENIS_KAMAR_TERBANYAK
+(
+	bulan in varchar2
+)
+return varchar2
+is
+	hasil varchar2(10000);
+	maks number(10);
+begin
+	maks:=-1;
+	for i in (
+		select a.nama_jenis,count(a.nama_jenis) as jumlah
+		from jenis_kamar a,kamar b,booking c
+		where c.id_kamar=b.id_kamar and b.kode_jenis=a.kode_jenis and upper(to_char(c.tgl_msk,'MONTH'))=upper(rpad(bulan,9,' '))
+		group by a.nama_jenis
+	)
+	loop
+		if maks=i.jumlah then 
+		hasil:=hasil || ' Dan ' || i.nama_jenis;
+		maks:=i.jumlah;
+		end if;
+		
+		if maks<i.jumlah then 
+		hasil:=i.nama_jenis;
+		maks:=i.jumlah;
+		end if;
+		
+	end loop;
 	return hasil;
 end;
 /

@@ -1,8 +1,9 @@
 --jenis kamar
 insert into jenis_kamar values('','Luxury',500000);
+insert into jenis_kamar values('','Deluxe',1000000);
 --kamar
 insert into kamar values(' ','JK001',null,'Y');
-insert into kamar values(' ','JK001',null,'Y');
+insert into kamar values(' ','JK002',null,'Y');
 insert into kamar values(' ','JK001','ME001','N');
 insert into kamar (kode_jenis, id_membership, tersedia) values('JK001',null,'Y');
 
@@ -23,7 +24,8 @@ insert into booking values('','ME001','KA001',TO_DATE('24/05/2019', 'dd/mm/yyyy'
 insert into booking values('','ME001','KA001',TO_DATE('27/05/2019', 'dd/mm/yyyy'),TO_DATE('29/05/2019', 'dd/mm/yyyy'));
 insert into booking values('','ME001','KA001',TO_DATE('01/06/2019', 'dd/mm/yyyy'),TO_DATE('4/06/2019', 'dd/mm/yyyy'));
 insert into booking values('','ME001','KA001',TO_DATE('05/06/2019', 'dd/mm/yyyy'),TO_DATE('8/06/2019', 'dd/mm/yyyy'));
-insert into booking values('','ME001','KA001',TO_DATE('09/06/2019', 'dd/mm/yyyy'),TO_DATE('14/06/2019', 'dd/mm/yyyy'));
+insert into booking values('','ME001','KA002',TO_DATE('09/06/2019', 'dd/mm/yyyy'),TO_DATE('14/06/2019', 'dd/mm/yyyy'));
+insert into booking values('','ME001','KA002',TO_DATE('15/06/2019', 'dd/mm/yyyy'),TO_DATE('18/06/2019', 'dd/mm/yyyy'));
 --user
 insert into users values('alfon','1','FRONT OFFICE');
 insert into users values('manajer','1','MANAGER');

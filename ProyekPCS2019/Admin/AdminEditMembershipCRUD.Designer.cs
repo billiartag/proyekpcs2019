@@ -40,6 +40,8 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -53,17 +55,19 @@
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(121, 198);
+            this.button1.Location = new System.Drawing.Point(117, 221);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(165, 23);
             this.button1.TabIndex = 0;
@@ -112,7 +116,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(58, 349);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(735, 324);
+            this.dataGridView1.Size = new System.Drawing.Size(630, 324);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -134,7 +138,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(12, 76);
+            this.groupBox1.Location = new System.Drawing.Point(290, 64);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(398, 250);
             this.groupBox1.TabIndex = 11;
@@ -179,12 +183,32 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Location = new System.Drawing.Point(442, 76);
+            this.groupBox2.Location = new System.Drawing.Point(718, 64);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(398, 250);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "UPDATE";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "AKTIF",
+            "TIDAK AKTIF"});
+            this.comboBox2.Location = new System.Drawing.Point(152, 183);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(240, 24);
+            this.comboBox2.TabIndex = 37;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(9, 186);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 17);
+            this.label11.TabIndex = 36;
+            this.label11.Text = "STATUS : ";
             // 
             // comboBox1
             // 
@@ -270,7 +294,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(110, 221);
+            this.button2.Location = new System.Drawing.Point(108, 221);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(181, 23);
             this.button2.TabIndex = 25;
@@ -291,37 +315,48 @@
             // 
             this.label10.AllowDrop = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.label10.Location = new System.Drawing.Point(290, 9);
+            this.label10.Location = new System.Drawing.Point(565, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(290, 52);
             this.label10.TabIndex = 14;
             this.label10.Text = "MEMBERSHIP";
             // 
-            // label11
+            // dataGridView3
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 186);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 17);
-            this.label11.TabIndex = 36;
-            this.label11.Text = "STATUS : ";
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(718, 349);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(630, 324);
+            this.dataGridView3.TabIndex = 15;
             // 
-            // comboBox2
+            // label12
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "AKTIF",
-            "TIDAK AKTIF"});
-            this.comboBox2.Location = new System.Drawing.Point(152, 183);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(240, 24);
-            this.comboBox2.TabIndex = 37;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(55, 318);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(109, 17);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "MEMBER AKTIF";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(1195, 329);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(153, 17);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "MEMBER TIDAK AKTIF";
             // 
             // EditMembership
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(852, 685);
+            this.ClientSize = new System.Drawing.Size(1382, 685);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.groupBox2);
@@ -337,7 +372,9 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -370,5 +407,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
