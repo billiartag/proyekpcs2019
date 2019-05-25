@@ -108,7 +108,7 @@ namespace ProyekPCS2019.Admin
             da2.Fill(dt2);
             dataGridViewKamar.DataSource = dt2;
 
-            if (dataGridViewKamar.Columns.Count < 4)
+            if (dataGridViewKamar.Columns.Count < 5)
             {
                 DataGridViewButtonColumn newbtn = new DataGridViewButtonColumn();
                 newbtn.DefaultCellStyle.SelectionForeColor = Color.Green;
@@ -197,7 +197,7 @@ namespace ProyekPCS2019.Admin
         //insert kamar
         private void button4_Click(object sender, EventArgs e)
         {
-            if (comboBox3.SelectedIndex > -1)
+            if (comboBox1.SelectedIndex > -1)
             {
                 conn.Open();
                 OracleTransaction mytrans = conn.BeginTransaction();
@@ -205,7 +205,7 @@ namespace ProyekPCS2019.Admin
                 {
                     OracleCommand cmd = new OracleCommand();
                     cmd.Connection = conn;
-                    cmd.CommandText = "insert into kamar values('','" + comboBox3.Text + "','Y')";
+                    cmd.CommandText = "insert into kamar (kode_jenis, id_membership, tersedia) values('" + comboBox1.Text + "',null,'Y')";
                     cmd.ExecuteNonQuery();
                     mytrans.Commit();
                 }
@@ -222,6 +222,7 @@ namespace ProyekPCS2019.Admin
         //update kamar
         private void button3_Click(object sender, EventArgs e)
         {
+            conn.Open();
             OracleTransaction mytrans = conn.BeginTransaction();
             try
             {
@@ -354,5 +355,6 @@ namespace ProyekPCS2019.Admin
                 conn.Close();
             }
         }
+        
     }
 }

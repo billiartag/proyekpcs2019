@@ -85,6 +85,7 @@ namespace ProyekPCS2019.Admin
             {
                 comboBox1.Items.Add(dataGridView2.Rows[i].Cells[0].Value.ToString());
             }
+            conn.Close();
         }
 
         //read
@@ -104,7 +105,7 @@ namespace ProyekPCS2019.Admin
                     cmd.CommandText = "select harga_fasilitas from fasilitas where id_fasilitas='" + comboBox1.Text + "'";
                     textBox3.Text = cmd.ExecuteScalar().ToString();
                     //desc
-                    cmd.CommandText = "select deskripsi from fasilitas where idfasilitas='" + comboBox1.Text + "'";
+                    cmd.CommandText = "select deskripsi from fasilitas where id_fasilitas='" + comboBox1.Text + "'";
                     richTextBox2.Text = cmd.ExecuteScalar().ToString();
 
                 }
@@ -127,7 +128,7 @@ namespace ProyekPCS2019.Admin
                 {
                     OracleCommand cmd = new OracleCommand();
                     cmd.Connection = conn;
-                    cmd.CommandText = "insert into fasilitas (nama_fasilitas, harga_fasilitas, deskripsi) values('','" + textBox1.Text + "','" + textBox2.Text + "','" + richTextBox1.Text + "')";
+                    cmd.CommandText = "insert into fasilitas (nama_fasilitas, harga_fasilitas, deskripsi) values('" + textBox1.Text + "','" + textBox2.Text + "','" + richTextBox1.Text + "')";
                     cmd.ExecuteNonQuery();
                     mytrans.Commit();
                 }

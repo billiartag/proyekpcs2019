@@ -19,6 +19,7 @@ constraint pk_kode_jenis PRIMARY KEY (kode_jenis)
 create table kamar(
 id_kamar varchar2(50),
 kode_jenis varchar2(50),
+id_membership varchar2(50),
 tersedia varchar2(50),
 constraint pk_kamar PRIMARY KEY (id_kamar),
 constraint fk_kamar foreign key(kode_jenis) references jenis_kamar(kode_jenis)

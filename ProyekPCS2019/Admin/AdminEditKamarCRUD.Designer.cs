@@ -82,7 +82,7 @@
             this.dataGridViewJenis.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewJenis.Name = "dataGridViewJenis";
             this.dataGridViewJenis.RowTemplate.Height = 24;
-            this.dataGridViewJenis.Size = new System.Drawing.Size(472, 244);
+            this.dataGridViewJenis.Size = new System.Drawing.Size(459, 244);
             this.dataGridViewJenis.TabIndex = 20;
             this.dataGridViewJenis.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewJenis_CellContentClick);
             // 
@@ -211,7 +211,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(255, 162);
+            this.groupBox2.Size = new System.Drawing.Size(240, 162);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "UPDATE JENIS";
@@ -219,7 +219,7 @@
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(132, 23);
+            this.comboBox4.Location = new System.Drawing.Point(124, 22);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(106, 21);
             this.comboBox4.TabIndex = 29;
@@ -237,7 +237,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(90, 121);
+            this.button1.Location = new System.Drawing.Point(86, 121);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 27;
@@ -247,7 +247,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(132, 52);
+            this.textBox3.Location = new System.Drawing.Point(124, 51);
             this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(106, 20);
@@ -255,7 +255,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(132, 79);
+            this.textBox4.Location = new System.Drawing.Point(124, 80);
             this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(106, 20);
@@ -285,11 +285,11 @@
             // 
             this.dataGridViewKamar.AllowUserToAddRows = false;
             this.dataGridViewKamar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewKamar.Location = new System.Drawing.Point(499, 253);
+            this.dataGridViewKamar.Location = new System.Drawing.Point(474, 253);
             this.dataGridViewKamar.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewKamar.Name = "dataGridViewKamar";
             this.dataGridViewKamar.RowTemplate.Height = 24;
-            this.dataGridViewKamar.Size = new System.Drawing.Size(472, 244);
+            this.dataGridViewKamar.Size = new System.Drawing.Size(559, 244);
             this.dataGridViewKamar.TabIndex = 29;
             this.dataGridViewKamar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKamar_CellContentClick);
             // 
@@ -311,11 +311,11 @@
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Location = new System.Drawing.Point(718, 53);
+            this.groupBox3.Location = new System.Drawing.Point(736, 53);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(255, 162);
+            this.groupBox3.Size = new System.Drawing.Size(297, 162);
             this.groupBox3.TabIndex = 30;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "UPDATE KAMAR";
@@ -323,7 +323,7 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(106, 23);
+            this.comboBox3.Location = new System.Drawing.Point(161, 22);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 33;
@@ -342,15 +342,15 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(25, 74);
+            this.comboBox2.Location = new System.Drawing.Point(15, 74);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(202, 21);
+            this.comboBox2.Size = new System.Drawing.Size(267, 21);
             this.comboBox2.TabIndex = 32;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(72, 53);
+            this.label8.Location = new System.Drawing.Point(94, 52);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(114, 13);
@@ -360,7 +360,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(22, 27);
+            this.label7.Location = new System.Drawing.Point(12, 26);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 13);
@@ -369,7 +369,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(89, 101);
+            this.button3.Location = new System.Drawing.Point(112, 101);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 27;
@@ -383,11 +383,11 @@
             this.groupBox4.Controls.Add(this.comboBox1);
             this.groupBox4.Controls.Add(this.button4);
             this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Location = new System.Drawing.Point(499, 53);
+            this.groupBox4.Location = new System.Drawing.Point(474, 53);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(215, 162);
+            this.groupBox4.Size = new System.Drawing.Size(258, 162);
             this.groupBox4.TabIndex = 29;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "INSERT KAMAR";
@@ -405,14 +405,14 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(8, 47);
+            this.comboBox1.Location = new System.Drawing.Point(8, 46);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(202, 21);
+            this.comboBox1.Size = new System.Drawing.Size(245, 21);
             this.comboBox1.TabIndex = 28;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(72, 74);
+            this.button4.Location = new System.Drawing.Point(97, 73);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 27;
@@ -423,7 +423,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(69, 26);
+            this.label13.Location = new System.Drawing.Point(94, 27);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(81, 13);
@@ -452,7 +452,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 510);
+            this.ClientSize = new System.Drawing.Size(1044, 510);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox3);
