@@ -15,6 +15,13 @@ namespace ProyekPCS2019
 {
     public partial class MainAdmin : Form
     {
+        EditPegawaiCRUD ep = new EditPegawaiCRUD();//pegawai
+        EditMembership em = new EditMembership();//membership
+        AdminEditBookingCRUD eb = new AdminEditBookingCRUD();//booking
+        AdminEditKamarCRUD ek = new AdminEditKamarCRUD();//kamar
+        AdminEditFasilitasCRUD ef = new AdminEditFasilitasCRUD();//fasilitas
+        FormReportCustomer rc = new FormReportCustomer();//report customer per bulan
+        FormReportJenisKamar rj = new FormReportJenisKamar();//report jenis kamar perbulan
         public MainAdmin()
         {
             InitializeComponent();
@@ -22,9 +29,15 @@ namespace ProyekPCS2019
 
         private void pEGAWAIToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditPegawaiCRUD ep = new EditPegawaiCRUD();
+            em.Hide();
+            eb.Hide();
+            ek.Hide();
+            ef.Hide();
+            rc.Hide();
+            rj.Hide();
             ep.MdiParent = this;
             ep.Show();
+            ep.Location = new Point(0,0);
         }
 
         private void MainMaster_Load(object sender, EventArgs e)
@@ -34,47 +47,83 @@ namespace ProyekPCS2019
 
         private void fASILITASToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            EditMembership em = new EditMembership();
+            ep.Hide();
+            eb.Hide();
+            ek.Hide();
+            ef.Hide();
+            rc.Hide();
+            rj.Hide();
             em.MdiParent = this;
             em.Show();
+            em.Location = new Point(0, 0);
 
         }
 
         private void kAMARToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AdminEditBookingCRUD eb = new AdminEditBookingCRUD();
+            ep.Hide();
+            em.Hide();
+            ek.Hide();
+            ef.Hide();
+            rc.Hide();
+            rj.Hide();
             eb.MdiParent = this;
             eb.Show();
+            eb.Location = new Point(0, 0);
         }
 
         private void kAMARToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            AdminEditKamarCRUD ek = new AdminEditKamarCRUD();
+            ep.Hide();
+            em.Hide();
+            eb.Hide();
+            ef.Hide();
+            rc.Hide();
+            rj.Hide();
             ek.MdiParent = this;
             ek.Show();
+            ek.Location = new Point(0, 0);
         }
 
         private void fASILITASToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            AdminEditFasilitasCRUD ef = new AdminEditFasilitasCRUD();
+            ep.Hide();
+            em.Hide();
+            eb.Hide();
+            ek.Hide();
+            rc.Hide();
+            rj.Hide();
             ef.MdiParent = this;
             ef.Show();
+            ef.Location = new Point(0, 0);
         }
 
         private void cUSTOMERPERBULANToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormReportCustomer rc = new FormReportCustomer();
+            ep.Hide();
+            em.Hide();
+            eb.Hide();
+            ek.Hide();
+            ef.Hide();
+            rj.Hide();
             rc.MdiParent = this;
             rc.Show();
+            rc.Location = new Point(0, 0);
 
         }
 
         private void dATAKAMARToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormReportJenisKamar rj = new FormReportJenisKamar();
+            ep.Hide();
+            em.Hide();
+            eb.Hide();
+            ek.Hide();
+            ef.Hide();
+            rc.Hide();
             rj.MdiParent = this;
             rj.Show();
+            rj.Location = new Point(0, 0);
         }
+        
     }
 }
