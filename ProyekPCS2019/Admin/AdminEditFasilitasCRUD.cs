@@ -139,6 +139,7 @@ namespace ProyekPCS2019.Admin
                 }
                 conn.Close();
             }
+            else MessageBox.Show("Semua field harus terisi");
             refresh();
         }
 
@@ -147,33 +148,36 @@ namespace ProyekPCS2019.Admin
         {
             conn.Open();
             OracleTransaction mytrans = conn.BeginTransaction();
-            try
-            {
-                //nama
-                OracleCommand cmd = new OracleCommand();
-                cmd.CommandText = "update fasilitas set nama_fasilitas='" + textBox4.Text + "' where id_fasilitas='" + comboBox1.Text + "'";
-                cmd.Connection = conn;
-                cmd.ExecuteNonQuery();
+            if (comboBox1.SelectedIndex > -1 && textBox3.Text != "" && textBox4.Text != "" && richTextBox2.Text != "") {
+                try
+                {
+                    //nama
+                    OracleCommand cmd = new OracleCommand();
+                    cmd.CommandText = "update fasilitas set nama_fasilitas='" + textBox4.Text + "' where id_fasilitas='" + comboBox1.Text + "'";
+                    cmd.Connection = conn;
+                    cmd.ExecuteNonQuery();
 
-                //harga
-                OracleCommand cmd1 = new OracleCommand();
-                cmd1.CommandText = "update fasilitas set harga_fasilitas='" + textBox3.Text + "' where id_fasilitas='" + comboBox1.Text + "'";
-                cmd1.Connection = conn;
-                cmd1.ExecuteNonQuery();
+                    //harga
+                    OracleCommand cmd1 = new OracleCommand();
+                    cmd1.CommandText = "update fasilitas set harga_fasilitas='" + textBox3.Text + "' where id_fasilitas='" + comboBox1.Text + "'";
+                    cmd1.Connection = conn;
+                    cmd1.ExecuteNonQuery();
 
-                //desc
-                OracleCommand cmd2 = new OracleCommand();
-                cmd2.CommandText = "update fasilitas set deskripsi='" + richTextBox2.Text + "' where id_fasilitas='" + comboBox1.Text + "'";
-                cmd2.Connection = conn;
-                cmd2.ExecuteNonQuery();
+                    //desc
+                    OracleCommand cmd2 = new OracleCommand();
+                    cmd2.CommandText = "update fasilitas set deskripsi='" + richTextBox2.Text + "' where id_fasilitas='" + comboBox1.Text + "'";
+                    cmd2.Connection = conn;
+                    cmd2.ExecuteNonQuery();
 
-                mytrans.Commit();
+                    mytrans.Commit();
+                }
+                catch (Exception ex)
+                {
+                    mytrans.Rollback();
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                mytrans.Rollback();
-                MessageBox.Show(ex.Message);
-            }
+            else MessageBox.Show("Semua field harus terisi");
 
             conn.Close();
             refresh();

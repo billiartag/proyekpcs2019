@@ -16,14 +16,14 @@ namespace ProyekPCS2019.Report.BulanTerbaikPenjualan {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class BulanTertinggi : ReportClass {
+    public class BulanTerbaik : ReportClass {
         
-        public BulanTertinggi() {
+        public BulanTerbaik() {
         }
         
         public override string ResourceName {
             get {
-                return "BulanTertinggi.rpt";
+                return "BulanTerbaik.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace ProyekPCS2019.Report.BulanTerbaikPenjualan {
         
         public override string FullResourceName {
             get {
-                return "ProyekPCS2019.Report.BulanTerbaikPenjualan.BulanTertinggi.rpt";
+                return "ProyekPCS2019.Report.BulanTerbaikPenjualan.BulanTerbaik.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace ProyekPCS2019.Report.BulanTerbaikPenjualan {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedBulanTertinggi : Component, ICachedReport {
+    public class CachedBulanTerbaik : Component, ICachedReport {
         
-        public CachedBulanTertinggi() {
+        public CachedBulanTerbaik() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace ProyekPCS2019.Report.BulanTerbaikPenjualan {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            BulanTertinggi rpt = new BulanTertinggi();
+            BulanTerbaik rpt = new BulanTerbaik();
             rpt.Site = this.Site;
             return rpt;
         }

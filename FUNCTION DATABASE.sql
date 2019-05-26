@@ -218,3 +218,16 @@ begin
 end;
 /
 show err;
+
+--penggunaan fasilitas terbanyak
+set serveroutput on;
+create or replace function FASILITAS_TERBANYAK
+(
+	bulan in varchar2
+)
+return varchar2
+is
+begin
+end;
+/
+show err;

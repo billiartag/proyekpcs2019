@@ -184,11 +184,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Report\BulanTerbaikPenjualan\BulanTertinggi.cs">
+    <Compile Include="Report\BulanTerbaikPenjualan\BulanTerbaik.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BulanTertinggi.rpt</DependentUpon>
+      <DependentUpon>BulanTerbaik.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\BulanTerbaikPenjualan\FormBulanTerbaik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\BulanTerbaikPenjualan\FormBulanTerbaik.Designer.cs">
+      <DependentUpon>FormBulanTerbaik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FasilitasPalingBanyakPerBulan\DataFasilitas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataFasilitas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\FasilitasPalingBanyakPerBulan\FormFasilitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FasilitasPalingBanyakPerBulan\FormFasilitas.Designer.cs">
+      <DependentUpon>FormFasilitas.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\JenisKamarPerBulan\FormReportJenisKamar.cs">
       <SubType>Form</SubType>
@@ -287,13 +305,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Report\BulanTerbaikPenjualan\BulanTertinggi.rpt">
+    <EmbeddedResource Include="Report\BulanTerbaikPenjualan\BulanTerbaik.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>BulanTertinggi.cs</LastGenOutput>
+      <LastGenOutput>BulanTerbaik.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\BulanTerbaikPenjualan\FormBulanTerbaik.resx">
+      <DependentUpon>FormBulanTerbaik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\FasilitasPalingBanyakPerBulan\DataFasilitas.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DataFasilitas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\FasilitasPalingBanyakPerBulan\FormFasilitas.resx">
+      <DependentUpon>FormFasilitas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\JenisKamarPerBulan\FormReportJenisKamar.resx">
       <DependentUpon>FormReportJenisKamar.cs</DependentUpon>

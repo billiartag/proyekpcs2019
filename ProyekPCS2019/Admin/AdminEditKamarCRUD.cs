@@ -166,31 +166,36 @@ namespace ProyekPCS2019.Admin
         //update jenis
         private void button1_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            OracleTransaction mytrans = conn.BeginTransaction();
-            try
+            if(textBox3.Text != "" && textBox4.Text != "")
             {
-                //nama
-                OracleCommand cmd = new OracleCommand();
-                cmd.CommandText = "update jenis_kamar set nama_jenis='" + textBox3.Text + "' where kode_jenis='" + comboBox4.Text + "'";
-                cmd.Connection = conn;
-                cmd.ExecuteNonQuery();
+                conn.Open();
+                OracleTransaction mytrans = conn.BeginTransaction();
+                try
+                {
+                    //nama
+                    OracleCommand cmd = new OracleCommand();
+                    cmd.CommandText = "update jenis_kamar set nama_jenis='" + textBox3.Text + "' where kode_jenis='" + comboBox4.Text + "'";
+                    cmd.Connection = conn;
+                    cmd.ExecuteNonQuery();
 
-                //jenis
-                OracleCommand cmd1 = new OracleCommand();
-                cmd1.CommandText = "update jenis_kamar set harga_jenis='" + textBox4.Text + "' where kode_jenis='" + comboBox4.Text + "'";
-                cmd1.Connection = conn;
-                cmd1.ExecuteNonQuery();
+                    //jenis
+                    OracleCommand cmd1 = new OracleCommand();
+                    cmd1.CommandText = "update jenis_kamar set harga_jenis='" + textBox4.Text + "' where kode_jenis='" + comboBox4.Text + "'";
+                    cmd1.Connection = conn;
+                    cmd1.ExecuteNonQuery();
                 
-                mytrans.Commit();
-            }
-            catch (Exception ex)
-            {
-                mytrans.Rollback();
-                MessageBox.Show(ex.Message);
-            }
+                    mytrans.Commit();
+                }
+                catch (Exception ex)
+                {
+                    mytrans.Rollback();
+                    MessageBox.Show(ex.Message);
+                }
 
-            conn.Close();
+                conn.Close();
+            }
+            else MessageBox.Show("Semua field harus terisi");
+
             refresh();
         }
 
@@ -222,25 +227,28 @@ namespace ProyekPCS2019.Admin
         //update kamar
         private void button3_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            OracleTransaction mytrans = conn.BeginTransaction();
-            try
+            if (comboBox1.SelectedIndex > -1 && comboBox2.SelectedIndex > -1)
             {
-                //kode
-                OracleCommand cmd = new OracleCommand();
-                cmd.CommandText = "update kamar set kode_jenis='" + comboBox2.Text + "' where id_kamar='" + comboBox3.Text + "'";
-                cmd.Connection = conn;
-                cmd.ExecuteNonQuery();
-                
-                mytrans.Commit();
-            }
-            catch (Exception ex)
-            {
-                mytrans.Rollback();
-                MessageBox.Show(ex.Message);
-            }
+                conn.Open();
+                OracleTransaction mytrans = conn.BeginTransaction();
+                try
+                {
+                    //kode
+                    OracleCommand cmd = new OracleCommand();
+                    cmd.CommandText = "update kamar set kode_jenis='" + comboBox2.Text + "' where id_kamar='" + comboBox3.Text + "'";
+                    cmd.Connection = conn;
+                    cmd.ExecuteNonQuery();
 
-            conn.Close();
+                    mytrans.Commit();
+                }
+                catch (Exception ex)
+                {
+                    mytrans.Rollback();
+                    MessageBox.Show(ex.Message);
+                }
+
+                conn.Close();
+            }
             refresh();
         }
 

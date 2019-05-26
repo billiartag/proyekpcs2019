@@ -5,8 +5,6 @@ insert into jenis_kamar values('','Deluxe',1000000);
 insert into kamar values(' ','JK001',null,'Y');
 insert into kamar values(' ','JK002',null,'Y');
 insert into kamar values(' ','JK001','ME001','N');
-insert into kamar (kode_jenis, id_membership, tersedia) values('JK001',null,'Y');
-
 --fasilitas
 insert into fasilitas values('','kolam renang',100000,'kolam renang');
 insert into fasilitas values('','spa',500000,'spa');
