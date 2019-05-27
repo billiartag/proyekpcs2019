@@ -68,5 +68,14 @@ namespace ProyekPCS2019
             this.Close();
 
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Client.ClientGantiPassword cp = new Client.ClientGantiPassword(conn, userID);
+            cp.ShowDialog();
+            this.Close();
+
+        }
     }
 }

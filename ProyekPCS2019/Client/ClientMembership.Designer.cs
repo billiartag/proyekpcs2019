@@ -32,6 +32,8 @@
             this.buttonBuat = new System.Windows.Forms.Button();
             this.buttonCek = new System.Windows.Forms.Button();
             this.groupBoxCek = new System.Windows.Forms.GroupBox();
+            this.labelStatusMember = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -67,8 +69,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.labelStatusMember = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBoxCek.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -135,6 +135,24 @@
             this.groupBoxCek.TabIndex = 3;
             this.groupBoxCek.TabStop = false;
             this.groupBoxCek.Text = "Cek Membership";
+            // 
+            // labelStatusMember
+            // 
+            this.labelStatusMember.AutoSize = true;
+            this.labelStatusMember.Location = new System.Drawing.Point(105, 302);
+            this.labelStatusMember.Name = "labelStatusMember";
+            this.labelStatusMember.Size = new System.Drawing.Size(13, 17);
+            this.labelStatusMember.TabIndex = 20;
+            this.labelStatusMember.Text = "-";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(50, 302);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 17);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Status:";
             // 
             // listBox1
             // 
@@ -462,24 +480,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // labelStatusMember
-            // 
-            this.labelStatusMember.AutoSize = true;
-            this.labelStatusMember.Location = new System.Drawing.Point(105, 302);
-            this.labelStatusMember.Name = "labelStatusMember";
-            this.labelStatusMember.Size = new System.Drawing.Size(13, 17);
-            this.labelStatusMember.TabIndex = 20;
-            this.labelStatusMember.Text = "-";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(50, 302);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 17);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Status:";
-            // 
             // ClientMembership
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -487,8 +487,8 @@
             this.ClientSize = new System.Drawing.Size(1089, 746);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBoxBuat);
             this.Controls.Add(this.groupBoxCek);
+            this.Controls.Add(this.groupBoxBuat);
             this.Name = "ClientMembership";
             this.Text = "Membership";
             this.Load += new System.EventHandler(this.ClientMembership_Load);
