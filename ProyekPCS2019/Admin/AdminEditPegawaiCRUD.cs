@@ -21,6 +21,11 @@ namespace ProyekPCS2019
 
         private void MainMaster_Load(object sender, EventArgs e)
         {
+            textBox5.Visible = false;
+            textBox6.Visible = false;
+            label11.Visible = false;
+            label12.Visible = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             dataGridView2.Visible = false;
             conn.ConnectionString = "User ID=proyek;Password=1;Data Source=orcl";
             try
@@ -82,6 +87,24 @@ namespace ProyekPCS2019
             {
                 comboBox3.Items.Add(dataGridView2.Rows[i].Cells[0].Value.ToString());
             }
+            OracleDataAdapter da2 = new OracleDataAdapter();
+            DataTable dt2 = new DataTable();
+            OracleCommand cmd2 = new OracleCommand();
+            cmd2.Connection = conn;
+            cmd2.CommandText = "select nama_jabatan from jabatan";
+            da2.SelectCommand = cmd2;
+            da2.Fill(dt2);
+            dataGridView2.DataSource = dt2;
+            comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
+            for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
+            {
+                comboBox1.Items.Add(dataGridView2.Rows[i].Cells[0].Value.ToString());
+                if (dataGridView2.Rows[i].Cells[0].Value.ToString().ToUpper()!="MANAGER" && dataGridView2.Rows[i].Cells[0].Value.ToString().ToUpper()!= "FRONT OFFICE")
+                {
+                    comboBox2.Items.Add(dataGridView2.Rows[i].Cells[0].Value.ToString());
+                }
+            }
             conn.Close();
 
         }
@@ -106,12 +129,22 @@ namespace ProyekPCS2019
                     }
                     cmd.Connection = conn;
                     cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = "insert into users values('"+textBox5.Text+"','"+textBox6.Text+"','"+comboBox1.Text+"')";
+                    cmd.ExecuteNonQuery();
                     mytrans.Commit();
                 }
                 catch (Exception ex)
                 {
                     mytrans.Rollback();
-                    MessageBox.Show(ex.Message);
+                    if (ex.Message== "ORA-00001: unique constraint (PROYEK.PK_USER) violated")
+                    {
+                        MessageBox.Show("USERNAME TELAH DIAPAKAI ! ");
+                    }
+                    else
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
             conn.Close();
@@ -232,6 +265,28 @@ namespace ProyekPCS2019
             conn.Close();
             refresh();
         }
-        
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.Text.ToUpper() == "MANAGER"|| comboBox1.Text.ToUpper() == "FRONT OFFICE")
+            {
+                textBox5.Visible = true;
+                textBox6.Visible = true;
+                label11.Visible = true;
+                label12.Visible = true;
+            }
+            else
+            {
+                textBox5.Visible = false;
+                textBox6.Visible = false;
+                label11.Visible = false;
+                label12.Visible = false;
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

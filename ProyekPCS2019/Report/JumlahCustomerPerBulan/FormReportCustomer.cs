@@ -20,6 +20,7 @@ namespace ProyekPCS2019.Report.Jumlah_Customer_Per_Bulan
 
         private void FormReportCustomer_Load(object sender, EventArgs e)
         {
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             comboBox1.Text = "May";
             ReportCustomer rep = new ReportCustomer();
             rep.SetDatabaseLogon("proyek", "1");

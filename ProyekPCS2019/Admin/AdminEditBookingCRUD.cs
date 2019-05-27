@@ -21,6 +21,8 @@ namespace ProyekPCS2019.Admin
 
         private void AdminEditBookingCRUD_Load(object sender, EventArgs e)
         {
+
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             textBox5.Enabled = false;
             textBox6.Enabled = false;
             dateTimePicker4.Enabled = false;

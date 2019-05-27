@@ -20,6 +20,7 @@ namespace ProyekPCS2019.Report.FasilitasPalingBanyakPerBulan
 
         private void FormFasilitas_Load(object sender, EventArgs e)
         {
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             comboBox1.Text = "May";
             DataFasilitas rep = new DataFasilitas();
             rep.SetDatabaseLogon("proyek", "1");

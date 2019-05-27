@@ -74,6 +74,12 @@
     <Compile Include="Admin\AdminEditKamarCRUD.Designer.cs">
       <DependentUpon>AdminEditKamarCRUD.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AdminJabatanCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminJabatanCRUD.Designer.cs">
+      <DependentUpon>AdminJabatanCRUD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client\ClientCekPesan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\AdminEditKamarCRUD.resx">
       <DependentUpon>AdminEditKamarCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminJabatanCRUD.resx">
+      <DependentUpon>AdminJabatanCRUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client\ClientCekPesan.resx">
       <DependentUpon>ClientCekPesan.cs</DependentUpon>

@@ -21,6 +21,7 @@ namespace ProyekPCS2019
 
         private void MainMaster_Load(object sender, EventArgs e)
         {
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             dataGridView2.Visible = false;
             conn.ConnectionString = "User ID=proyek;Password=1;Data Source=orcl";
             try
@@ -98,7 +99,14 @@ namespace ProyekPCS2019
                     cmd.Connection = conn;
                     cmd.CommandText = "insert into membership values('','"+textBox1.Text+ "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "',1)";
                     cmd.ExecuteNonQuery();
+                    //users
+                    cmd.CommandText = "select max(to_number(substr(id_membership,3,3))) from membership";
+                    string username = "ME";
+                    username = username + cmd.ExecuteScalar().ToString().PadLeft(3,'0');
+                    cmd.CommandText = "insert into users values('" + username + "','" + username + "','CUSTOMER')";
+                    cmd.ExecuteNonQuery();
                     mytrans.Commit();
+                    MessageBox.Show("USERNAME ANDA : "+username+"\nPASSWORD ANDA : "+ username);
                 }
                 catch (Exception ex)
                 {

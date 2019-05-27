@@ -21,6 +21,7 @@ namespace ProyekPCS2019.Report.JenisKamarPerBulan
 
         private void FormReportJenisKamar_Load(object sender, EventArgs e)
         {
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             conn.ConnectionString = "User ID=proyek;Password=1;Data Source=orcl";
             try
             {

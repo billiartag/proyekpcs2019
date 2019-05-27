@@ -73,10 +73,12 @@
             // label10
             // 
             this.label10.AllowDrop = true;
+            this.label10.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.label10.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label10.Location = new System.Drawing.Point(404, 9);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(207, 52);
+            this.label10.Size = new System.Drawing.Size(207, 44);
             this.label10.TabIndex = 19;
             this.label10.Text = "BOOKING";
             // 
@@ -193,12 +195,13 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.Highlight;
             this.button2.Location = new System.Drawing.Point(165, 261);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 23);
+            this.button2.Size = new System.Drawing.Size(144, 31);
             this.button2.TabIndex = 18;
             this.button2.Text = "UPDATE BOOKING";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox1
@@ -227,12 +230,13 @@
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.SystemColors.Highlight;
             this.button4.Location = new System.Drawing.Point(44, 261);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(142, 23);
+            this.button4.Size = new System.Drawing.Size(142, 31);
             this.button4.TabIndex = 26;
             this.button4.Text = "BATAL BOOKING";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // dateTimePicker3
@@ -371,12 +375,13 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
             this.button1.Location = new System.Drawing.Point(192, 261);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 23);
+            this.button1.Size = new System.Drawing.Size(142, 31);
             this.button1.TabIndex = 0;
             this.button1.Text = "INSERT BOOKING";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
@@ -421,7 +426,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ProyekPCS2019.Properties.Resources._91a8958149c5f608b77fba66347e3032;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(997, 804);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dataGridView2);

@@ -21,6 +21,7 @@ namespace ProyekPCS2019
         EditMembership em = new EditMembership();//membership
         AdminEditBookingCRUD eb = new AdminEditBookingCRUD();//booking
         AdminEditKamarCRUD ek = new AdminEditKamarCRUD();//kamar
+        AdminJabatanCRUD ej = new AdminJabatanCRUD();//jabatan
         AdminEditFasilitasCRUD ef = new AdminEditFasilitasCRUD();//fasilitas
         FormReportCustomer rc = new FormReportCustomer();//report customer per bulan
         FormReportJenisKamar rj = new FormReportJenisKamar();//report jenis kamar perbulan
@@ -41,6 +42,7 @@ namespace ProyekPCS2019
             rj.Hide();
             rf.Hide();
             rb.Hide();
+            ej.Hide();
             ep.MdiParent = this;
             ep.Show();
             ep.Location = new Point(0,0);
@@ -60,6 +62,7 @@ namespace ProyekPCS2019
             rc.Hide();
             rj.Hide();
             rf.Hide();
+            ej.Hide();
             rb.Hide();
             em.MdiParent = this;
             em.Show();
@@ -72,6 +75,7 @@ namespace ProyekPCS2019
             ep.Hide();
             em.Hide();
             ek.Hide();
+            ej.Hide();
             ef.Hide();
             rc.Hide();
             rj.Hide();
@@ -87,6 +91,7 @@ namespace ProyekPCS2019
             ep.Hide();
             em.Hide();
             eb.Hide();
+            ej.Hide();
             ef.Hide();
             rc.Hide();
             rj.Hide();
@@ -104,6 +109,7 @@ namespace ProyekPCS2019
             eb.Hide();
             ek.Hide();
             rc.Hide();
+            ej.Hide();
             rj.Hide();
             rf.Hide();
             rb.Hide();
@@ -118,6 +124,7 @@ namespace ProyekPCS2019
             em.Hide();
             eb.Hide();
             ek.Hide();
+            ej.Hide();
             ef.Hide();
             rj.Hide();
             rf.Hide();
@@ -133,6 +140,7 @@ namespace ProyekPCS2019
             ep.Hide();
             em.Hide();
             eb.Hide();
+            ej.Hide();
             ek.Hide();
             ef.Hide();
             rc.Hide();
@@ -149,6 +157,7 @@ namespace ProyekPCS2019
             em.Hide();
             eb.Hide();
             ek.Hide();
+            ej.Hide();
             ef.Hide();
             rj.Hide();
             rc.Hide();
@@ -163,6 +172,7 @@ namespace ProyekPCS2019
             ep.Hide();
             em.Hide();
             eb.Hide();
+            ej.Hide();
             ek.Hide();
             ef.Hide();
             rj.Hide();
@@ -171,6 +181,31 @@ namespace ProyekPCS2019
             rf.MdiParent = this;
             rf.Show();
             rf.Location = new Point(0, 0);
+        }
+
+        private void eXITTOMENUToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login x = new Login();
+            this.Hide();
+            x.ShowDialog();
+            this.Close();
+        }
+
+        private void jABATANToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            ep.Hide();
+            em.Hide();
+            eb.Hide();
+            rf.Hide();
+            ek.Hide();
+            ef.Hide();
+            rj.Hide();
+            rc.Hide();
+            rb.Hide();
+            ej.MdiParent = this;
+            ej.Show();
+            ej.Location = new Point(0, 0);
         }
     }
 }

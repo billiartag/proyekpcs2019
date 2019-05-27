@@ -21,6 +21,7 @@ namespace ProyekPCS2019.Admin
 
         private void AdminEditKamarCRUD_Load(object sender, EventArgs e)
         {
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             //2 UNTUK JENIS KAMAR 4 UNTUK KAMAR
             dataGridView2.Visible = false;
             dataGridView4.Visible = false;

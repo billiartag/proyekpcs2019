@@ -9,7 +9,7 @@ insert into kamar values(' ','JK001','ME001','N');
 insert into fasilitas values('','kolam renang',100000,'kolam renang');
 insert into fasilitas values('','spa',500000,'spa');
 --pegawai
-insert into pegawai values('','Alfonsus Yves','L','ADMIN','mangrove');
+insert into pegawai values('','Alfonsus Yves','L','FRONT OFFICE','mangrove');
 insert into pegawai values('','Karyawan1','L','KOKI','somewhere over da rainbow');
 insert into pegawai values('','mister satpam','L','SATPAM','emboh');
 --membership
@@ -31,6 +31,9 @@ insert into users values('cust','1','CUSTOMER');
 --jabatan
 insert into jabatan values('KOKI',4000000);
 insert into jabatan values('SATPAM',3000000);
+insert into jabatan values('MANAGER',30000000);
+insert into jabatan values('FRONT OFFICE',40000000);
+insert into jabatan values('CUSTOMER',0);
 --htrans
 insert into h_transaksi values('TR001','KA001','1000000','ME001','KB001',TO_DATE('15/05/2019', 'dd/mm/yyyy'),TO_DATE('17/05/2019', 'dd/mm/yyyy'));
 insert into h_transaksi values('TR002','KA001','800000','ME001','KB002',TO_DATE('18/05/2019', 'dd/mm/yyyy'),TO_DATE('20/05/2019', 'dd/mm/yyyy'));

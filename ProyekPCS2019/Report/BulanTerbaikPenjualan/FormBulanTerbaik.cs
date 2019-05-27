@@ -21,6 +21,7 @@ namespace ProyekPCS2019.Report.BulanTerbaikPenjualan
 
         private void FormBulanTerbaik_Load(object sender, EventArgs e)
         {
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             conn.ConnectionString = "User ID=proyek;Password=1;Data Source=orcl";
             try
             {

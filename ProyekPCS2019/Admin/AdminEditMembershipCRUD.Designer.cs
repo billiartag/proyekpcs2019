@@ -67,12 +67,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(117, 221);
+            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button1.Location = new System.Drawing.Point(124, 228);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 23);
+            this.button1.Size = new System.Drawing.Size(165, 37);
             this.button1.TabIndex = 0;
             this.button1.Text = "INSERT MEMBERSHIP";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
@@ -113,7 +114,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(58, 349);
+            this.dataGridView1.Location = new System.Drawing.Point(58, 352);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(630, 324);
@@ -140,7 +141,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(290, 64);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(398, 250);
+            this.groupBox1.Size = new System.Drawing.Size(398, 271);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "INSERT";
@@ -185,7 +186,7 @@
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Location = new System.Drawing.Point(718, 64);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(398, 250);
+            this.groupBox2.Size = new System.Drawing.Size(398, 271);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "UPDATE";
@@ -294,18 +295,19 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(108, 221);
+            this.button2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button2.Location = new System.Drawing.Point(115, 228);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(181, 23);
+            this.button2.Size = new System.Drawing.Size(181, 37);
             this.button2.TabIndex = 25;
             this.button2.Text = "UPDATE MEMBERSHIP";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(785, 429);
+            this.dataGridView2.Location = new System.Drawing.Point(785, 458);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(37, 28);
@@ -314,6 +316,7 @@
             // label10
             // 
             this.label10.AllowDrop = true;
+            this.label10.BackColor = System.Drawing.SystemColors.Highlight;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.label10.Location = new System.Drawing.Point(565, 9);
             this.label10.Name = "label10";
@@ -325,7 +328,7 @@
             // 
             this.dataGridView3.AllowUserToAddRows = false;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(718, 349);
+            this.dataGridView3.Location = new System.Drawing.Point(718, 352);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 24;
             this.dataGridView3.Size = new System.Drawing.Size(630, 324);
@@ -334,7 +337,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(55, 318);
+            this.label12.Location = new System.Drawing.Point(55, 332);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(109, 17);
             this.label12.TabIndex = 15;
@@ -343,7 +346,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(1195, 329);
+            this.label13.Location = new System.Drawing.Point(1195, 332);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(153, 17);
             this.label13.TabIndex = 16;
@@ -353,8 +356,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ProyekPCS2019.Properties.Resources._91a8958149c5f608b77fba66347e3032;
-            this.ClientSize = new System.Drawing.Size(1382, 685);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1382, 700);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.dataGridView3);

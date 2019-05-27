@@ -22,6 +22,7 @@ namespace ProyekPCS2019.Admin
 
         private void AdminEditFasilitasCRUD_Load(object sender, EventArgs e)
         {
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             dataGridView2.Visible = false;
             conn.ConnectionString = "User ID=proyek;Password=1;Data Source=orcl";
             try

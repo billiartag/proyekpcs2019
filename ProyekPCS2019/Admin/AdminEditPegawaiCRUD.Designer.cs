@@ -55,6 +55,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -63,12 +67,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(144, 205);
+            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button1.Location = new System.Drawing.Point(129, 283);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 23);
+            this.button1.Size = new System.Drawing.Size(152, 34);
             this.button1.TabIndex = 0;
             this.button1.Text = "INSERT PEGAWAI";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
@@ -118,7 +123,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(106, 371);
+            this.dataGridView1.Location = new System.Drawing.Point(108, 494);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(652, 324);
@@ -150,15 +155,11 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "ADMIN",
-            "MANAGER",
-            "FRONT OFFICE",
-            "CUSTOMER"});
             this.comboBox1.Location = new System.Drawing.Point(144, 109);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(239, 24);
             this.comboBox1.TabIndex = 9;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBox2
             // 
@@ -169,6 +170,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.button1);
@@ -181,7 +186,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(8, 98);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(398, 250);
+            this.groupBox1.Size = new System.Drawing.Size(398, 339);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "INSERT";
@@ -202,7 +207,7 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Location = new System.Drawing.Point(438, 98);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(398, 250);
+            this.groupBox2.Size = new System.Drawing.Size(398, 339);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "UPDATE";
@@ -241,25 +246,23 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(127, 205);
+            this.button2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button2.Location = new System.Drawing.Point(141, 283);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(154, 23);
+            this.button2.Size = new System.Drawing.Size(154, 34);
             this.button2.TabIndex = 0;
             this.button2.Text = "UPDATE PEGAWAI";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Admin",
-            "Manager",
-            "Resepsionis"});
             this.comboBox2.Location = new System.Drawing.Point(141, 133);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(239, 24);
             this.comboBox2.TabIndex = 9;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -322,7 +325,7 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(781, 451);
+            this.dataGridView2.Location = new System.Drawing.Point(783, 574);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(37, 28);
@@ -331,6 +334,7 @@
             // label10
             // 
             this.label10.AllowDrop = true;
+            this.label10.BackColor = System.Drawing.SystemColors.Highlight;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.label10.Location = new System.Drawing.Point(319, 26);
             this.label10.Name = "label10";
@@ -338,12 +342,44 @@
             this.label10.TabIndex = 15;
             this.label10.Text = "PEGAWAI";
             // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(144, 182);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(239, 22);
+            this.textBox5.TabIndex = 12;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(16, 185);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(97, 17);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "USERNAME : ";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(144, 219);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(239, 22);
+            this.textBox6.TabIndex = 14;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(16, 222);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(92, 17);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "PASSWORD ";
+            // 
             // EditPegawaiCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ProyekPCS2019.Properties.Resources._91a8958149c5f608b77fba66347e3032;
-            this.ClientSize = new System.Drawing.Size(852, 707);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(866, 840);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.groupBox2);
@@ -392,5 +428,9 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label11;
     }
 }
