@@ -103,7 +103,7 @@ namespace ProyekPCS2019.Admin
                     textBox4.Text = cmd.ExecuteScalar().ToString();
                     //harga
                     cmd.CommandText = "select harga_fasilitas from fasilitas where id_fasilitas='" + comboBox1.Text + "'";
-                    textBox3.Text = cmd.ExecuteScalar().ToString();
+                    numericUpDown2.Value = Convert.ToInt32(cmd.ExecuteScalar().ToString());
                     //desc
                     cmd.CommandText = "select deskripsi from fasilitas where id_fasilitas='" + comboBox1.Text + "'";
                     richTextBox2.Text = cmd.ExecuteScalar().ToString();
@@ -120,7 +120,7 @@ namespace ProyekPCS2019.Admin
         //insert
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "" && textBox2.Text != "" && richTextBox1.Text != "")
+            if (textBox1.Text != "" && numericUpDown1.Value != 0 && richTextBox1.Text != "")
             {
                 conn.Open();
                 OracleTransaction mytrans = conn.BeginTransaction();
@@ -128,7 +128,7 @@ namespace ProyekPCS2019.Admin
                 {
                     OracleCommand cmd = new OracleCommand();
                     cmd.Connection = conn;
-                    cmd.CommandText = "insert into fasilitas (nama_fasilitas, harga_fasilitas, deskripsi) values('" + textBox1.Text + "','" + textBox2.Text + "','" + richTextBox1.Text + "')";
+                    cmd.CommandText = "insert into fasilitas (nama_fasilitas, harga_fasilitas, deskripsi) values('" + textBox1.Text + "','" + numericUpDown1.Value + "','" + richTextBox1.Text + "')";
                     cmd.ExecuteNonQuery();
                     mytrans.Commit();
                 }
@@ -148,7 +148,7 @@ namespace ProyekPCS2019.Admin
         {
             conn.Open();
             OracleTransaction mytrans = conn.BeginTransaction();
-            if (comboBox1.SelectedIndex > -1 && textBox3.Text != "" && textBox4.Text != "" && richTextBox2.Text != "") {
+            if (comboBox1.SelectedIndex > -1 && numericUpDown2.Value != 0 && textBox4.Text != "" && richTextBox2.Text != "") {
                 try
                 {
                     //nama
@@ -159,7 +159,7 @@ namespace ProyekPCS2019.Admin
 
                     //harga
                     OracleCommand cmd1 = new OracleCommand();
-                    cmd1.CommandText = "update fasilitas set harga_fasilitas='" + textBox3.Text + "' where id_fasilitas='" + comboBox1.Text + "'";
+                    cmd1.CommandText = "update fasilitas set harga_fasilitas='" + numericUpDown2.Value + "' where id_fasilitas='" + comboBox1.Text + "'";
                     cmd1.Connection = conn;
                     cmd1.ExecuteNonQuery();
 

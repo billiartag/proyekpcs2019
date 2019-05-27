@@ -213,6 +213,7 @@ namespace ProyekPCS2019.Admin
                     cmd.CommandText = "insert into kamar (kode_jenis, id_membership, tersedia) values('" + comboBox1.Text + "',null,'Y')";
                     cmd.ExecuteNonQuery();
                     mytrans.Commit();
+                    comboBox1.SelectedIndex = -1;
                 }
                 catch (Exception ex)
                 {
