@@ -31,5 +31,16 @@ insert into users values('cust','1','CUSTOMER');
 --jabatan
 insert into jabatan values('KOKI',4000000);
 insert into jabatan values('SATPAM',3000000);
+--htrans
+insert into h_transaksi values('TR001','KA001','1000000','ME001','KB001',TO_DATE('15/05/2019', 'dd/mm/yyyy'),TO_DATE('17/05/2019', 'dd/mm/yyyy'));
+insert into h_transaksi values('TR002','KA001','800000','ME001','KB002',TO_DATE('18/05/2019', 'dd/mm/yyyy'),TO_DATE('20/05/2019', 'dd/mm/yyyy'));
+insert into h_transaksi values('TR003','KA001','600000','ME001','KB003',TO_DATE('21/05/2019', 'dd/mm/yyyy'),TO_DATE('23/05/2019', 'dd/mm/yyyy'));
+--dtrans
+insert into d_transaksi values ('TR001', 'FA001');
+insert into d_transaksi values ('TR001', 'FA002');
+insert into d_transaksi values ('TR002', 'FA002');
+insert into d_transaksi values ('TR003', 'FA001');
+insert into d_transaksi values ('TR003', 'FA002');
+
 commit;
 
