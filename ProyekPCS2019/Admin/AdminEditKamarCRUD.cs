@@ -24,10 +24,6 @@ namespace ProyekPCS2019.Admin
             //2 UNTUK JENIS KAMAR 4 UNTUK KAMAR
             dataGridView2.Visible = false;
             dataGridView4.Visible = false;
-            //didisable dulu ini buat auto insert kamar
-            label4.Visible = false;
-            numericUpDown1.Visible = false;
-            numericUpDown1.Enabled = false;
 
             conn.ConnectionString = "User ID=proyek;Password=1;Data Source=orcl";
             try
