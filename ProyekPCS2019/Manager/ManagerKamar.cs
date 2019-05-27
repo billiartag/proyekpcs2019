@@ -47,21 +47,12 @@ namespace ProyekPCS2019.Manager
                 this.Close();
             }
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBox1.SelectedIndex != -1) {
-                numericUpDown1.Value =Convert.ToInt32( comboBox1.SelectedValue.ToString());
-
-            }
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             OracleTransaction trx = conn.BeginTransaction();
             try
             {
-                OracleCommand cmd = new OracleCommand("UPDATE JENIS_KAMAR SET HARGA_JENIS=" + numericUpDown1.Value.ToString() + " WHERE NAMA_JENIS='" + comboBox1.Text + "'", conn);
+                OracleCommand cmd = new OracleCommand("UPDATE JENIS_KAMAR SET HARGA_JENIS=" + numericUpDown1.Value.ToString() + " WHERE kode_jenis='" + id_jeniskamar+ "'", conn);
                 cmd.ExecuteNonQuery();
                 trx.Commit();
                 refreshKamar();
@@ -77,13 +68,27 @@ namespace ProyekPCS2019.Manager
             dt.Clear();
             OracleDataAdapter od = new OracleDataAdapter("SELECT * FROM JENIS_KAMAR", conn);
             od.Fill(dt);
-            comboBox1.DisplayMember = "nama_jenis";
-            comboBox1.ValueMember = "harga_jenis";
-            comboBox1.DataSource = dt;
-            listBox1.Items.Clear();
-            for (int i = 0; i < dt.Rows.Count; i++)
+            listBox1.DisplayMember = "nama_jenis";
+            listBox1.ValueMember = "kode_jenis";
+            listBox1.DataSource = dt;            
+        }
+        string id_jeniskamar = "";
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex != -1)
             {
-                listBox1.Items.Add(dt.Rows[i].ItemArray[1]+" - "+ dt.Rows[i].ItemArray[2]);
+                id_jeniskamar = listBox1.SelectedValue.ToString();
+                textBox1.Text = id_jeniskamar;
+                int indexrow = 0;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    if (dt.Rows[i].ItemArray[0].ToString() == id_jeniskamar)
+                    {
+                        indexrow = i;
+                        break;
+                    }
+                }
+                numericUpDown1.Value = Convert.ToInt32(dt.Rows[indexrow].ItemArray[2].ToString());
             }
         }
     }
