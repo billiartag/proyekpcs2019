@@ -138,7 +138,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Name = "ManagerKaryawan";
-            this.Text = "ManagerKaryawan";
+            this.Text = "Ubah Karyawan";
             this.Load += new System.EventHandler(this.ManagerKaryawan_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
