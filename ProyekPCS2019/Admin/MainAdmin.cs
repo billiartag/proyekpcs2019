@@ -1,4 +1,6 @@
 ﻿using ProyekPCS2019.Admin;
+using ProyekPCS2019.Report.FasilitasPalingBanyakPerBulan;
+using ProyekPCS2019.Report.BulanTerbaikPenjualan;
 using ProyekPCS2019.Report.JenisKamarPerBulan;
 using ProyekPCS2019.Report.Jumlah_Customer_Per_Bulan;
 using System;
@@ -22,6 +24,8 @@ namespace ProyekPCS2019
         AdminEditFasilitasCRUD ef = new AdminEditFasilitasCRUD();//fasilitas
         FormReportCustomer rc = new FormReportCustomer();//report customer per bulan
         FormReportJenisKamar rj = new FormReportJenisKamar();//report jenis kamar perbulan
+        FormFasilitas rf = new FormFasilitas();//report fasilitas per bulan
+        FormBulanTerbaik rb = new FormBulanTerbaik();//report bulan penjualan terbaik
         public MainAdmin()
         {
             InitializeComponent();
@@ -35,6 +39,8 @@ namespace ProyekPCS2019
             ef.Hide();
             rc.Hide();
             rj.Hide();
+            rf.Hide();
+            rb.Hide();
             ep.MdiParent = this;
             ep.Show();
             ep.Location = new Point(0,0);
@@ -53,6 +59,8 @@ namespace ProyekPCS2019
             ef.Hide();
             rc.Hide();
             rj.Hide();
+            rf.Hide();
+            rb.Hide();
             em.MdiParent = this;
             em.Show();
             em.Location = new Point(0, 0);
@@ -67,6 +75,8 @@ namespace ProyekPCS2019
             ef.Hide();
             rc.Hide();
             rj.Hide();
+            rf.Hide();
+            rb.Hide();
             eb.MdiParent = this;
             eb.Show();
             eb.Location = new Point(0, 0);
@@ -80,6 +90,8 @@ namespace ProyekPCS2019
             ef.Hide();
             rc.Hide();
             rj.Hide();
+            rf.Hide();
+            rb.Hide();
             ek.MdiParent = this;
             ek.Show();
             ek.Location = new Point(0, 0);
@@ -93,6 +105,8 @@ namespace ProyekPCS2019
             ek.Hide();
             rc.Hide();
             rj.Hide();
+            rf.Hide();
+            rb.Hide();
             ef.MdiParent = this;
             ef.Show();
             ef.Location = new Point(0, 0);
@@ -106,6 +120,8 @@ namespace ProyekPCS2019
             ek.Hide();
             ef.Hide();
             rj.Hide();
+            rf.Hide();
+            rb.Hide();
             rc.MdiParent = this;
             rc.Show();
             rc.Location = new Point(0, 0);
@@ -120,10 +136,41 @@ namespace ProyekPCS2019
             ek.Hide();
             ef.Hide();
             rc.Hide();
+            rf.Hide();
+            rb.Hide();
             rj.MdiParent = this;
             rj.Show();
             rj.Location = new Point(0, 0);
         }
-        
+
+        private void bULANTERBAIKToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ep.Hide();
+            em.Hide();
+            eb.Hide();
+            ek.Hide();
+            ef.Hide();
+            rj.Hide();
+            rc.Hide();
+            rf.Hide();
+            rb.MdiParent = this;
+            rb.Show();
+            rb.Location = new Point(0, 0);
+        }
+
+        private void dATAFASILITASToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ep.Hide();
+            em.Hide();
+            eb.Hide();
+            ek.Hide();
+            ef.Hide();
+            rj.Hide();
+            rc.Hide();
+            rb.Hide();
+            rf.MdiParent = this;
+            rf.Show();
+            rf.Location = new Point(0, 0);
+        }
     }
 }

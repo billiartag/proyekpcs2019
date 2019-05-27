@@ -54,43 +54,43 @@
             this.rEPORTCUSTOMERPERBULANToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1696, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1028, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // pEGAWAIToolStripMenuItem
             // 
             this.pEGAWAIToolStripMenuItem.Name = "pEGAWAIToolStripMenuItem";
-            this.pEGAWAIToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.pEGAWAIToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.pEGAWAIToolStripMenuItem.Text = "PEGAWAI";
             this.pEGAWAIToolStripMenuItem.Click += new System.EventHandler(this.pEGAWAIToolStripMenuItem_Click);
             // 
             // fASILITASToolStripMenuItem
             // 
             this.fASILITASToolStripMenuItem.Name = "fASILITASToolStripMenuItem";
-            this.fASILITASToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
+            this.fASILITASToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.fASILITASToolStripMenuItem.Text = "MEMBERSHIP";
             this.fASILITASToolStripMenuItem.Click += new System.EventHandler(this.fASILITASToolStripMenuItem_Click);
             // 
             // kAMARToolStripMenuItem
             // 
             this.kAMARToolStripMenuItem.Name = "kAMARToolStripMenuItem";
-            this.kAMARToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.kAMARToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.kAMARToolStripMenuItem.Text = "BOOKING";
             this.kAMARToolStripMenuItem.Click += new System.EventHandler(this.kAMARToolStripMenuItem_Click);
             // 
             // kAMARToolStripMenuItem1
             // 
             this.kAMARToolStripMenuItem1.Name = "kAMARToolStripMenuItem1";
-            this.kAMARToolStripMenuItem1.Size = new System.Drawing.Size(72, 24);
+            this.kAMARToolStripMenuItem1.Size = new System.Drawing.Size(60, 20);
             this.kAMARToolStripMenuItem1.Text = "KAMAR";
             this.kAMARToolStripMenuItem1.Click += new System.EventHandler(this.kAMARToolStripMenuItem1_Click);
             // 
             // fASILITASToolStripMenuItem1
             // 
             this.fASILITASToolStripMenuItem1.Name = "fASILITASToolStripMenuItem1";
-            this.fASILITASToolStripMenuItem1.Size = new System.Drawing.Size(85, 24);
+            this.fASILITASToolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
             this.fASILITASToolStripMenuItem1.Text = "FASILITAS";
             this.fASILITASToolStripMenuItem1.Click += new System.EventHandler(this.fASILITASToolStripMenuItem1_Click);
             // 
@@ -102,44 +102,46 @@
             this.dATAFASILITASToolStripMenuItem,
             this.dATAKAMARToolStripMenuItem});
             this.rEPORTCUSTOMERPERBULANToolStripMenuItem.Name = "rEPORTCUSTOMERPERBULANToolStripMenuItem";
-            this.rEPORTCUSTOMERPERBULANToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.rEPORTCUSTOMERPERBULANToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.rEPORTCUSTOMERPERBULANToolStripMenuItem.Text = "REPORT";
             // 
             // cUSTOMERPERBULANToolStripMenuItem
             // 
             this.cUSTOMERPERBULANToolStripMenuItem.Name = "cUSTOMERPERBULANToolStripMenuItem";
-            this.cUSTOMERPERBULANToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
+            this.cUSTOMERPERBULANToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.cUSTOMERPERBULANToolStripMenuItem.Text = "CUSTOMER PER BULAN";
             this.cUSTOMERPERBULANToolStripMenuItem.Click += new System.EventHandler(this.cUSTOMERPERBULANToolStripMenuItem_Click);
             // 
             // bULANTERBAIKToolStripMenuItem
             // 
             this.bULANTERBAIKToolStripMenuItem.Name = "bULANTERBAIKToolStripMenuItem";
-            this.bULANTERBAIKToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
+            this.bULANTERBAIKToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.bULANTERBAIKToolStripMenuItem.Text = "BULAN TERBAIK";
+            this.bULANTERBAIKToolStripMenuItem.Click += new System.EventHandler(this.bULANTERBAIKToolStripMenuItem_Click);
             // 
             // dATAFASILITASToolStripMenuItem
             // 
             this.dATAFASILITASToolStripMenuItem.Name = "dATAFASILITASToolStripMenuItem";
-            this.dATAFASILITASToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
+            this.dATAFASILITASToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.dATAFASILITASToolStripMenuItem.Text = "DATA FASILITAS";
+            this.dATAFASILITASToolStripMenuItem.Click += new System.EventHandler(this.dATAFASILITASToolStripMenuItem_Click);
             // 
             // dATAKAMARToolStripMenuItem
             // 
             this.dATAKAMARToolStripMenuItem.Name = "dATAKAMARToolStripMenuItem";
-            this.dATAKAMARToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
+            this.dATAKAMARToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.dATAKAMARToolStripMenuItem.Text = "JENIS KAMAR PER BULAN";
             this.dATAKAMARToolStripMenuItem.Click += new System.EventHandler(this.dATAKAMARToolStripMenuItem_Click);
             // 
             // MainAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1696, 934);
+            this.ClientSize = new System.Drawing.Size(1028, 609);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainAdmin";
             this.Text = "MainMaster";
             this.Load += new System.EventHandler(this.MainMaster_Load);
