@@ -40,18 +40,21 @@
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(2);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.crystalReportViewer1.ReuseParameterValuesOnRefresh = true;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1028, 609);
             this.crystalReportViewer1.TabIndex = 8;
             this.crystalReportViewer1.ToolPanelWidth = 150;
+            this.crystalReportViewer1.ReportRefresh += new CrystalDecisions.Windows.Forms.RefreshEventHandler(this.crystalReportViewer1_ReportRefresh);
             // 
             // FormBulanTerbaik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1028, 609);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "FormBulanTerbaik";
             this.Text = "FormBulanTerbaik";
+            this.Load += new System.EventHandler(this.FormBulanTerbaik_Load);
             this.ResumeLayout(false);
 
         }

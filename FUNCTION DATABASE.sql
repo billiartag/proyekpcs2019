@@ -219,15 +219,30 @@ end;
 /
 show err;
 
---penggunaan fasilitas terbanyak
-set serveroutput on;
-create or replace function FASILITAS_TERBANYAK
-(
-	bulan in varchar2
-)
+create or replace function TRANSAKSI_TERBANYAK
 return varchar2
 is
+	hasil varchar2(10000);
+	maks number(10);
 begin
+	maks:=-1;
+	for i in (
+		select to_char(tgl_checkin, 'MONTH') as bulan, count(*) as jumlah
+		from h_transaksi
+		group by to_char(tgl_checkin, 'MONTH')
+	)
+	loop
+		if maks = i.jumlah then 
+		hasil := hasil || ' dan ' || i.bulan;
+		maks := i.jumlah;
+		end if;
+		
+		if maks < i.jumlah then 
+		hasil := i.bulan;
+		maks := i.jumlah;
+		end if;
+	end loop;
+	return hasil;
 end;
 /
 show err;
