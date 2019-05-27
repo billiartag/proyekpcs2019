@@ -228,7 +228,7 @@ namespace ProyekPCS2019.Admin
         //update kamar
         private void button3_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex > -1 && comboBox2.SelectedIndex > -1)
+            if (comboBox3.SelectedIndex > -1 && comboBox2.SelectedIndex > -1)
             {
                 conn.Open();
                 OracleTransaction mytrans = conn.BeginTransaction();
@@ -364,6 +364,5 @@ namespace ProyekPCS2019.Admin
                 conn.Close();
             }
         }
-        
     }
 }
