@@ -190,7 +190,7 @@ namespace ProyekPCS2019
             try
             {
                 conn.Open();
-                OracleCommand cmd = new OracleCommand("Select count(*) from kamar where kode_jenis = '" + comboBox1.SelectedValue + "' and upper(tersedia) = 'YA'", conn);
+                OracleCommand cmd = new OracleCommand("Select count(*) from kamar where kode_jenis = '" + comboBox1.SelectedValue + "' and upper(tersedia) = 'Y'", conn);
                 textBox1.Text = cmd.ExecuteScalar().ToString();
                 loadDataKamar(comboBox1.SelectedValue.ToString());
                 conn.Close();
@@ -221,7 +221,7 @@ namespace ProyekPCS2019
                 }
                 if (book)
                 {
-                    OracleCommand cmd = new OracleCommand("Select count(id_kamar) from kamar where id_kamar = '" + id_kamar + "' and upper(tersedia) = 'YA'", conn);
+                    OracleCommand cmd = new OracleCommand("Select count(id_kamar) from kamar where id_kamar = '" + id_kamar + "' and upper(tersedia) = 'Y'", conn);
                     int temp = Convert.ToInt32(cmd.ExecuteScalar().ToString());
                     //MessageBox.Show("Test -->"+temp);
                     if (temp == 0)
@@ -231,7 +231,7 @@ namespace ProyekPCS2019
                     else
                     {
                         string date = DateTime.Now.Day + "-" + DateTime.Now.Month + "-" + DateTime.Now.Year;
-                        string update = "update kamar set tersedia = 'tidak' where id_kamar = '" + id_kamar + "'";
+                        string update = "update kamar set tersedia = 'N' where id_kamar = '" + id_kamar + "'";
                         cmd = new OracleCommand(update, conn);
                         cmd.ExecuteNonQuery();
                         //MessageBox.Show("update kamar lewat");
@@ -280,7 +280,7 @@ namespace ProyekPCS2019
         }
         public void checkOut(string id_kamar)
         {
-            MessageBox.Show("Test");
+            //MessageBox.Show("Test");
             if (conn.State == ConnectionState.Open)
             {
                 conn.Close();
@@ -288,7 +288,7 @@ namespace ProyekPCS2019
             try
             {
                 conn.Open();
-                OracleCommand cmd = new OracleCommand("Select count(*) from kamar where id_kamar = '" + id_kamar + "' and tersedia = 'tidak'", conn);
+                OracleCommand cmd = new OracleCommand("Select count(*) from kamar where id_kamar = '" + id_kamar + "' and tersedia = 'N'", conn);
                 int temp = Convert.ToInt32(cmd.ExecuteScalar().ToString());
                 
                 if(temp == 0)
@@ -319,7 +319,7 @@ namespace ProyekPCS2019
                             conn.Close();
                         }
                         conn.Open();
-                        string update = "update kamar set tersedia = 'ya' where id_kamar = '" + id_kamar + "'";
+                        string update = "update kamar set tersedia = 'Y' where id_kamar = '" + id_kamar + "'";
                         cmd = new OracleCommand(update, conn);
                         cmd.ExecuteNonQuery();
                         loadDataKamar(comboBox1.SelectedValue.ToString());
@@ -399,13 +399,13 @@ namespace ProyekPCS2019
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show(e.ColumnIndex+"clickeddddd");
-            if (e.ColumnIndex == 3)
+            //MessageBox.Show(e.ColumnIndex+"clickeddddd");
+            if (e.ColumnIndex == 4)
             {
                 //MessageBox.Show("clicked -- >"+ dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
                 checkIn(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
             }
-            else if(e.ColumnIndex == 4)
+            else if(e.ColumnIndex == 5)
             {
                 //MessageBox.Show("clicked -- >" + dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
                 checkOut(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
@@ -428,7 +428,7 @@ namespace ProyekPCS2019
                 try
                 {
                     conn.Open();
-                    String sql = "Select id_kamar from kamar where kode_jenis = '"+comboBox1.SelectedValue.ToString()+"' and tersedia = 'ya'";
+                    String sql = "Select id_kamar from kamar where kode_jenis = '"+comboBox1.SelectedValue.ToString()+"' and tersedia = 'Y'";
                     OracleCommand cmd = new OracleCommand(sql,conn);
                     OracleDataAdapter datmp = new OracleDataAdapter(cmd);
                     DataTable dttemp = new DataTable();

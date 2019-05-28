@@ -57,8 +57,9 @@ namespace ProyekPCS2019.Front_Office
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Login a = new Login();
-            a.Show();
+            a.ShowDialog();
             this.Close();
         }
     }
