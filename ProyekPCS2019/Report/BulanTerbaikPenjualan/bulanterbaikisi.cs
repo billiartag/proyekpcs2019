@@ -16,14 +16,14 @@ namespace ProyekPCS2019.Report.BulanTerbaikPenjualan {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class BulanTerbaik : ReportClass {
+    public class bulanterbaikisi : ReportClass {
         
-        public BulanTerbaik() {
+        public bulanterbaikisi() {
         }
         
         public override string ResourceName {
             get {
-                return "BulanTerbaik.rpt";
+                return "bulanterbaikisi.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace ProyekPCS2019.Report.BulanTerbaikPenjualan {
         
         public override string FullResourceName {
             get {
-                return "ProyekPCS2019.Report.BulanTerbaikPenjualan.BulanTerbaik.rpt";
+                return "ProyekPCS2019.Report.BulanTerbaikPenjualan.bulanterbaikisi.rpt";
             }
             set {
                 // Do nothing
@@ -95,20 +95,12 @@ namespace ProyekPCS2019.Report.BulanTerbaikPenjualan {
                 return this.DataDefinition.ParameterFields[0];
             }
         }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_bulanterbaikisirpt_bulan {
-            get {
-                return this.DataDefinition.ParameterFields[1];
-            }
-        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedBulanTerbaik : Component, ICachedReport {
+    public class Cachedbulanterbaikisi : Component, ICachedReport {
         
-        public CachedBulanTerbaik() {
+        public Cachedbulanterbaikisi() {
         }
         
         [Browsable(false)]
@@ -145,7 +137,7 @@ namespace ProyekPCS2019.Report.BulanTerbaikPenjualan {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            BulanTerbaik rpt = new BulanTerbaik();
+            bulanterbaikisi rpt = new bulanterbaikisi();
             rpt.Site = this.Site;
             return rpt;
         }
