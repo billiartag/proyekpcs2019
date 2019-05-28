@@ -13,6 +13,8 @@ namespace ProyekPCS2019.Front_Office
 {
     public partial class FrontOfficeFasilitas : Form
     {
+        public DataTable datatablessource = new DataTable();
+        OracleCommandBuilder builder;
         public FrontOfficeFasilitas()
         {
             InitializeComponent();
@@ -64,8 +66,10 @@ namespace ProyekPCS2019.Front_Office
 
                     DateTime a = dateTimePicker1.Value;
                     Boolean cektgl = false;
-                    if (tglmsk <= a && a <= tglkeluar)
+                MessageBox.Show(tglmsk+" -- "+a+" -- "+tglkeluar);
+                if (tglmsk <= a && a <= tglkeluar)
                     {
+                        
                         cektgl = true;
                     }
                     else
@@ -76,55 +80,23 @@ namespace ProyekPCS2019.Front_Office
                     {
                         for (int i = 0; i < numericUpDown1.Value; i++)
                         {
-                            string sql = "INSERT INTO d_transaksi VALUES('" + kode + "','" + comboBox2.SelectedValue + "')";
-                            OracleCommand cmd = new OracleCommand(sql, conn);
-                            cmd.ExecuteNonQuery();
+                        //string sql = "INSERT INTO d_transaksi VALUES('" + kode + "','" + comboBox2.SelectedValue + "')";
+                        //OracleCommand cmd = new OracleCommand(sql, conn);
+                        //cmd.ExecuteNonQuery();
 
-                        //MessageBox.Show("4");
+                        ////MessageBox.Show("4");
+                        
 
-                    }
+                        //add row
+                        DataRow dr = datatablessource.NewRow();
+                        dr[0] = kode;
+                        dr[1] = comboBox2.SelectedValue.ToString();
+                        datatablessource.Rows.Add(dr);
+
+                        }
+                    //loadData();
                     //update h_trans
-                    sql2 = "select id_fasilitas from d_transaksi where id_transaksi = '"+kode+"'";
-                        cmd2 = new OracleCommand(sql2, conn);
-                        OracleDataAdapter da = new OracleDataAdapter(cmd2);
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-                        int hargatotal = 0;
-
-                    //MessageBox.Show("5");
-
-
-
-                    foreach (DataRow row in dt.Rows)
-                        {
-                            sql2 = "select harga_fasilitas from fasilitas where id_fasilitas = '"+row[0]+"'";
-                            cmd2 = new OracleCommand(sql2, conn);
-                            hargatotal += Convert.ToInt32(cmd2.ExecuteScalar().ToString());
-                        //MessageBox.Show("6");
-
-                    }
-                    //cari harga jenis
-                    sql2 = "select kode_jenis from kamar where id_kamar = '"+comboBox1.SelectedValue+"'";
-                        cmd2 = new OracleCommand(sql2, conn);
-                        string jenis = cmd2.ExecuteScalar().ToString();
-
-                    //MessageBox.Show("7");
-
-
-                    sql2 = "select harga_jenis from jenis_kamar where kode_jenis = '"+jenis+"'";
-                        cmd2 = new OracleCommand(sql2, conn);
-                        int hargakamar = Convert.ToInt32(cmd2.ExecuteScalar().ToString());
-                        hargatotal += hargakamar;
-
-                    //MessageBox.Show("8");
-
-
-                    sql2 = "update h_transaksi set total_harga = " + hargatotal+"where id_transaksi = '"+kode+"'";
-                        cmd2 = new OracleCommand(sql2, conn);
-                        cmd2.ExecuteNonQuery();
-                        MessageBox.Show("Fasilitas berhasil ditambahkan!");
-
-                    //MessageBox.Show("9");
+                    
 
                 }
                 else
@@ -138,9 +110,59 @@ namespace ProyekPCS2019.Front_Office
                 catch (Exception ex)
                 {
                     conn.Close();
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.ToString());
                 }
             
+        }
+        public void updatedata(string kode) {
+
+            string sql2;
+            OracleCommand cmd2;
+
+            sql2 = "select id_fasilitas from d_transaksi where id_transaksi = '" + kode + "'";
+            cmd2 = new OracleCommand(sql2, conn);
+            OracleDataAdapter da = new OracleDataAdapter(cmd2);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            int hargatotal = 0;
+
+            //MessageBox.Show("5");
+
+
+
+            foreach (DataRow row in dt.Rows)
+            {
+                
+                sql2 = "select harga_fasilitas from fasilitas where id_fasilitas = '" + row[0] + "'";
+                cmd2 = new OracleCommand(sql2, conn);
+                hargatotal += Convert.ToInt32(cmd2.ExecuteScalar().ToString());
+                //MessageBox.Show("6");
+
+            }
+            //cari harga jenis
+            sql2 = "select kode_jenis from kamar where id_kamar = '" + comboBox1.SelectedValue + "'";
+            cmd2 = new OracleCommand(sql2, conn);
+            string jenis = cmd2.ExecuteScalar().ToString();
+
+            //MessageBox.Show("7");
+
+
+            sql2 = "select harga_jenis from jenis_kamar where kode_jenis = '" + jenis + "'";
+            cmd2 = new OracleCommand(sql2, conn);
+            int hargakamar = Convert.ToInt32(cmd2.ExecuteScalar().ToString());
+            hargatotal += hargakamar;
+
+            //MessageBox.Show("8");
+
+
+            sql2 = "update h_transaksi set total_harga = " + hargatotal + "where id_transaksi = '" + kode + "'";
+            cmd2 = new OracleCommand(sql2, conn);
+            cmd2.ExecuteNonQuery();
+            MessageBox.Show("Fasilitas berhasil ditambahkan!");
+
+            //MessageBox.Show("9");
+
+
         }
         public void isifasilitas() {
             if (conn.State == ConnectionState.Open)
@@ -192,9 +214,76 @@ namespace ProyekPCS2019.Front_Office
         }
         private void FrontOfficeFasilitas_Load(object sender, EventArgs e)
         {
+            loadData();
             isifasilitas();
             isikamar();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+            try
+            {
+                conn.Open();
+
+                string sql2 = "SELECT id_transaksi FROM h_transaksi WHERE id_kamar = '" + comboBox1.Text + "' ORDER BY tgl_checkin DESC";
+                OracleCommand cmd2 = new OracleCommand(sql2, conn);
+                string kode = cmd2.ExecuteScalar().ToString();
+
+
+                OracleCommand cmd = new OracleCommand("select * from d_transaksi where id_transaksi = '"+kode+"'", conn);
+                OracleDataAdapter od = new OracleDataAdapter(cmd);
+                builder = new OracleCommandBuilder(od);
+                od.InsertCommand = builder.GetInsertCommand();
+                od.Update(datatablessource);
+
+                updatedata(kode);
+
+
+
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        public void loadData() {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+
+                try
+                {
+                    conn.Open();
+                    //string sql2 = "SELECT id_transaksi FROM h_transaksi WHERE id_kamar = '" + comboBox1.Text + "' ORDER BY tgl_checkin DESC";
+                    //OracleCommand cmd2 = new OracleCommand(sql2, conn);
+                    //string kode = cmd2.ExecuteScalar().ToString();
+
+                    OracleCommand cmd2 = new OracleCommand("select * from d_transaksi", conn);
+                    OracleDataAdapter od = new OracleDataAdapter(cmd2);
+                    od.Fill(datatablessource);
+                    dataGridView1.DataSource = datatablessource;
+                    
+                    
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //dataGridView1.Rows.RemoveAt(e.RowIndex);
+        }
     }
 }
