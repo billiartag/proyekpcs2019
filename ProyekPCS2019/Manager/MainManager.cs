@@ -24,6 +24,9 @@ namespace ProyekPCS2019.Manager
 
         private void buttonKeluar_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Login l = new Login();
+            l.ShowDialog();
             this.Close();
         }
 

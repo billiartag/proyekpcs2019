@@ -23,6 +23,9 @@ namespace ProyekPCS2019
 
         private void button4_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Login l = new Login();
+            l.ShowDialog();
             this.Close();
         }
 
