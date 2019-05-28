@@ -202,6 +202,12 @@
       <DependentUpon>BulanTerbaik.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report\BulanTerbaikPenjualan\bulanterbaikisi.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bulanterbaikisi.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\BulanTerbaikPenjualan\FormBulanTerbaik.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,6 +332,10 @@
     <EmbeddedResource Include="Report\BulanTerbaikPenjualan\BulanTerbaik.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BulanTerbaik.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\BulanTerbaikPenjualan\bulanterbaikisi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>bulanterbaikisi.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\BulanTerbaikPenjualan\FormBulanTerbaik.resx">
       <DependentUpon>FormBulanTerbaik.cs</DependentUpon>
