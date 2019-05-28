@@ -234,33 +234,33 @@ namespace ProyekPCS2019
                         string update = "update kamar set tersedia = 'tidak' where id_kamar = '" + id_kamar + "'";
                         cmd = new OracleCommand(update, conn);
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("update kamar lewat");
+                        //MessageBox.Show("update kamar lewat");
                         //buat kode trans
-                        MessageBox.Show("Test : "+ dateTimePicker5.Value.Month.ToString());
+                        //MessageBox.Show("Test : "+ dateTimePicker5.Value.Month.ToString());
                         string kodetrans = dateTimePicker5.Value.Month.ToString() + dateTimePicker5.Value.Year.ToString().Substring(2, 2);
 
-                        MessageBox.Show("kodetrans : "+kodetrans);
+                        //MessageBox.Show("kodetrans : "+kodetrans);
                         sql = "select count(id_transaksi) from h_transaksi where substr(id_transaksi,0,3) = '"+kodetrans+"'";
                         cmd = new OracleCommand(sql, conn);
                         int jum = Convert.ToInt32(cmd.ExecuteScalar().ToString());
                         jum++;
                         kodetrans += jum.ToString().PadLeft(3,'0');
-                        MessageBox.Show("buat kode lewat");
+                        //MessageBox.Show("buat kode lewat");
                         //ambil tgl keluar
                         sql = "select to_char(tgl_keluar,'dd-mm-yyyy') from booking where tgl_msk = to_date('"+tgl+"','dd-mm-yyyy') and id_kamar = '"+id_kamar+"'";
                         cmd = new OracleCommand(sql, conn);
                         string tglkeluar = cmd.ExecuteScalar().ToString();
-                        MessageBox.Show("ambil tgl keluar lewat");
+                        //MessageBox.Show("ambil tgl keluar lewat");
                         //ambil tgl membership
                         sql = "select id_membership from booking where tgl_msk = to_date('" + tgl + "','dd-mm-yyyy') and id_kamar = '" + id_kamar + "'";
                         cmd = new OracleCommand(sql, conn);
                         string member = cmd.ExecuteScalar().ToString();
-                        MessageBox.Show("ambil membership lewat : "+member);
+                        //MessageBox.Show("ambil membership lewat : "+member);
                         //ambil tgl kode_booking
                         sql = "select kode_booking from booking where tgl_msk = to_date('" + tgl + "','dd-mm-yyyy') and id_kamar = '" + id_kamar + "'";
                         cmd = new OracleCommand(sql, conn);
                         string kodebook = cmd.ExecuteScalar().ToString();
-                        MessageBox.Show("ambil kode booking lewat");
+                        //MessageBox.Show("ambil kode booking lewat");
 
 
                         sql = "insert into h_transaksi values('"+kodetrans+"','"+id_kamar+"','0','"+member+"','"+kodebook+"',to_date('"+tgl+"','dd-mm-yyyy'),to_date('"+tglkeluar+"','dd-mm-yyyy'))";
@@ -330,7 +330,7 @@ namespace ProyekPCS2019
                         string sql = "SELECT id_transaksi FROM h_transaksi WHERE id_kamar = '" + id_kamar + "' ORDER BY tgl_checkin DESC";
                         cmd = new OracleCommand(sql, conn);
                         string idtrans = cmd.ExecuteScalar().ToString();
-                        MessageBox.Show("1");
+                        //MessageBox.Show("1");
 
 
                         sql = "select DISTINCT id_fasilitas from d_transaksi where id_transaksi = '"+idtrans+"'";
@@ -338,14 +338,14 @@ namespace ProyekPCS2019
                         OracleDataAdapter da = new OracleDataAdapter(cmd);
                         DataTable dt = new DataTable();
                         da.Fill(dt);
-                        MessageBox.Show("2");
+                        //MessageBox.Show("2");
 
 
                         sql = "select j.harga_jenis from kamar k, jenis_kamar j where k.id_kamar = '"+id_kamar+"' and k.kode_jenis = j.kode_jenis";
                         cmd = new OracleCommand(sql,conn);
                         int hrg = Convert.ToInt32(cmd.ExecuteScalar().ToString());
 
-                        MessageBox.Show("3");
+                        //MessageBox.Show("3");
 
 
                         sql = "select j.nama_jenis from kamar k, jenis_kamar j where k.id_kamar = '" + id_kamar + "' and k.kode_jenis = j.kode_jenis";

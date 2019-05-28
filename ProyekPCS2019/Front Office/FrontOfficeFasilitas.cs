@@ -42,19 +42,19 @@ namespace ProyekPCS2019.Front_Office
                     string sql2 = "SELECT id_transaksi FROM h_transaksi WHERE id_kamar = '" + comboBox1.Text + "' ORDER BY tgl_checkin DESC";
                     OracleCommand cmd2 = new OracleCommand(sql2, conn);
                     string kode = cmd2.ExecuteScalar().ToString();
-                MessageBox.Show("1");
+               // MessageBox.Show("1");
 
                 string sqlcek = "SELECT tgl_checkout FROM h_transaksi WHERE id_kamar = '" + comboBox1.Text + "' ORDER BY tgl_checkin DESC";
                     OracleCommand cmd3 = new OracleCommand(sqlcek,conn);
                     string tgl2 = cmd3.ExecuteScalar().ToString();
 
-                MessageBox.Show("2");
+                //MessageBox.Show("2");
 
 
                 string sqlcek2 = "SELECT tgl_checkin FROM h_transaksi WHERE id_kamar = '" + comboBox1.Text + "' ORDER BY tgl_checkin DESC";
                     OracleCommand cmd4 = new OracleCommand(sqlcek2, conn);
                     string tgl3 = cmd4.ExecuteScalar().ToString();
-                MessageBox.Show("3");
+                //MessageBox.Show("3");
 
 
 
@@ -80,7 +80,7 @@ namespace ProyekPCS2019.Front_Office
                             OracleCommand cmd = new OracleCommand(sql, conn);
                             cmd.ExecuteNonQuery();
 
-                        MessageBox.Show("4");
+                        //MessageBox.Show("4");
 
                     }
                     //update h_trans
@@ -91,7 +91,7 @@ namespace ProyekPCS2019.Front_Office
                         da.Fill(dt);
                         int hargatotal = 0;
 
-                    MessageBox.Show("5");
+                    //MessageBox.Show("5");
 
 
 
@@ -100,7 +100,7 @@ namespace ProyekPCS2019.Front_Office
                             sql2 = "select harga_fasilitas from fasilitas where id_fasilitas = '"+row[0]+"'";
                             cmd2 = new OracleCommand(sql2, conn);
                             hargatotal += Convert.ToInt32(cmd2.ExecuteScalar().ToString());
-                        MessageBox.Show("6");
+                        //MessageBox.Show("6");
 
                     }
                     //cari harga jenis
@@ -108,7 +108,7 @@ namespace ProyekPCS2019.Front_Office
                         cmd2 = new OracleCommand(sql2, conn);
                         string jenis = cmd2.ExecuteScalar().ToString();
 
-                    MessageBox.Show("7");
+                    //MessageBox.Show("7");
 
 
                     sql2 = "select harga_jenis from jenis_kamar where kode_jenis = '"+jenis+"'";
@@ -116,7 +116,7 @@ namespace ProyekPCS2019.Front_Office
                         int hargakamar = Convert.ToInt32(cmd2.ExecuteScalar().ToString());
                         hargatotal += hargakamar;
 
-                    MessageBox.Show("8");
+                    //MessageBox.Show("8");
 
 
                     sql2 = "update h_transaksi set total_harga = " + hargatotal+"where id_transaksi = '"+kode+"'";
@@ -124,7 +124,7 @@ namespace ProyekPCS2019.Front_Office
                         cmd2.ExecuteNonQuery();
                         MessageBox.Show("Fasilitas berhasil ditambahkan!");
 
-                    MessageBox.Show("9");
+                    //MessageBox.Show("9");
 
                 }
                 else
@@ -186,7 +186,8 @@ namespace ProyekPCS2019.Front_Office
             catch (Exception ex)
             {
                 conn.Close();
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
+                MessageBox.Show("Kamar tidak ada penghuni!");
             }
         }
         private void FrontOfficeFasilitas_Load(object sender, EventArgs e)

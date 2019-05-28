@@ -49,5 +49,17 @@ namespace ProyekPCS2019.Front_Office
             a.MdiParent = this;
             a.Show();
         }
+
+        private void FrontOfficeParent_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login a = new Login();
+            a.Show();
+            this.Close();
+        }
     }
 }

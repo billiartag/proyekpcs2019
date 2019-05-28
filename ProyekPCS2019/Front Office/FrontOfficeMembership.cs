@@ -39,6 +39,15 @@ namespace ProyekPCS2019.Front_Office
                 MessageBox.Show("Member berhasil dibuat!");
                 isimembership();
                 conn.Close();
+
+                string sql2 = "SELECT max(id_membership) FROM membership";
+                cmd = new OracleCommand(sql, conn);
+                string idmember = cmd.ExecuteScalar().ToString();
+                //MessageBox.Show(idmember);
+
+                sql2 = "INSERT INTO user VALUES('"+idmember+ "','" + idmember + "','CUSTOMER')";
+                cmd = new OracleCommand(sql,conn);
+                cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
