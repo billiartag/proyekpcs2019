@@ -35,7 +35,7 @@ namespace ProyekPCS2019.Client
             labelNoKamar.Text = "-";
             labelTanggalKeluar.Text = "-";
             labelTanggalMasuk.Text = "-";
-            OracleDataAdapter od = new OracleDataAdapter("SELECT * FROM BOOKING WHERE KODE_BOOKING='"+textBoxKodeBooking.Text+"' AND ID_MEMBERSHIP='"+userID+"'", conn);
+            OracleDataAdapter od = new OracleDataAdapter("SELECT * FROM BOOKING WHERE KODE_BOOKING='"+textBoxKodeBooking.Text.ToUpper()+"' AND ID_MEMBERSHIP='"+userID+"'", conn);
             DataTable dt = new DataTable();
             od.Fill(dt);
             if (dt.Rows.Count == 1)

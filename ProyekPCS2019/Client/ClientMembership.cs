@@ -150,7 +150,7 @@ namespace ProyekPCS2019.Client
                 labelAlamatMember.Text = tabeldatamember.Rows[0].ItemArray[2].ToString();
                 labelNoMember.Text = tabeldatamember.Rows[0].ItemArray[3].ToString();
                 labelEmailMember.Text = tabeldatamember.Rows[0].ItemArray[4].ToString();
-                if (tabeldatamember.Rows[0].ItemArray[4].ToString() == "1") {
+                if (tabeldatamember.Rows[0].ItemArray[5].ToString() == "1") {
                     labelStatusMember.Text = "Aktif";
                 }
                 else { labelStatusMember.Text = "Non Aktif"; }

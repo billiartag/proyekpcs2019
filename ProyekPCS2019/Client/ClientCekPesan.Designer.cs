@@ -56,6 +56,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Azure;
             this.groupBox1.Controls.Add(this.buttonCekBooking);
             this.groupBox1.Controls.Add(this.textBoxKodeBooking);
             this.groupBox1.Controls.Add(this.label1);
@@ -94,6 +95,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Azure;
             this.groupBox2.Controls.Add(this.labelTanggalKeluar);
             this.groupBox2.Controls.Add(this.labelTanggalMasuk);
             this.groupBox2.Controls.Add(this.labelNoKamar);
@@ -165,6 +167,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(675, 396);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

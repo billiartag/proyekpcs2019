@@ -78,6 +78,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.MintCream;
             this.groupBox1.Controls.Add(this.buttonBuat);
             this.groupBox1.Controls.Add(this.buttonCek);
             this.groupBox1.Location = new System.Drawing.Point(13, 12);
@@ -129,7 +130,7 @@
             this.groupBoxCek.Controls.Add(this.button4);
             this.groupBoxCek.Controls.Add(this.textBoxidMember);
             this.groupBoxCek.Controls.Add(this.label1);
-            this.groupBoxCek.Location = new System.Drawing.Point(13, 114);
+            this.groupBoxCek.Location = new System.Drawing.Point(12, 114);
             this.groupBoxCek.Name = "groupBoxCek";
             this.groupBoxCek.Size = new System.Drawing.Size(1064, 620);
             this.groupBoxCek.TabIndex = 3;
@@ -349,6 +350,7 @@
             // 
             // groupBoxBuat
             // 
+            this.groupBoxBuat.BackColor = System.Drawing.Color.MintCream;
             this.groupBoxBuat.Controls.Add(this.label18);
             this.groupBoxBuat.Controls.Add(this.textBoxPassword);
             this.groupBoxBuat.Controls.Add(this.label17);
@@ -484,11 +486,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(1089, 746);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBoxCek);
             this.Controls.Add(this.groupBoxBuat);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.groupBoxCek);
             this.Name = "ClientMembership";
             this.Text = "Membership";
             this.Load += new System.EventHandler(this.ClientMembership_Load);

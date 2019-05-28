@@ -190,9 +190,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(17, 472);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(273, 34);
+            this.label6.Size = new System.Drawing.Size(311, 34);
             this.label6.TabIndex = 23;
             this.label6.Text = "Untuk mengganti gambar dapat langsung \r\ndilakukan dengan button ubah gambar";
             // 
@@ -200,6 +201,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(808, 525);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.numericUpDownHargaFasilitas);

@@ -20,7 +20,7 @@ namespace ProyekPCS2019.Client
         public ClientPesanKamar(string username,OracleConnection cnn)
         {
             InitializeComponent();
-            userID = username;
+            userID = username.ToUpper();
             conn = cnn;
         }
 
@@ -137,10 +137,14 @@ namespace ProyekPCS2019.Client
             OracleTransaction ot = conn.BeginTransaction();
             try
             {
+                MessageBox.Show(userID);
                 OracleCommand cmd = new OracleCommand("INSERT INTO BOOKING VALUES('','"+userID+"','"+id_kamar_fix+ "',to_date('" + dateTimePicker1.Value.ToShortDateString() + "','dd/mm/yyyy'),to_date('" + dateTimePicker2.Value.ToShortDateString() + "','dd/mm/yyyy'))", conn);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Kamar telah berhasil di book! Anda mendapatkan kamar "+id_kamar_fix);
                 ot.Commit();
+                MessageBox.Show("Kamar telah berhasil di book! Anda mendapatkan kamar "+id_kamar_fix);
+                OracleCommand CMD2 = new OracleCommand("SELECT MAX(KODE_BOOKING) FROM BOOKING WHERE ID_MEMBERSHIP='"+userID+"'", conn);
+                string booking_roder = CMD2.ExecuteScalar().ToString();
+                MessageBox.Show("Kode booking anda adalah: "+booking_roder+"\nTerimakasih!");
             }
             catch (Exception ex)
             {

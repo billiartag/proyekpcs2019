@@ -43,6 +43,7 @@ namespace ProyekPCS2019.Client
                     MessageBox.Show("gagal ganti password!"+ex.ToString());
                 }
             }
+            else { MessageBox.Show("Password tidak sesuai");}
             user.Clear();
             textBox1.Clear();
             textBox2.Clear();

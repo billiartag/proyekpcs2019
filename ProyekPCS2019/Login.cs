@@ -56,7 +56,7 @@ namespace ProyekPCS2019
                     if (role == "CUSTOMER")
                     {
                         this.Hide();
-                        MainClient mc = new MainClient(user);
+                        MainClient mc = new MainClient(user.ToUpper());
                         mc.ShowDialog();
                         this.Close();
                     }
@@ -70,7 +70,7 @@ namespace ProyekPCS2019
                     else if (role == "MANAGER")
                     {
                         this.Hide();
-                        Manager.MainManager mc = new Manager.MainManager(user,conn);
+                        Manager.MainManager mc = new Manager.MainManager(user.ToUpper(), conn);
                         mc.ShowDialog();
                         this.Close();
                     }/*
