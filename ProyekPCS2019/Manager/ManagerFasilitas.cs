@@ -60,11 +60,13 @@ namespace ProyekPCS2019.Manager
 
                         try
                         {
-                            img = Image.FromFile("gambar_fasilitas/" + textBoxIDFasilitas.Text + ".jpg");
+                            img = Image.FromFile(Application.StartupPath+"/gambar_fasilitas/" + textBoxIDFasilitas.Text + ".jpg");
                             pictureBox1.Image = img;
                         }
                         catch (Exception ex)
                         {
+                            pictureBox1.Image.Dispose();
+                            pictureBox1.Image = null; 
                         }
                     }
                 }
@@ -72,15 +74,28 @@ namespace ProyekPCS2019.Manager
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            img.Dispose();
+            try
+            {
+
+                img.Dispose();
+            }
+            catch (Exception)
+            {
+                
+            }
             openFileDialog1.InitialDirectory = Application.StartupPath;
             openFileDialog1.Title = "Pilih gambar untuk fasilitas " + textBoxNamaFasilitas.Text;
             openFileDialog1.Filter = "File jpg|*.jpg";
+            string filepath1 = "";
             if (openFileDialog1.ShowDialog() == DialogResult.OK) {
                 try
                 {
                     img = Image.FromFile(openFileDialog1.FileName);
                     string filepath = Application.StartupPath + "\\gambar_fasilitas\\" + textBoxIDFasilitas.Text + ".jpg";
+                    filepath1 = filepath;
+                    if (!System.IO.Directory.Exists("\\gambar_fasilitas\\")) {
+                        System.IO.Directory.CreateDirectory("\\gambar_fasilitas\\");
+                    }
                     if (System.IO.File.Exists(filepath))
                     {
                         System.IO.File.Delete(filepath);
@@ -90,12 +105,12 @@ namespace ProyekPCS2019.Manager
                     {
                         img.Save(filepath);
                     }
-                    pictureBox1.Image = img;
-                    MessageBox.Show("Gambar berhasil diubah!");
+                    pictureBox1.Image = Image.FromFile(Application.StartupPath+"\\gambar_fasilitas\\" + textBoxIDFasilitas.Text + ".jpg");
+                    MessageBox.Show("\\Gambar berhasil diubah!");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show(filepath1+"\n"+ex.ToString());
                 }
             }
         }
